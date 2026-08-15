@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>朱拓恺 (ZTK) | 个人主页 & 实践成果展示</title>
-    <!-- SEO 与元数据 -->
     <meta name="description" content="朱拓恺的个人主页，苏州大学车辆工程2026级准大一新生，未来致力于从事车辆工程与AI算法开发。">
     <meta name="author" content="朱拓恺">
     
@@ -63,7 +62,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        /* 自定义滚动条 */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -77,7 +75,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #0066FF;
         }
-        /* 交互高亮行悬浮放大发光特效 */
         .code-jump-row {
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -97,7 +94,6 @@
     <!-- 2. 导航栏 (Navbar) -->
     <header class="fixed top-0 left-0 right-0 z-40 glass-card transition-all duration-300 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- 标志 Logo -->
             <a href="#hero" class="flex items-center space-x-3 group">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue to-brand-cyan flex items-center justify-center font-black text-white text-xl shadow-lg shadow-brand-blue/30 group-hover:scale-105 transition-transform">
                     Z
@@ -108,7 +104,6 @@
                 </div>
             </a>
 
-            <!-- 桌面端导航链接 -->
             <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
                 <a href="#about" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5"><i class="fa-regular fa-user text-xs"></i> 个人简介</a>
                 <a href="#skills" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5"><i class="fa-solid fa-code text-xs"></i> 专业技能</a>
@@ -118,7 +113,6 @@
                 <a href="#interests" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5"><i class="fa-solid fa-compass text-xs"></i> 兴趣特长</a>
             </nav>
 
-            <!-- 快捷操作按钮 -->
             <div class="flex items-center space-x-3">
                 <a href="https://github.com/ZTK1119" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-800 hover:bg-brand-blue text-slate-200 hover:text-white transition-all text-sm flex items-center gap-2 border border-slate-700">
                     <i class="fa-brands fa-github text-base"></i>
@@ -133,7 +127,6 @@
             </div>
         </div>
 
-        <!-- 移动端折叠导航 -->
         <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 space-y-3 bg-slate-900/95 border-b border-slate-800">
             <a href="#about" class="block py-2 text-slate-300 hover:text-brand-cyan">个人简介</a>
             <a href="#skills" class="block py-2 text-slate-300 hover:text-brand-cyan">专业技能</a>
@@ -171,7 +164,6 @@
                         一名热爱编程与前沿 AI 技术的工科准大一新生。高中阶段曾作为<strong class="text-brand-cyan font-bold">组长带领团队</strong>完成数据分析与科普游戏研发课题，斩获<strong class="text-yellow-400 font-bold">长三角科创活动省级一等奖</strong>与<strong class="text-emerald-400 font-bold">优秀营员</strong>称号；熟练使用 Python 数据分析库与 AI 辅助编程，考取了阿里巴巴达摩院<strong class="text-purple-300 font-bold">人工智能训练师初级及高级双证书</strong>。
                     </p>
 
-                    <!-- 关键技术标签 -->
                     <div class="flex flex-wrap gap-2 pt-1">
                         <span class="px-2.5 py-1 bg-slate-800/90 rounded-md border border-slate-700 text-xs font-mono text-slate-300"><i class="fa-brands fa-python text-yellow-400 mr-1"></i>Python 数据处理</span>
                         <span class="px-2.5 py-1 bg-slate-800/90 rounded-md border border-slate-700 text-xs font-mono text-slate-300"><i class="fa-solid fa-chart-line text-brand-cyan mr-1"></i>数据可视化 & 时序预测</span>
@@ -179,7 +171,6 @@
                         <span class="px-2.5 py-1 bg-slate-800/90 rounded-md border border-slate-700 text-xs font-mono text-slate-300"><i class="fa-solid fa-video text-emerald-400 mr-1"></i>视频剪辑 & PPT 美化</span>
                     </div>
 
-                    <!-- 操作按钮组 -->
                     <div class="flex flex-wrap items-center gap-3 pt-3">
                         <a href="#awards" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan text-white font-bold text-xs shadow-lg shadow-brand-blue/30 hover:scale-105 transition-transform flex items-center gap-2">
                             <i class="fa-solid fa-award"></i> 查看证书原件图片
@@ -193,14 +184,12 @@
                     </div>
                 </div>
 
-                <!-- ================= 右侧重构：高级结构化数据卡片（支持点击平滑定位跳转与悬浮放大发光） ================= -->
+                <!-- 右侧结构化数据卡片 -->
                 <div class="lg:col-span-5 relative group">
-                    <!-- 背景流光光晕 -->
                     <div class="absolute -inset-1 bg-gradient-to-r from-brand-cyan via-brand-blue to-purple-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition duration-700"></div>
 
                     <div class="relative glass-card rounded-2xl p-5 sm:p-6 shadow-2xl border border-slate-700/80 bg-slate-900/90 backdrop-blur-xl">
                         
-                        <!-- 顶栏 -->
                         <div class="flex items-center justify-between border-b border-slate-700/60 pb-3 mb-4 text-xs font-mono">
                             <div class="flex items-center space-x-2">
                                 <span class="w-3 h-3 rounded-full bg-rose-500/90 inline-block hover:scale-110 transition-transform cursor-pointer shadow-sm"></span>
@@ -217,28 +206,22 @@
                             </button>
                         </div>
 
-                        <!-- 结构化内容列表 (字体加亮，移除行号和外壳，点击直接跳转相应位置) -->
                         <div class="space-y-2.5 font-mono text-xs sm:text-[13px] leading-relaxed">
-                            
-                            <!-- 姓名 -->
                             <a href="#about" class="code-jump-row flex items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
                                 <span class="text-white font-bold tracking-wide min-w-[75px]">姓名：</span>
                                 <span class="text-emerald-400 font-bold hover:drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]">"朱拓恺 (ZTK)"</span>
                             </a>
 
-                            <!-- 学校专业 -->
                             <a href="#about" class="code-jump-row flex items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
                                 <span class="text-white font-bold tracking-wide min-w-[75px]">学校专业：</span>
                                 <span class="text-cyan-300 font-semibold hover:drop-shadow-[0_0_8px_rgba(103,232,249,0.8)]">"苏州大学 · 车辆工程 (2026级)"</span>
                             </a>
 
-                            <!-- 未来志向 -->
                             <a href="#about" class="code-jump-row flex items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
                                 <span class="text-white font-bold tracking-wide min-w-[75px]">未来志向：</span>
                                 <span class="text-brand-cyan font-bold hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.9)]">"未来致力于从事车辆工程与AI算法开发"</span>
                             </a>
 
-                            <!-- 主要荣誉 -->
                             <a href="#awards" class="code-jump-row flex items-start sm:items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
                                 <span class="text-white font-bold tracking-wide min-w-[75px] mt-0.5 sm:mt-0">主要荣誉：</span>
                                 <div class="flex flex-wrap gap-1.5">
@@ -247,7 +230,6 @@
                                 </div>
                             </a>
 
-                            <!-- 专业技能 -->
                             <a href="#skills" class="code-jump-row flex items-start sm:items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
                                 <span class="text-white font-bold tracking-wide min-w-[75px] mt-0.5 sm:mt-0">专业技能：</span>
                                 <div class="flex flex-wrap gap-1.5">
@@ -257,15 +239,12 @@
                                 </div>
                             </a>
 
-                            <!-- 证书资质 -->
                             <a href="#awards" class="code-jump-row flex items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
                                 <span class="text-white font-bold tracking-wide min-w-[75px]">证书资质：</span>
                                 <span class="text-purple-300 font-bold hover:drop-shadow-[0_0_8px_rgba(216,180,254,0.8)]">"达摩院人工智能训练师(初级+高级)"</span>
                             </a>
-
                         </div>
 
-                        <!-- 底栏 -->
                         <div class="mt-4 pt-3.5 border-t border-slate-800 flex items-center justify-between">
                             <div class="flex items-center space-x-2 text-[11px] text-slate-400">
                                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -467,7 +446,7 @@
                             <i class="fa-solid fa-file-word"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white text-xs">课题研究论文正文.docx</h4>
+                            <h4 class="font-bold text-white text-xs">基于数据可视化应用的电子游戏共同性设计实践研究.docx</h4>
                             <span class="text-[11px] text-slate-400 block mt-0.5">基于数据可视化的电子游戏共同性设计研究论文</span>
                         </div>
                     </div>
@@ -718,23 +697,19 @@
     <!-- ================= 11. 证书图片放大预览模态框 (Modal) ================= -->
     <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 hidden opacity-0 transition-opacity duration-300">
         <div class="glass-card max-w-3xl w-full max-h-[95vh] rounded-2xl p-4 sm:p-6 space-y-3 border border-brand-cyan/40 relative flex flex-col justify-between">
-            <!-- 关闭按钮 -->
             <button onclick="closeCertImageModal()" class="absolute top-3 right-3 text-slate-400 hover:text-white p-2 text-xl z-20">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- 弹窗标题 -->
             <div class="pr-10">
                 <h3 id="modal-img-title" class="text-sm sm:text-base font-bold text-white">证书标题</h3>
                 <p id="modal-img-sub" class="text-[11px] text-slate-400 font-mono mt-0.5">证书编号与发证机构</p>
             </div>
 
-            <!-- 图片容器 -->
             <div class="w-full flex-1 max-h-[65vh] bg-slate-950/80 rounded-xl overflow-hidden flex items-center justify-center p-2 border border-slate-800">
                 <img id="modal-img-src" src="" alt="证书大图预览" class="max-w-full max-h-[60vh] object-contain rounded-lg shadow-2xl">
             </div>
 
-            <!-- 操作按钮 -->
             <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs font-mono">
                 <a id="modal-img-download" href="" download class="px-4 py-2 rounded-lg bg-brand-blue hover:bg-brand-cyan hover:text-slate-900 text-white font-bold transition-colors flex items-center gap-1.5">
                     <i class="fa-solid fa-download"></i> 下载该证书原件
@@ -808,6 +783,7 @@
         // 4. 复制简介信息
         function copyProfileInfo() {
             const profileText = `朱拓恺 (ZTK) 个人简介：
+- 姓名：朱拓恺 (ZTK)
 - 学校专业：苏州大学 · 车辆工程 (2026级准大一)
 - 未来志向：未来致力于从事车辆工程与AI算法开发
 - 主要荣誉：长三角中学生数据应用创新省级一等奖（组长）、优秀营员
