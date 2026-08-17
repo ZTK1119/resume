@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>朱拓恺 (ZTK) | 个人主页 & 实践成果展示</title>
-    <meta name="description" content="朱拓恺的个人主页，苏州大学车辆工程2026级准大一新生，未来致力于从事车辆工程与AI算法开发。">
+    <title>朱拓恺 (ZTK) | 浪尖社区 · 2026 RST 竞赛训练营入营申请</title>
+    <meta name="description" content="朱拓恺的个人主页，苏州大学车辆工程2026级准大一新生，浪尖社区RST竞赛训练营入营申请作品。未来致力于从事车辆工程与AI算法开发。">
     <meta name="author" content="朱拓恺">
-    
-    <!-- 引入 Tailwind CSS CDN -->
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -15,799 +15,1170 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            blue: '#0066FF',
+                        cyber: {
+                            bg: '#030712',
+                            surface: '#090F24',
+                            card: 'rgba(10, 17, 40, 0.72)',
+                            border: 'rgba(255, 255, 255, 0.09)',
                             cyan: '#00F0FF',
+                            blue: '#2563EB',
+                            purple: '#8B5CF6',
                             emerald: '#10B981',
-                            dark: '#0B1120',
-                            card: '#1E293B',
+                            amber: '#F59E0B',
+                            pink: '#EC4899'
                         }
                     },
+                    fontFamily: {
+                        sans: ['"Outfit"', '"Plus Jakarta Sans"', '"Noto Sans SC"', 'sans-serif'],
+                        display: ['"Outfit"', '"Noto Sans SC"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace']
+                    },
                     animation: {
-                        'float': 'float 3s ease-in-out infinite',
+                        'marquee': 'marquee 25s linear infinite',
+                        'marquee-reverse': 'marqueeRev 28s linear infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
                     },
                     keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-6px)' },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        },
+                        marqueeRev: {
+                            '0%': { transform: 'translateX(-50%)' },
+                            '100%': { transform: 'translateX(0%)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.35', transform: 'scale(1)' },
+                            '50%': { opacity: '0.75', transform: 'scale(1.06)' }
                         }
                     }
                 }
             }
         }
     </script>
-    
-    <!-- 引入 Font Awesome 图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google 字体 -->
+
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google 顶流字体：Outfit (饱满圆润大方) + Plus Jakarta Sans + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: #030712;
+            color: #E2E8F0;
+            font-family: 'Outfit', 'Plus Jakarta Sans', 'Noto Sans SC', sans-serif;
+            overflow-x: hidden;
         }
-        .code-font {
-            font-family: 'Fira Code', monospace;
+        ::selection {
+            background: #00F0FF;
+            color: #030712;
         }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+
+        /* 磨砂玻璃质感卡片 */
+        .glass-panel {
+            background: rgba(9, 15, 36, 0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .tech-gradient-text {
-            background: linear-gradient(135deg, #00F0FF 0%, #0066FF 50%, #A855F7 100%);
+        .glass-panel-hover {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-panel-hover:hover {
+            border-color: rgba(0, 240, 255, 0.35);
+            box-shadow: 0 20px 45px -15px rgba(0, 240, 255, 0.18);
+            transform: translateY(-4px);
+        }
+
+        /* 饱满圆润的科技渐变字 */
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #FFFFFF 20%, #00F0FF 65%, #2563EB 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #FFFFFF 20%, #C084FC 60%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.45);
+        }
+
+        /* 滚动条美化 */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #0B1120;
+            background: #030712;
         }
         ::-webkit-scrollbar-thumb {
-            background: #334155;
+            background: #1E293B;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #0066FF;
+            background: #00F0FF;
         }
-        .code-jump-row {
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            will-change: transform;
         }
-        .code-jump-row:hover {
-            transform: translateX(6px) scale(1.03);
-            background: rgba(30, 41, 59, 0.9);
-            box-shadow: 0 10px 25px -5px rgba(0, 240, 255, 0.15);
-            border-color: rgba(0, 240, 255, 0.4);
+
+        /* 3D 悬浮卡片 */
+        .tilt-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.15s ease-out;
         }
     </style>
 </head>
-<body class="bg-[#0B1120] text-slate-100 transition-colors duration-300 antialiased selection:bg-brand-blue selection:text-white">
+<body class="relative antialiased">
 
-    <!-- 1. 顶部滚动进度条 -->
-    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-cyan via-brand-blue to-emerald-400 z-50 transition-all duration-100" style="width: 0%"></div>
+    <!-- 0. 动态底层背景 Canvas (流光粒子 + 动态网格 + 鼠标引力场) -->
+    <canvas id="cyber-bg-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
 
-    <!-- 2. 导航栏 (Navbar) -->
-    <header class="fixed top-0 left-0 right-0 z-40 glass-card transition-all duration-300 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- 鼠标动态光晕交互层 -->
+    <div id="mouse-glow" class="fixed inset-0 pointer-events-none z-0 opacity-70 transition-opacity duration-300"></div>
+
+    <!-- 1. 顶部全局滚动进度条 -->
+    <div id="scroll-bar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple z-50 transition-all duration-100" style="width: 0%"></div>
+
+    <!-- 2. 悬浮导航栏 -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-panel border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
             <a href="#hero" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue to-brand-cyan flex items-center justify-center font-black text-white text-xl shadow-lg shadow-brand-blue/30 group-hover:scale-105 transition-transform">
-                    Z
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-cyber-cyan to-cyber-blue p-[1px] group-hover:shadow-[0_0_25px_rgba(0,240,255,0.7)] transition-all">
+                    <div class="w-full h-full bg-[#030712] rounded-[15px] flex items-center justify-center font-black text-cyber-cyan font-display text-lg">
+                        ZTK
+                    </div>
                 </div>
                 <div>
-                    <span class="font-bold text-lg tracking-wider text-white">朱拓恺</span>
-                    <span class="text-xs text-brand-cyan block code-font">ZTK · 2026级准大一</span>
+                    <div class="flex items-center gap-2">
+                        <span class="font-extrabold text-base sm:text-lg tracking-wide text-white font-display">朱拓恺</span>
+                        <span class="px-2 py-0.5 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/30 text-[11px] font-mono text-cyber-cyan font-bold">浪尖社区 · RST 训练营</span>
+                    </div>
+                    <span class="text-[11px] text-slate-400 font-mono hidden sm:block">Suzhou University · Vehicle & AI (2026)</span>
                 </div>
             </a>
 
-            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5"><i class="fa-regular fa-user text-xs"></i> 个人简介</a>
-                <a href="#skills" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5"><i class="fa-solid fa-code text-xs"></i> 专业技能</a>
-                <a href="#research" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5"><i class="fa-solid fa-flask text-xs"></i> 课题经历</a>
-                <a href="#files-download" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5 text-brand-cyan font-bold"><i class="fa-solid fa-download text-xs"></i> 材料文档</a>
-                <a href="#awards" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5"><i class="fa-solid fa-award text-xs"></i> 荣誉证书</a>
-                <a href="#interests" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5"><i class="fa-solid fa-compass text-xs"></i> 兴趣特长</a>
+            <!-- 极简先锋导航菜单 -->
+            <nav class="hidden lg:flex items-center space-x-6 text-xs font-mono tracking-wider text-slate-300">
+                <a href="#about" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº001</span> 个人简介</a>
+                <a href="#skills" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº002</span> 技能矩阵</a>
+                <a href="#research" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº003</span> 竞赛源码</a>
+                <a href="#files-download" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº004</span> 成果文库</a>
+                <a href="#awards" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº005</span> 荣誉证书</a>
+                <a href="#pledge" class="hover:text-cyber-amber transition-colors text-cyber-amber font-bold"><span class="text-cyber-amber/60">Nº006</span> 特长与入营意向</a>
             </nav>
 
             <div class="flex items-center space-x-3">
-                <a href="https://github.com/ZTK1119" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-800 hover:bg-brand-blue text-slate-200 hover:text-white transition-all text-sm flex items-center gap-2 border border-slate-700">
-                    <i class="fa-brands fa-github text-base"></i>
-                    <span class="hidden sm:inline font-mono text-xs">GitHub</span>
+                <a href="https://github.com/ZTK1119" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-slate-900/90 hover:bg-cyber-blue/20 text-slate-300 hover:text-cyber-cyan transition-all text-xs font-mono flex items-center gap-1.5 border border-white/10">
+                    <i class="fa-brands fa-github text-sm"></i>
+                    <span class="hidden sm:inline">GitHub</span>
                 </a>
-                <a href="#contact" class="px-3.5 py-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-cyan text-white font-bold text-xs shadow-md shadow-brand-blue/30 hover:opacity-90 transition-opacity">
-                    联系方式
+                <a href="#pledge" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple text-slate-950 font-black text-xs font-mono uppercase tracking-wider hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] transition-all">
+                    入营申请书
                 </a>
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
-                    <i class="fa-solid fa-bars text-lg"></i>
+                <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                    <i class="fa-solid fa-bars text-sm"></i>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 space-y-3 bg-slate-900/95 border-b border-slate-800">
-            <a href="#about" class="block py-2 text-slate-300 hover:text-brand-cyan">个人简介</a>
-            <a href="#skills" class="block py-2 text-slate-300 hover:text-brand-cyan">专业技能</a>
-            <a href="#research" class="block py-2 text-slate-300 hover:text-brand-cyan">课题经历</a>
-            <a href="#files-download" class="block py-2 text-brand-cyan font-bold">材料文档下载</a>
-            <a href="#awards" class="block py-2 text-slate-300 hover:text-brand-cyan">荣誉证书</a>
-            <a href="#interests" class="block py-2 text-slate-300 hover:text-brand-cyan">兴趣特长</a>
-            <a href="#contact" class="block py-2 text-brand-cyan font-bold">获取联系方式</a>
+        <!-- 移动端抽屉菜单 -->
+        <div id="mobile-menu" class="hidden lg:hidden px-6 py-5 space-y-3 bg-[#030712]/95 border-b border-white/10 backdrop-blur-2xl font-mono text-xs">
+            <a href="#about" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº001 个人简介 (Profile)</a>
+            <a href="#skills" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº002 技能矩阵 (Skills Matrix)</a>
+            <a href="#research" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº003 竞赛源码 (Research Project)</a>
+            <a href="#files-download" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº004 成果文库 (Files Vault)</a>
+            <a href="#awards" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº005 荣誉证书 (Certificates)</a>
+            <a href="#pledge" class="block py-1.5 text-cyber-amber font-bold">Nº006 特长与入营意向 (Pledge)</a>
+            <a href="#contact" class="block py-1.5 text-cyber-cyan">Nº007 连线交流 (Contact)</a>
         </div>
     </header>
 
-    <main class="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+    <main class="relative z-10 pt-28 sm:pt-36 space-y-24 sm:space-y-32">
 
-        <!-- ================= 3. HERO 主视觉介绍区域 ================= -->
-        <section id="hero" class="relative min-h-[80vh] flex items-center justify-between pt-4 pb-8">
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
-            <div class="absolute bottom-10 right-10 w-80 h-80 bg-brand-cyan/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
-                <!-- 左侧自我介绍 -->
-                <div class="lg:col-span-7 space-y-5">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-blue/10 border border-brand-blue/30 text-brand-cyan text-xs font-mono">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                        <span>苏州大学 · 车辆工程专业 · 2026级准大一新生</span>
+        <!-- ================= 1. HERO 视觉主介绍区 ================= -->
+        <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- 左侧文案 -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-cyber-cyan/40 text-cyber-cyan text-xs font-mono shadow-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-cyber-cyan animate-ping"></span>
+                        <span class="text-slate-200">浪尖儿大学生社区 · 2026 RST 竞赛训练营入营申请作品</span>
                     </div>
 
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
-                        你好，我是 <span class="tech-gradient-text">朱拓恺</span>
-                        <span class="block text-xl sm:text-2xl text-slate-300 font-bold mt-2">
-                            <span id="typed-text" class="text-brand-cyan border-b-2 border-brand-cyan pb-1">未来致力于从事车辆工程与AI算法开发</span>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] font-display">
+                        <span class="text-slate-400 block text-xl sm:text-2xl font-normal font-sans mb-1">Hello, I'm</span>
+                        <span class="text-gradient-cyan text-glow">朱拓恺 (ZTK)</span>
+                        <span class="block text-xl sm:text-2xl lg:text-3xl text-slate-200 font-bold mt-2 font-display">
+                            <span id="typed-text" class="text-cyber-cyan border-b-2 border-cyber-cyan pb-0.5">未来致力于从事车辆工程与AI算法开发</span>
                         </span>
                     </h1>
 
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-                        一名热爱编程与前沿 AI 技术的工科准大一新生。高中阶段曾作为<strong class="text-brand-cyan font-bold">组长带领团队</strong>完成数据分析与科普游戏研发课题，斩获<strong class="text-yellow-400 font-bold">长三角科创活动省级一等奖</strong>与<strong class="text-emerald-400 font-bold">优秀营员</strong>称号；熟练使用 Python 数据分析库与 AI 辅助编程，考取了阿里巴巴达摩院<strong class="text-purple-300 font-bold">人工智能训练师初级及高级双证书</strong>。
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
+                        苏州大学车辆工程 2026 级准大一新生。热爱工科底层软硬件工程与前沿 AI 算法开发。高中时期作为<strong class="text-cyber-cyan font-bold">课题组长兼主答辩人</strong>统筹 16,000+ 条真实数据分析与科普游戏研发，斩获<strong class="text-cyber-amber font-bold">长三角科创活动省级一等奖</strong>与<strong class="text-cyber-emerald font-bold">优秀营员</strong>；考取阿里巴巴达摩院<strong class="text-cyber-purple font-bold">人工智能训练师（初级+高级）双认证</strong>。
                     </p>
 
-                    <div class="flex flex-wrap gap-2 pt-1">
-                        <span class="px-2.5 py-1 bg-slate-800/90 rounded-md border border-slate-700 text-xs font-mono text-slate-300"><i class="fa-brands fa-python text-yellow-400 mr-1"></i>Python 数据处理</span>
-                        <span class="px-2.5 py-1 bg-slate-800/90 rounded-md border border-slate-700 text-xs font-mono text-slate-300"><i class="fa-solid fa-chart-line text-brand-cyan mr-1"></i>数据可视化 & 时序预测</span>
-                        <span class="px-2.5 py-1 bg-slate-800/90 rounded-md border border-slate-700 text-xs font-mono text-slate-300"><i class="fa-solid fa-robot text-purple-400 mr-1"></i>AI 编程 & 智能 Agent</span>
-                        <span class="px-2.5 py-1 bg-slate-800/90 rounded-md border border-slate-700 text-xs font-mono text-slate-300"><i class="fa-solid fa-video text-emerald-400 mr-1"></i>视频剪辑 & PPT 美化</span>
+                    <!-- 核心胶囊标签 -->
+                    <div class="flex flex-wrap gap-2.5 pt-1 font-mono text-xs">
+                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-brands fa-python text-yellow-400"></i> Python / Pandas / 数据挖掘</span>
+                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-robot text-cyber-purple"></i> 智能 Agent & 提示词工程</span>
+                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-car text-cyber-cyan"></i> 车辆构造与智能算法赋能</span>
                     </div>
 
-                    <div class="flex flex-wrap items-center gap-3 pt-3">
-                        <a href="#awards" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan text-white font-bold text-xs shadow-lg shadow-brand-blue/30 hover:scale-105 transition-transform flex items-center gap-2">
-                            <i class="fa-solid fa-award"></i> 查看证书原件图片
+                    <!-- 操作按钮组 -->
+                    <div class="flex flex-wrap items-center gap-3.5 pt-2 font-mono text-xs sm:text-sm">
+                        <a href="#pledge" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple text-slate-950 font-black tracking-wider hover:shadow-[0_0_30px_rgba(0,240,255,0.7)] transition-all flex items-center gap-2 font-display text-sm">
+                            <i class="fa-solid fa-fire"></i> 查阅特长与入营宣言
                         </a>
-                        <a href="#files-download" class="px-5 py-2.5 rounded-xl glass-card text-brand-cyan font-semibold text-xs border border-brand-cyan/40 hover:bg-brand-cyan/10 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-file-arrow-down"></i> 查阅论文 & 答辩PPT
+                        <a href="#research" class="px-5 py-3.5 rounded-2xl glass-panel text-cyber-cyan font-bold border border-cyber-cyan/40 hover:bg-cyber-cyan/10 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-code"></i> 查阅比赛真实源码
                         </a>
-                        <a href="https://prototype.xxtg666.top/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors text-xs flex items-center gap-1.5">
-                            <i class="fa-solid fa-gamepad text-purple-400"></i> 在线游戏原型
+                        <a href="https://prototype.xxtg666.top/" target="_blank" rel="noopener noreferrer" class="px-4 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-gamepad text-cyber-purple"></i> 在线游戏原型
                         </a>
                     </div>
                 </div>
 
-                <!-- 右侧结构化数据卡片 -->
-                <div class="lg:col-span-5 relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-cyan via-brand-blue to-purple-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition duration-700"></div>
-
-                    <div class="relative glass-card rounded-2xl p-5 sm:p-6 shadow-2xl border border-slate-700/80 bg-slate-900/90 backdrop-blur-xl">
-                        
-                        <div class="flex items-center justify-between border-b border-slate-700/60 pb-3 mb-4 text-xs font-mono">
+                <!-- 右侧极客规格卡片 (3D Tilt) -->
+                <div class="lg:col-span-5">
+                    <div id="hero-card" class="tilt-card glass-panel rounded-3xl p-6 sm:p-7 border border-white/10 shadow-2xl relative overflow-hidden">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4 font-mono text-xs">
                             <div class="flex items-center space-x-2">
-                                <span class="w-3 h-3 rounded-full bg-rose-500/90 inline-block hover:scale-110 transition-transform cursor-pointer shadow-sm"></span>
-                                <span class="w-3 h-3 rounded-full bg-amber-500/90 inline-block hover:scale-110 transition-transform cursor-pointer shadow-sm"></span>
-                                <span class="w-3 h-3 rounded-full bg-emerald-500/90 inline-block hover:scale-110 transition-transform cursor-pointer shadow-sm"></span>
-                                <span class="ml-2 text-slate-400 font-bold flex items-center gap-1.5">
-                                    <i class="fa-solid fa-address-card text-brand-cyan text-[11px]"></i> student_profile.info
-                                </span>
+                                <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                                <span class="ml-2 text-slate-400 font-bold">rst_candidate_spec.json</span>
                             </div>
-                            
-                            <button onclick="copyProfileInfo()" class="flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-800 hover:bg-brand-blue text-slate-300 hover:text-white border border-slate-700 transition-all active:scale-95 text-[11px]">
+                            <button onclick="copyProfileInfo()" class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-cyber-blue hover:text-white text-slate-300 border border-slate-700 text-[11px] transition-all">
                                 <i id="copy-icon" class="fa-regular fa-copy"></i>
-                                <span id="copy-text">复制简介</span>
+                                <span id="copy-text">复制简历概要</span>
                             </button>
                         </div>
 
-                        <div class="space-y-2.5 font-mono text-xs sm:text-[13px] leading-relaxed">
-                            <a href="#about" class="code-jump-row flex items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
-                                <span class="text-white font-bold tracking-wide min-w-[75px]">姓名：</span>
-                                <span class="text-emerald-400 font-bold hover:drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]">"朱拓恺 (ZTK)"</span>
-                            </a>
-
-                            <a href="#about" class="code-jump-row flex items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
-                                <span class="text-white font-bold tracking-wide min-w-[75px]">学校专业：</span>
-                                <span class="text-cyan-300 font-semibold hover:drop-shadow-[0_0_8px_rgba(103,232,249,0.8)]">"苏州大学 · 车辆工程 (2026级)"</span>
-                            </a>
-
-                            <a href="#about" class="code-jump-row flex items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
-                                <span class="text-white font-bold tracking-wide min-w-[75px]">未来志向：</span>
-                                <span class="text-brand-cyan font-bold hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.9)]">"未来致力于从事车辆工程与AI算法开发"</span>
-                            </a>
-
-                            <a href="#awards" class="code-jump-row flex items-start sm:items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
-                                <span class="text-white font-bold tracking-wide min-w-[75px] mt-0.5 sm:mt-0">主要荣誉：</span>
-                                <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-amber-400/10 text-amber-300 font-bold border border-amber-400/40 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]">"长三角科创省级一等奖"</span>
-                                    <span class="px-2 py-0.5 rounded-md bg-amber-400/10 text-amber-300 font-bold border border-amber-400/40 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]">"优秀营员"</span>
-                                </div>
-                            </a>
-
-                            <a href="#skills" class="code-jump-row flex items-start sm:items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
-                                <span class="text-white font-bold tracking-wide min-w-[75px] mt-0.5 sm:mt-0">专业技能：</span>
-                                <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-cyan-400/10 text-cyan-300 font-semibold border border-cyan-400/40 hover:drop-shadow-[0_0_8px_rgba(103,232,249,0.8)]">"Python数据分析"</span>
-                                    <span class="px-2 py-0.5 rounded-md bg-cyan-400/10 text-cyan-300 font-semibold border border-cyan-400/40 hover:drop-shadow-[0_0_8px_rgba(103,232,249,0.8)]">"AI编程"</span>
-                                    <span class="px-2 py-0.5 rounded-md bg-cyan-400/10 text-cyan-300 font-semibold border border-cyan-400/40 hover:drop-shadow-[0_0_8px_rgba(103,232,249,0.8)]">"HTML"</span>
-                                </div>
-                            </a>
-
-                            <a href="#awards" class="code-jump-row flex items-center px-3 py-2 rounded-xl border border-slate-800 bg-slate-950/40 text-left block">
-                                <span class="text-white font-bold tracking-wide min-w-[75px]">证书资质：</span>
-                                <span class="text-purple-300 font-bold hover:drop-shadow-[0_0_8px_rgba(216,180,254,0.8)]">"达摩院人工智能训练师(初级+高级)"</span>
-                            </a>
+                        <div class="space-y-2.5 font-mono text-xs leading-relaxed">
+                            <div class="p-3 rounded-xl bg-black/50 border border-white/5 flex items-center justify-between">
+                                <span class="text-slate-400">"candidate_name":</span>
+                                <span class="text-cyber-emerald font-bold">"朱拓恺 (ZTK)"</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-black/50 border border-white/5 flex items-center justify-between">
+                                <span class="text-slate-400">"target_camp":</span>
+                                <span class="text-cyber-cyan font-bold">"浪尖社区 · RST 竞赛训练营"</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-black/50 border border-white/5 flex items-center justify-between">
+                                <span class="text-slate-400">"university":</span>
+                                <span class="text-slate-200">"苏州大学 · 车辆工程 (2026级)"</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-black/50 border border-white/5 flex items-start justify-between">
+                                <span class="text-slate-400 mt-0.5">"provincial_honor":</span>
+                                <span class="text-cyber-amber font-bold text-right">"长三角科创省级一等奖 (组长)"</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-black/50 border border-white/5 flex items-start justify-between">
+                                <span class="text-slate-400 mt-0.5">"ai_certification":</span>
+                                <span class="text-cyber-purple font-bold text-right">"达摩院AI训练师 (初级+高级)"</span>
+                            </div>
                         </div>
 
-                        <div class="mt-4 pt-3.5 border-t border-slate-800 flex items-center justify-between">
-                            <div class="flex items-center space-x-2 text-[11px] text-slate-400">
-                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                <span>点击卡片各行可平滑跳转到对应板块</span>
-                            </div>
-                            <a href="#awards" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-brand-blue to-brand-cyan text-white hover:opacity-90 transition-all text-xs font-mono font-bold shadow-md shadow-brand-blue/30 flex items-center gap-1.5 group/link">
-                                <i class="fa-solid fa-eye text-[11px]"></i>
-                                <span>直达证书展厅</span>
-                                <i class="fa-solid fa-chevron-right text-[9px] group-hover/link:translate-x-1 transition-transform"></i>
+                        <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+                            <span class="text-slate-400 flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-cyber-emerald animate-pulse"></span>
+                                Status: Ready for RST Camp
+                            </span>
+                            <a href="#pledge" class="text-cyber-cyan hover:underline flex items-center gap-1">
+                                入营宣言 <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
+        <!-- ================= 2. MARQUEE 浪尖社区无限双向跑马灯 ================= -->
+        <section class="py-5 border-y border-white/10 bg-black/40 overflow-hidden relative font-display">
+            <div class="marquee-track animate-marquee text-2xl sm:text-4xl font-extrabold tracking-wider text-slate-500 uppercase flex items-center gap-10 whitespace-nowrap">
+                <span class="text-cyber-cyan">● 浪尖儿大学生社区</span>
+                <span class="text-white">RST 竞赛训练营</span>
+                <span>● SUZHOU UNIVERSITY</span>
+                <span class="text-cyber-amber">PROVINCIAL 1ST PRIZE</span>
+                <span>● DAMO ACADEMY CERTIFIED</span>
+                <span class="text-cyber-purple">AI × VEHICLE ENGINEERING</span>
+                <span class="text-cyber-cyan">● 浪尖儿大学生社区</span>
+                <span class="text-white">RST 竞赛训练营</span>
+                <span>● SUZHOU UNIVERSITY</span>
+                <span class="text-cyber-amber">PROVINCIAL 1ST PRIZE</span>
+                <span>● DAMO ACADEMY CERTIFIED</span>
+                <span class="text-cyber-purple">AI × VEHICLE ENGINEERING</span>
+            </div>
+        </section>
 
-        <!-- ================= 4. ABOUT 个人简介与目标 ================= -->
-        <section id="about" class="space-y-6">
-            <div class="text-center max-w-3xl mx-auto space-y-2">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan"><i class="fa-regular fa-user mr-1"></i> About Me</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold text-white">个人背景与未来方向</p>
-                <div class="w-16 h-1 bg-gradient-to-r from-brand-cyan to-brand-blue mx-auto rounded-full"></div>
+        <!-- ================= 3. Nº001 ABOUT 个人背景与志向 ================= -->
+        <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+                <div>
+                    <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº001 // PROFILE & ASPIRATION</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">个人背景与未来方向</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-400 font-mono">打牢工科工程底座，探索 AI 赋予智能车辆的全新可能</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div class="glass-card p-6 rounded-2xl border-t-2 border-t-brand-blue space-y-3 hover:-translate-y-1 transition-transform">
-                    <div class="w-10 h-10 rounded-xl bg-brand-blue/20 text-brand-cyan flex items-center justify-center text-lg">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel glass-panel-hover p-8 rounded-3xl border-t-2 border-t-cyber-blue space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cyber-blue/20 text-cyber-cyan flex items-center justify-center text-xl font-display">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
-                    <h3 class="text-base font-bold text-white">本科专业 · 苏州大学车辆工程</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">
-                        作为 2026 级准大一新生，即将开始车辆工程专业本科阶段的学习。系统打好车辆构造、机械设计与工程力学基础，为将 AI 与智能化技术应用到汽车领域做好充分准备。
+                    <h3 class="text-lg font-bold text-white font-display">苏州大学 · 车辆工程</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                        作为 2026 级本科准大一新生，即将全面开展机械设计、工程力学、控制工程与车辆构造系统学习，为大学硬核竞赛实践筑牢工科底座。
                     </p>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl border-t-2 border-t-brand-cyan space-y-3 hover:-translate-y-1 transition-transform">
-                    <div class="w-10 h-10 rounded-xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-car"></i>
+                <div class="glass-panel glass-panel-hover p-8 rounded-3xl border-t-2 border-t-cyber-cyan space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cyber-cyan/20 text-cyber-cyan flex items-center justify-center text-xl font-display">
+                        <i class="fa-solid fa-car-side"></i>
                     </div>
-                    <h3 class="text-base font-bold text-white">未来方向 · 车辆工程 + AI算法开发</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">
-                        <strong class="text-white font-bold">未来致力于从事车辆工程与AI算法开发</strong>。目标通过保研深入学习智能网联汽车、自动驾驶算法与车机智能交互系统，探索人工智能在汽车工业中的实用价值。
+                    <h3 class="text-lg font-bold text-white font-display">车辆工程 + AI 算法开发</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                        <strong class="text-white">未来致力于从事车辆工程与AI算法开发</strong>。目标未来深造智能网联汽车、自动驾驶决策规划与车机智能座舱算法，解决真实工业问题。
                     </p>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl border-t-2 border-t-emerald-400 space-y-3 hover:-translate-y-1 transition-transform">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-400/20 text-emerald-400 flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-users"></i>
+                <div class="glass-panel glass-panel-hover p-8 rounded-3xl border-t-2 border-t-cyber-emerald space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cyber-emerald/20 text-cyber-emerald flex items-center justify-center text-xl font-display">
+                        <i class="fa-solid fa-users-gear"></i>
                     </div>
-                    <h3 class="text-base font-bold text-white">团队协作 · 组长负责与答辩经验</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">
-                        高中时期担任 3 人研究小组组长，负责统筹分工、代码审核与修改、PPT 设计制作以及最终现场汇报答辩，具备良好的团队沟通协作与表达展示能力。
+                    <h3 class="text-lg font-bold text-white font-display">组长负责与答辩经验</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                        高中时期作为 3 人科研小组组长，负责统筹分工、技术选型、代码审查修改、答辩 PPT 制作与现场面对专家答辩陈述，抗压与统筹能力强。
                     </p>
                 </div>
             </div>
         </section>
 
-
-        <!-- ================= 5. SKILLS 核心技能 ================= -->
-        <section id="skills" class="space-y-6">
-            <div class="text-center max-w-3xl mx-auto space-y-2">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan"><i class="fa-solid fa-code mr-1"></i> Technical Skills</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold text-white">专业技能与日常工具</p>
-                <div class="w-16 h-1 bg-gradient-to-r from-brand-cyan to-brand-blue mx-auto rounded-full"></div>
+        <!-- ================= 4. Nº002 SKILLS 核心技能矩阵 ================= -->
+        <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+                <div>
+                    <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº002 // CAPABILITIES MATRIX</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">专业技能与技术栈</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-400 font-mono">扎实编程根底 + 敏锐数据洞察 + 高效 AI 工具流</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="glass-card p-6 rounded-2xl space-y-4">
-                    <div class="flex items-center gap-3 border-b border-slate-700/60 pb-3">
-                        <i class="fa-brands fa-python text-yellow-400 text-xl"></i>
-                        <h3 class="text-base font-bold text-white">编程语言与数据分析</h3>
-                    </div>
-                    <div class="space-y-3 text-xs">
-                        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                            <span class="font-bold text-brand-cyan block mb-1">Python 语言 & 数据处理</span>
-                            <span class="text-slate-300">熟练使用 <strong class="text-white font-bold">Pandas</strong> 对数据集进行清洗、补全缺失值与过滤；使用 <strong class="text-white font-bold">Matplotlib</strong> 绘制饼状图与折线图；使用 <strong class="text-white font-bold">ARIMA 模型</strong> 进行时间序列分析与销量预测。</span>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- 编程与数据分析 -->
+                <div class="glass-panel p-7 sm:p-8 rounded-3xl space-y-5">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-python text-yellow-400 text-2xl"></i>
+                            <h3 class="text-lg font-bold text-white font-display">编程语言与数据挖掘</h3>
                         </div>
-                        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                            <span class="font-bold text-brand-cyan block mb-1">HTML 网页编程 & Ren'Py 游戏引擎</span>
-                            <span class="text-slate-300">深入学习过 HTML 网页语言与样式排版；熟练使用 Ren'Py 引擎制作具有分支剧情和交互题目的视觉小说科普游戏。</span>
+                        <span class="text-xs font-mono text-slate-400">Core Stack</span>
+                    </div>
+
+                    <div class="space-y-4 text-xs font-mono">
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-slate-200">Pandas 数据清洗 & 字典索引映射插补 (实战)</span>
+                                <span class="text-cyber-cyan font-bold">92%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-cyber-cyan to-cyber-blue h-full rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-slate-200">缺失值中位数补全 & 异常年份区间清洗过滤</span>
+                                <span class="text-cyber-cyan font-bold">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-cyber-cyan to-cyber-blue h-full rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-slate-200">Matplotlib / Seaborn 统计图表与数据多维表达</span>
+                                <span class="text-cyber-cyan font-bold">86%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-cyber-cyan to-cyber-blue h-full rounded-full" style="width: 86%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl space-y-4">
-                    <div class="flex items-center gap-3 border-b border-slate-700/60 pb-3">
-                        <i class="fa-solid fa-wand-magic-sparkles text-purple-400 text-xl"></i>
-                        <h3 class="text-base font-bold text-white">AI 工具应用与多媒体设计</h3>
-                    </div>
-                    <div class="space-y-3 text-xs">
-                        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                            <span class="font-bold text-purple-300 block mb-1">熟练运用 AI 编程 & 打造个人 Agent</span>
-                            <span class="text-slate-300">善于利用大模型辅助编写和调试代码；通过设置 Prompt 工作流为自己打造解决学习与数据整理问题的智能 Agent 助手。</span>
+                <!-- AI 工具链与交互开发 -->
+                <div class="glass-panel p-7 sm:p-8 rounded-3xl space-y-5">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-wand-magic-sparkles text-cyber-purple text-2xl"></i>
+                            <h3 class="text-lg font-bold text-white font-display">AI 智能体与交互设计</h3>
                         </div>
-                        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                            <span class="font-bold text-purple-300 block mb-1">PPT 视觉美化 & 视频剪辑</span>
-                            <span class="text-slate-300">擅长制作排版精美、逻辑清晰的答辩演示 PPT；熟练掌握视频剪辑软件，能独立完成项目宣传片与演示视频的剪辑与配乐。</span>
+                        <span class="text-xs font-mono text-slate-400">AI Multiplier</span>
+                    </div>
+
+                    <div class="space-y-4 text-xs font-mono">
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-slate-200">AI 辅助编程 / Prompt 工作流 / 专属智能体构建</span>
+                                <span class="text-cyber-purple font-bold">92%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-cyber-purple to-pink-500 h-full rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-slate-200">Ren'Py 游戏引擎 / 分支剧情与理化题目交互逻辑</span>
+                                <span class="text-cyber-purple font-bold">86%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-cyber-purple to-pink-500 h-full rounded-full" style="width: 86%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-slate-200">答辩演示文稿逻辑美化 / 项目宣传视频剪辑配乐</span>
+                                <span class="text-cyber-purple font-bold">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-cyber-purple to-pink-500 h-full rounded-full" style="width: 90%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <!-- ================= 6. RESEARCH 课题项目概述 ================= -->
-        <section id="research" class="space-y-6">
-            <div class="text-center max-w-3xl mx-auto space-y-2">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan"><i class="fa-solid fa-flask mr-1"></i> Research Project</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold text-white">核心课题经历</p>
-                <div class="w-16 h-1 bg-gradient-to-r from-brand-cyan to-brand-blue mx-auto rounded-full"></div>
+        <!-- ================= 5. Nº003 RESEARCH 核心课题与真实比赛源码展示 ================= -->
+        <section id="research" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+                <div>
+                    <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº003 // REAL CODE & COMPETITION PROJECT</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">长三角科创省级一等奖课题实战</h2>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-xl bg-cyber-amber/10 border border-cyber-amber/30 text-cyber-amber text-xs font-mono font-bold">省级一等奖 (组长)</span>
+                    <span class="px-3 py-1 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan text-xs font-mono font-bold">2024.07 – 2025.01</span>
+                </div>
             </div>
 
-            <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-5 border-l-4 border-l-brand-blue">
-                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-700/60 pb-4">
-                    <div>
-                        <span class="px-2.5 py-1 rounded bg-brand-blue/20 text-brand-cyan font-mono text-xs font-semibold mr-2">组长 / 答辩人 / 代码审核修改</span>
-                        <span class="px-2.5 py-1 rounded bg-yellow-400/20 text-yellow-400 font-mono text-xs font-semibold">长三角科创活动省级一等奖</span>
-                        <h3 class="text-lg sm:text-xl font-bold text-white mt-2">基于数据可视化的电子游戏销量趋势分析及科学教育游戏设计应用研究</h3>
-                    </div>
-                    <div class="text-xs font-mono text-slate-400">
-                        <span><i class="fa-regular fa-calendar mr-1"></i> 2024年7月 – 2025年1月</span>
-                    </div>
+            <!-- 课题卡片 -->
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-7 border-l-4 border-l-cyber-cyan">
+                <div>
+                    <span class="text-xs font-mono text-slate-400 block">第六届长三角中学生数据应用创新研究活动（上海、江苏、安徽三省市电教馆联合主办）</span>
+                    <h3 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white mt-2 font-display">
+                        基于数据可视化的电子游戏销量趋势分析及科学教育游戏设计应用研究
+                    </h3>
                 </div>
 
-                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    在 2024 年第六届长三角中学生数据应用创新研究活动中，本人担任小组组长，带领组员共同完成课题研究。全组使用 AI 编程进行数据处理、游戏设计、PPT 制作、论文撰写与最终答辩。其中我主要负责<strong class="text-brand-cyan font-bold">全组代码审核修改、团队分工对接、答辩 PPT 制作与现场汇报答辩</strong>。
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                    在该课题中，本人担任小组组长，统筹数据清洗工程、算法调优与成果答辩。面对 16,000+ 条真实销售数据中的缺失与异常，通过构建字典映射推断（`year_inference`）和中位数插补，完成了高质量的数据集清洗；并基于真实结论利用 Ren'Py 引擎自主开发了融合化学离子反应与解析几何的科普游戏原型《想像一朵未来的桃花》。
                 </p>
 
-                <!-- 课题分工与实现亮点 -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                        <strong class="text-brand-cyan block"><i class="fa-solid fa-chart-pie mr-1"></i>1. 数据清洗与多维可视化</strong>
-                        <span class="text-slate-300">使用 Python 对 16,000+ 条全球销量数据清洗，利用 Matplotlib 绘制题材市场份额饼图、全球区域销量折线图及主机世代更迭图。</span>
+                <!-- 真实工程指标卡片 -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-center">
+                    <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
+                        <span class="text-slate-400 text-[11px] block">数据样本规模</span>
+                        <span class="text-xl sm:text-2xl font-black text-cyber-cyan mt-1 block font-display">16,240+</span>
+                        <span class="text-[10px] text-slate-500">条真实销售数据清洗</span>
                     </div>
-                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                        <strong class="text-yellow-400 block"><i class="fa-solid fa-laptop-code mr-1"></i>2. ARIMA 时序预测与参数寻优</strong>
-                        <span class="text-slate-300">构建三大类时序分析模型，编写循环利用 AIC（赤池信息准则）自动寻找最优阶数参数 (p, d, q) 并完成未来 5 年趋势外推。</span>
+                    <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
+                        <span class="text-slate-400 text-[11px] block">缺失值推断方案</span>
+                        <span class="text-xl sm:text-2xl font-black text-cyber-amber mt-1 block font-display">Dict Map</span>
+                        <span class="text-[10px] text-slate-500">同名游戏年份字典推断</span>
                     </div>
-                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                        <strong class="text-purple-400 block"><i class="fa-solid fa-gamepad mr-1"></i>3. 科普游戏《想像一朵未来的桃花》</strong>
-                        <span class="text-slate-300">使用 Ren'Py 引擎设计剧情与学科题目交互分支，将化学离子反应与解析几何几何题融入互动中，收集玩家真实问卷反馈。</span>
+                    <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
+                        <span class="text-slate-400 text-[11px] block">游戏原型引擎</span>
+                        <span class="text-xl sm:text-2xl font-black text-cyber-purple mt-1 block font-display">Ren'Py</span>
+                        <span class="text-[10px] text-slate-500">理化交互剧情分支</span>
                     </div>
-                    <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                        <strong class="text-emerald-400 block"><i class="fa-solid fa-users-gear mr-1"></i>4. 组长代码审查与现场答辩</strong>
-                        <span class="text-slate-300">把控研发进度，审核与修改全部代码，独立完成全套答辩 PPT 制作与上海/江苏/安徽三省市专家评审答辩陈述。</span>
+                    <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
+                        <span class="text-slate-400 text-[11px] block">评审答辩荣誉</span>
+                        <span class="text-xl sm:text-2xl font-black text-cyber-emerald mt-1 block font-display">省级一等</span>
+                        <span class="text-[10px] text-slate-500">荣获“优秀营员”表彰</span>
                     </div>
                 </div>
 
-                <!-- 游戏原型直达 -->
-                <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-wrap items-center justify-between gap-3">
-                    <div class="text-xs text-slate-300">
-                        <i class="fa-solid fa-link text-brand-cyan mr-1.5"></i>
-                        <span>课题实际研发的游戏原型程序，已部署在云端服务器支持全平台在线游玩：</span>
+                <!-- 真实参赛源码沙盒展示区 (Tab 切换真实 Notebook 逻辑) -->
+                <div class="rounded-2xl bg-[#030611] border border-slate-800 overflow-hidden font-mono text-xs">
+                    <!-- 顶部 Tab 栏 -->
+                    <div class="flex flex-wrap items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-slate-800">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                            <span class="text-slate-400 ml-2 font-bold">Data Analysis Competition Code (.ipynb)</span>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-2 sm:mt-0">
+                            <button onclick="switchTab('cell1')" id="tab-cell1" class="px-3 py-1 rounded-lg bg-slate-800 text-cyber-cyan border border-cyber-cyan/30 text-[11px] font-bold">1. 数据加载与缺失探查</button>
+                            <button onclick="switchTab('cell2')" id="tab-cell2" class="px-3 py-1 rounded-lg bg-transparent text-slate-400 hover:text-white text-[11px]">2. 字典推断与中位数清洗</button>
+                            <button onclick="switchTab('cell3')" id="tab-cell3" class="px-3 py-1 rounded-lg bg-transparent text-slate-400 hover:text-white text-[11px]">3. 异常过滤与结果导出</button>
+                            <button onclick="switchTab('game')" id="tab-game" class="px-3 py-1 rounded-lg bg-transparent text-slate-400 hover:text-white text-[11px]">4. Ren'Py 科普游戏脚本</button>
+                        </div>
                     </div>
-                    <a href="https://prototype.xxtg666.top/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-gradient-to-r from-brand-blue to-brand-cyan text-white font-bold text-xs shadow hover:opacity-90 transition-opacity">
-                        打开在线游戏原型 (prototype.xxtg666.top)
+
+                    <!-- 代码展示区 (100% 真实源码) -->
+                    <div class="p-5 overflow-x-auto text-slate-300 leading-relaxed text-[12px]">
+                        <pre id="code-block" class="font-mono"><code>import pandas as pd
+
+# 加载数据集
+data = pd.read_csv('电子游戏销量数据集.csv')
+data.head(), data.columns
+
+# 检查缺失值情况
+missing_data = data.isnull().sum()
+print("Missing Data Summary:\n", missing_data)</code></pre>
+                    </div>
+                </div>
+
+                <!-- 游戏原型一键直达 -->
+                <div class="p-5 rounded-2xl bg-gradient-to-r from-cyber-blue/20 via-cyber-purple/20 to-black/40 border border-cyber-cyan/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-gamepad text-cyber-cyan text-2xl"></i>
+                        <div>
+                            <span class="font-bold text-white text-xs sm:text-sm block font-display">科普游戏原型《想像一朵未来的桃花》已部署上线</span>
+                            <span class="text-[11px] text-slate-400 font-mono">支持 PC 与手机浏览器即开即玩：prototype.xxtg666.top</span>
+                        </div>
+                    </div>
+                    <a href="https://prototype.xxtg666.top/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-cyber-cyan text-slate-950 font-bold font-mono text-xs hover:bg-white transition-colors shrink-0 font-display">
+                        立即启动在线游戏 <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
                     </a>
                 </div>
             </div>
         </section>
 
-
-        <!-- ================= 7. FILES DOWNLOAD 课题文档材料查阅与下载专区 ================= -->
-        <section id="files-download" class="space-y-6">
-            <div class="text-center max-w-3xl mx-auto space-y-2">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan"><i class="fa-solid fa-folder-open mr-1"></i> Project Documents</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold text-white">课题全套材料查阅与下载</p>
-                <p class="text-xs text-slate-400">点击下方按钮可直接在浏览器中打开查阅或下载 Word 论文、PPT 演示文稿及 Python 源码</p>
-                <div class="w-16 h-1 bg-gradient-to-r from-brand-cyan to-brand-blue mx-auto rounded-full"></div>
+        <!-- ================= 6. Nº004 FILES VAULT 全套材料查阅与下载中心 ================= -->
+        <section id="files-download" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+                <div>
+                    <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº004 // PROJECT DOCUMENTS VAULT</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">课题全套材料查阅与下载</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-400 font-mono">支持浏览器直接在线打开查阅或本地下载全套原件</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- 1. 最终答辩 PPT -->
-                <div class="glass-card p-5 rounded-2xl border border-slate-700/80 hover:border-brand-cyan transition-all flex flex-col justify-between space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg shrink-0">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 font-mono text-xs">
+                
+                <!-- 1. 终期答辩 PPT -->
+                <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-rose-400/50 transition-all">
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-11 h-11 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg shrink-0">
                             <i class="fa-solid fa-file-powerpoint"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white text-xs">答辩ppt.pptx</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5">课题终期汇报与现场答辩演示文稿</span>
+                            <h4 class="font-bold text-white text-xs font-sans">答辩ppt.pptx</h4>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">长三角活动终期汇报现场演示文稿</span>
                         </div>
                     </div>
-                    <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
-                        <a href="答辩ppt.pptx" download class="flex-1 py-1.5 text-center rounded-lg bg-slate-800 hover:bg-brand-blue text-white text-xs font-mono font-semibold transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i>下载 PPT
+                    <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+                        <a href="答辩ppt.pptx" download class="flex-1 py-2 text-center rounded-xl bg-slate-900 hover:bg-rose-600 text-white font-bold transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> 下载 PPT
                         </a>
-                        <a href="答辩ppt.pptx" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs">
+                        <a href="答辩ppt.pptx" target="_blank" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- 2. 课题论文正文 Word -->
-                <div class="glass-card p-5 rounded-2xl border border-slate-700/80 hover:border-brand-cyan transition-all flex flex-col justify-between space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-brand-cyan flex items-center justify-center text-lg shrink-0">
+                <!-- 2. 论文正文 Word -->
+                <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-cyber-cyan/50 transition-all">
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-11 h-11 rounded-2xl bg-blue-500/20 text-cyber-cyan flex items-center justify-center text-lg shrink-0">
                             <i class="fa-solid fa-file-word"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white text-xs">基于数据可视化应用的电子游戏共同性设计实践研究.docx</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5">基于数据可视化的电子游戏共同性设计研究论文</span>
+                            <h4 class="font-bold text-white text-xs truncate max-w-[190px] font-sans" title="基于数据可视化应用的电子游戏共同性设计实践研究.docx">基于数据可视化应用...docx</h4>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">省级获奖完整学术论文正文</span>
                         </div>
                     </div>
-                    <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
-                        <a href="基于数据可视化应用的电子游戏共同性设计实践研究.docx" download class="flex-1 py-1.5 text-center rounded-lg bg-slate-800 hover:bg-brand-blue text-white text-xs font-mono font-semibold transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i>下载论文
+                    <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+                        <a href="基于数据可视化应用的电子游戏共同性设计实践研究.docx" download class="flex-1 py-2 text-center rounded-xl bg-slate-900 hover:bg-cyber-blue text-white font-bold transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> 下载论文
                         </a>
-                        <a href="基于数据可视化应用的电子游戏共同性设计实践研究.docx" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs">
+                        <a href="基于数据可视化应用的电子游戏共同性设计实践研究.docx" target="_blank" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- 3. 开题报告 Word -->
-                <div class="glass-card p-5 rounded-2xl border border-slate-700/80 hover:border-brand-cyan transition-all flex flex-col justify-between space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg shrink-0">
-                            <i class="fa-solid fa-file-lines"></i>
+                <!-- 3. Python 源码 Notebook -->
+                <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-yellow-400/50 transition-all">
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-11 h-11 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-brands fa-python"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white text-xs">开题报告.docx</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5">课题开题阐述与研究动机/方法规划文档</span>
+                            <h4 class="font-bold text-white text-xs font-sans">数据分析代码.ipynb</h4>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">真实数据清洗与可视化分析代码</span>
                         </div>
                     </div>
-                    <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
-                        <a href="开题报告.docx" download class="flex-1 py-1.5 text-center rounded-lg bg-slate-800 hover:bg-brand-blue text-white text-xs font-mono font-semibold transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i>下载报告
+                    <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+                        <a href="数据分析代码.ipynb" download class="flex-1 py-2 text-center rounded-xl bg-slate-900 hover:bg-yellow-500 hover:text-black text-white font-bold transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> 下载 Notebook
                         </a>
-                        <a href="开题报告.docx" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs">
+                        <a href="数据分析代码.ipynb" target="_blank" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- 4. 开题答辩 PPT -->
-                <div class="glass-card p-5 rounded-2xl border border-slate-700/80 hover:border-brand-cyan transition-all flex flex-col justify-between space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg shrink-0">
+                <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-amber-400/50 transition-all">
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-11 h-11 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg shrink-0">
                             <i class="fa-solid fa-file-powerpoint"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white text-xs">开题答辩.pptx</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5">开题汇报演示 PPT（汇报人：朱拓恺）</span>
+                            <h4 class="font-bold text-white text-xs font-sans">开题答辩.pptx</h4>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">开题汇报演示 PPT（汇报人：朱拓恺）</span>
                         </div>
                     </div>
-                    <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
-                        <a href="开题答辩.pptx" download class="flex-1 py-1.5 text-center rounded-lg bg-slate-800 hover:bg-brand-blue text-white text-xs font-mono font-semibold transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i>下载 PPT
+                    <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+                        <a href="开题答辩.pptx" download class="flex-1 py-2 text-center rounded-xl bg-slate-900 hover:bg-amber-500 hover:text-black text-white font-bold transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> 下载 PPT
                         </a>
-                        <a href="开题答辩.pptx" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs">
+                        <a href="开题答辩.pptx" target="_blank" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- 5. Python 源码 Jupyter -->
-                <div class="glass-card p-5 rounded-2xl border border-slate-700/80 hover:border-brand-cyan transition-all flex flex-col justify-between space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-lg shrink-0">
-                            <i class="fa-brands fa-python"></i>
+                <!-- 5. 开题报告 Word -->
+                <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-sky-400/50 transition-all">
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-11 h-11 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-file-lines"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white text-xs">数据分析代码.ipynb</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5">Pandas 清洗、图表可视化与 ARIMA 源码</span>
+                            <h4 class="font-bold text-white text-xs font-sans">开题报告.docx</h4>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">课题背景与研究方案规划</span>
                         </div>
                     </div>
-                    <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
-                        <a href="数据分析代码.ipynb" download class="flex-1 py-1.5 text-center rounded-lg bg-slate-800 hover:bg-brand-blue text-white text-xs font-mono font-semibold transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i>下载 Notebook
+                    <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+                        <a href="开题报告.docx" download class="flex-1 py-2 text-center rounded-xl bg-slate-900 hover:bg-sky-500 hover:text-black text-white font-bold transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> 下载报告
                         </a>
-                        <a href="数据分析代码.ipynb" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs">
+                        <a href="开题报告.docx" target="_blank" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- 6. 在线游戏原型 -->
-                <div class="glass-card p-5 rounded-2xl border border-slate-700/80 hover:border-brand-cyan transition-all flex flex-col justify-between space-y-3">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg shrink-0">
+                <!-- 6. 游戏原型云端直达 -->
+                <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-cyber-purple/50 transition-all">
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-11 h-11 rounded-2xl bg-purple-500/20 text-cyber-purple flex items-center justify-center text-lg shrink-0">
                             <i class="fa-solid fa-gamepad"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white text-xs">科普游戏原型在线游玩</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5">网页即开即玩（prototype.xxtg666.top）</span>
+                            <h4 class="font-bold text-white text-xs font-sans">在线游戏原型</h4>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">云端部署全平台即开即玩</span>
                         </div>
                     </div>
-                    <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
-                        <a href="https://prototype.xxtg666.top/" target="_blank" rel="noopener noreferrer" class="flex-1 py-1.5 text-center rounded-lg bg-gradient-to-r from-brand-blue to-purple-600 hover:opacity-90 text-white text-xs font-mono font-semibold transition-opacity">
-                            <i class="fa-solid fa-play mr-1"></i>立即进入游玩
+                    <div class="flex items-center gap-2 pt-3 border-t border-white/10">
+                        <a href="https://prototype.xxtg666.top/" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 text-center rounded-xl bg-gradient-to-r from-cyber-blue to-cyber-purple text-white font-bold hover:opacity-90 transition-opacity">
+                            <i class="fa-solid fa-play mr-1"></i> 立即体验原型
                         </a>
                     </div>
                 </div>
+
             </div>
         </section>
 
-
-        <!-- ================= 8. AWARDS 荣誉奖项与证书图片原件展示 ================= -->
-        <section id="awards" class="space-y-6">
-            <div class="text-center max-w-3xl mx-auto space-y-2">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan"><i class="fa-solid fa-award mr-1"></i> Certificates Gallery</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold text-white">荣誉奖项与证书原件</p>
-                <p class="text-xs text-slate-400">点击任意证书卡片，即可在弹窗中放大预览真实证书图片扫描件</p>
-                <div class="w-16 h-1 bg-gradient-to-r from-brand-cyan to-brand-blue mx-auto rounded-full"></div>
+        <!-- ================= 7. Nº005 HONORS 荣誉奖项与证书原件展厅 ================= -->
+        <section id="awards" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+                <div>
+                    <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº005 // HONORS & CERTIFICATES</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">荣誉奖项与证书原件</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-400 font-mono">点击任意证书卡片即可在弹窗中放大查阅高清扫描原件</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
                 <!-- 证书 1: 一等奖 -->
-                <div onclick="openCertImageModal('一等奖.png', '2024年第六届长三角中学生数据应用创新研究活动 · 一等奖', '证书编号：2024DATA-S-003 | 发证单位：上海市教师教育学院、江苏省电化教育馆、安徽省电化教育馆')" class="glass-card p-4 rounded-2xl border-t-2 border-t-yellow-400 cursor-pointer hover:scale-105 transition-all group space-y-3">
-                    <div class="w-full h-40 rounded-xl bg-slate-900 overflow-hidden relative border border-slate-800">
-                        <img src="一等奖.png" alt="团队一等奖证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-mono gap-1">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i> 点击放大预览
+                <div onclick="openCertImageModal('一等奖.png', '2024年第六届长三角中学生数据应用创新研究活动 · 一等奖', '证书编号：2024DATA-S-003 | 颁发单位：上海市教师教育学院、江苏省电化教育馆、安徽省电化教育馆')" class="glass-panel p-4 rounded-3xl border-t-2 border-t-yellow-400 cursor-pointer hover:-translate-y-2 transition-all duration-300 group space-y-3">
+                    <div class="w-full h-44 rounded-2xl bg-black/80 overflow-hidden relative border border-white/10">
+                        <img src="一等奖.png" alt="团队一等奖证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-mono gap-1.5 backdrop-blur-sm">
+                            <i class="fa-solid fa-magnifying-glass-plus text-cyber-cyan"></i> 点击查看大图
                         </div>
                     </div>
                     <div>
                         <span class="text-[11px] font-mono text-yellow-400 font-bold block">长三角科创活动 · 省级一等奖</span>
-                        <h4 class="font-bold text-white text-xs group-hover:text-brand-cyan transition-colors mt-0.5">荣誉证书 (团队一等奖)</h4>
-                        <p class="text-[11px] text-slate-400 font-mono">编号: 2024DATA-S-003</p>
+                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">荣誉证书 (团队一等奖)</h4>
+                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: 2024DATA-S-003</p>
                     </div>
                 </div>
 
                 <!-- 证书 2: 优秀营员 -->
-                <div onclick="openCertImageModal('优秀营员证书.png', '2024年第六届长三角数据应用创新研究活动 · 优秀营员', '证书编号：2024DATA-C-004 | 发证单位：上海市教师教育学院、江苏省电化教育馆、安徽省电化教育馆')" class="glass-card p-4 rounded-2xl border-t-2 border-t-brand-cyan cursor-pointer hover:scale-105 transition-all group space-y-3">
-                    <div class="w-full h-40 rounded-xl bg-slate-900 overflow-hidden relative border border-slate-800">
-                        <img src="优秀营员证书.png" alt="优秀营员证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-mono gap-1">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i> 点击放大预览
+                <div onclick="openCertImageModal('优秀营员证书.png', '2024年第六届长三角数据应用创新研究活动 · 优秀营员', '证书编号：2024DATA-C-004 | 颁发单位：上海市教师教育学院、江苏省电化教育馆、安徽省电化教育馆')" class="glass-panel p-4 rounded-3xl border-t-2 border-t-cyber-cyan cursor-pointer hover:-translate-y-2 transition-all duration-300 group space-y-3">
+                    <div class="w-full h-44 rounded-2xl bg-black/80 overflow-hidden relative border border-white/10">
+                        <img src="优秀营员证书.png" alt="优秀营员证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-mono gap-1.5 backdrop-blur-sm">
+                            <i class="fa-solid fa-magnifying-glass-plus text-cyber-cyan"></i> 点击查看大图
                         </div>
                     </div>
                     <div>
-                        <span class="text-[11px] font-mono text-brand-cyan font-bold block">长三角科创活动 · 个人荣誉</span>
-                        <h4 class="font-bold text-white text-xs group-hover:text-brand-cyan transition-colors mt-0.5">优秀营员证书 (朱拓恺)</h4>
-                        <p class="text-[11px] text-slate-400 font-mono">编号: 2024DATA-C-004</p>
+                        <span class="text-[11px] font-mono text-cyber-cyan font-bold block">长三角科创活动 · 个人荣誉</span>
+                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">优秀营员证书 (朱拓恺)</h4>
+                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: 2024DATA-C-004</p>
                     </div>
                 </div>
 
                 <!-- 证书 3: 达摩院高级 -->
-                <div onclick="openCertImageModal('人工智能训练师高级.jpg', '阿里巴巴达摩院 “人工智能训练师” 高级证书', '证书编号：AIT260717214042000102 | 发证机构：达摩院 - 机器智能技术事业部 / 阿里云智能服务事业部')" class="glass-card p-4 rounded-2xl border-t-2 border-t-emerald-400 cursor-pointer hover:scale-105 transition-all group space-y-3">
-                    <div class="w-full h-40 rounded-xl bg-slate-900 overflow-hidden relative border border-slate-800">
-                        <img src="人工智能训练师高级.jpg" alt="达摩院人工智能训练师高级证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-mono gap-1">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i> 点击放大预览
+                <div onclick="openCertImageModal('人工智能训练师高级.jpg', '阿里巴巴达摩院 “人工智能训练师” 高级证书', '证书编号：AIT260717214042000102 | 认证机构：达摩院 - 机器智能技术事业部 / 阿里云智能服务事业部')" class="glass-panel p-4 rounded-3xl border-t-2 border-t-cyber-emerald cursor-pointer hover:-translate-y-2 transition-all duration-300 group space-y-3">
+                    <div class="w-full h-44 rounded-2xl bg-black/80 overflow-hidden relative border border-white/10">
+                        <img src="人工智能训练师高级.jpg" alt="达摩院人工智能训练师高级证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-mono gap-1.5 backdrop-blur-sm">
+                            <i class="fa-solid fa-magnifying-glass-plus text-cyber-emerald"></i> 点击查看大图
                         </div>
                     </div>
                     <div>
-                        <span class="text-[11px] font-mono text-emerald-400 font-bold block">阿里巴巴达摩院 · 高级认证</span>
-                        <h4 class="font-bold text-white text-xs group-hover:text-brand-cyan transition-colors mt-0.5">人工智能训练师 (高级)</h4>
-                        <p class="text-[11px] text-slate-400 font-mono">编号: AIT260717214042000102</p>
+                        <span class="text-[11px] font-mono text-cyber-emerald font-bold block">阿里巴巴达摩院 · 高级认证</span>
+                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">人工智能训练师 (高级)</h4>
+                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: AIT260717214042000102</p>
                     </div>
                 </div>
 
                 <!-- 证书 4: 达摩院初级 -->
-                <div onclick="openCertImageModal('人工智能训练师初级.jpg', '阿里巴巴达摩院 “人工智能训练师” 初级证书', '证书编号：AIT260713201325000195 | 发证机构：达摩院 - 机器智能技术事业部 / 阿里云智能服务事业部')" class="glass-card p-4 rounded-2xl border-t-2 border-t-purple-400 cursor-pointer hover:scale-105 transition-all group space-y-3">
-                    <div class="w-full h-40 rounded-xl bg-slate-900 overflow-hidden relative border border-slate-800">
-                        <img src="人工智能训练师初级.jpg" alt="达摩院人工智能训练师初级证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-mono gap-1">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i> 点击放大预览
+                <div onclick="openCertImageModal('人工智能训练师初级.jpg', '阿里巴巴达摩院 “人工智能训练师” 初级证书', '证书编号：AIT260713201325000195 | 认证机构：达摩院 - 机器智能技术事业部 / 阿里云智能服务事业部')" class="glass-panel p-4 rounded-3xl border-t-2 border-t-cyber-purple cursor-pointer hover:-translate-y-2 transition-all duration-300 group space-y-3">
+                    <div class="w-full h-44 rounded-2xl bg-black/80 overflow-hidden relative border border-white/10">
+                        <img src="人工智能训练师初级.jpg" alt="达摩院人工智能训练师初级证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-mono gap-1.5 backdrop-blur-sm">
+                            <i class="fa-solid fa-magnifying-glass-plus text-cyber-purple"></i> 点击查看大图
                         </div>
                     </div>
                     <div>
-                        <span class="text-[11px] font-mono text-purple-400 font-bold block">阿里巴巴达摩院 · 初级认证</span>
-                        <h4 class="font-bold text-white text-xs group-hover:text-brand-cyan transition-colors mt-0.5">人工智能训练师 (初级)</h4>
-                        <p class="text-[11px] text-slate-400 font-mono">编号: AIT260713201325000195</p>
+                        <span class="text-[11px] font-mono text-cyber-purple font-bold block">阿里巴巴达摩院 · 初级认证</span>
+                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">人工智能训练师 (初级)</h4>
+                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: AIT260713201325000195</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= 8. Nº006 PLEDGE 个人特长与竞赛入营意愿书 ================= -->
+        <section id="pledge" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+                <div>
+                    <span class="text-xs font-mono text-cyber-amber tracking-widest block uppercase">Nº006 // SPECIALTIES & PLEDGE</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">个人核心特长 & RST 训练营入营申请</h2>
+                </div>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-cyber-amber/10 border border-cyber-amber/30 text-cyber-amber text-xs font-mono font-bold">
+                    <i class="fa-solid fa-bolt"></i> 浪尖社区 · 战队申请
+                </div>
+            </div>
+
+            <!-- 特长矩阵 3 列 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel p-7 rounded-3xl border-t-2 border-t-cyber-cyan space-y-3.5">
+                    <div class="w-11 h-11 rounded-2xl bg-cyber-cyan/20 text-cyber-cyan flex items-center justify-center text-lg font-display">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white font-display">1. 工科底座 + 敏锐的 AI 实战落地能力</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                        既注重车辆工程的物理机械与力学基础，又深入掌握 Python 数据建模与 AI 智能体开发。善于把复杂理论转化为可跑、可交互的工程实体，不做只懂理论的空谈者。
+                    </p>
+                </div>
+
+                <div class="glass-panel p-7 rounded-3xl border-t-2 border-t-cyber-emerald space-y-3.5">
+                    <div class="w-11 h-11 rounded-2xl bg-cyber-emerald/20 text-cyber-emerald flex items-center justify-center text-lg font-display">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white font-display">2. 课题把控力、代码重构与团队统筹</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                        具备实战检验过的课题队长经验。能够把控研发节奏，统一团队技术栈规范，审核与重构组员代码，在紧迫的赛期内确保高质量交付。
+                    </p>
+                </div>
+
+                <div class="glass-panel p-7 rounded-3xl border-t-2 border-t-cyber-purple space-y-3.5">
+                    <div class="w-11 h-11 rounded-2xl bg-cyber-purple/20 text-cyber-purple flex items-center justify-center text-lg font-display">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white font-display">3. 卓越的答辩路演、PPT美化与抗压能力</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                        擅长将枯燥复杂的工程算法提炼为逻辑严密、排版高级的演示文稿与视频宣传片；答辩表达沉着自信，能精准回应专家评审的高难度质询。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 极客意愿宣言卡片 -->
+            <div class="glass-panel rounded-3xl p-7 sm:p-10 border border-cyber-amber/40 relative overflow-hidden space-y-5 bg-gradient-to-b from-[#09122A] to-[#030712]">
+                <div class="flex items-center gap-3">
+                    <span class="w-3 h-3 rounded-full bg-cyber-amber animate-ping"></span>
+                    <h3 class="text-lg sm:text-xl font-black text-white font-display tracking-wide">
+                        致浪尖社区老师与 RST 训练营评审的一封信：
+                    </h3>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                    <p>
+                        尊敬的浪尖社区老师、学长及训练营评审导师：
+                    </p>
+                    <p>
+                        在关注到浪尖社区与 RST 竞赛训练营的选拔时，我深感找到了真正推崇<strong class="text-white">“工程实践、动手做出成果、灵活拥抱 AI 前沿”</strong>的硬核技术阵地！作为一名即将踏入苏州大学车辆工程专业的准大一新生，我不仅渴望在大学阶段筑牢机械与控制工程基石，更强烈渴望将 <strong class="text-cyber-cyan">AI 算法、智能感知与数据智能</strong> 深度融入到未来的方程式赛车、智能车、机器人与创新创业竞赛的赛场上。
+                    </p>
+                    <p>
+                        高中阶段带领团队拿下长三角科创省级一等奖并考取达摩院 AI 训练师双证的经历，让我深刻体会到团队协作与把想法变为现实的乐趣。我深知大学竞赛更加残酷且充满挑战，我极其渴望能够正式加入 <strong class="text-cyber-amber">浪尖儿大学生社区 RST 竞赛训练营</strong>，在优秀的社区导师与学长引领下，与志同道合的战友组建战队、打磨项目，在未来的全国顶级竞赛中为团队斩获国家级大奖！
+                    </p>
+                    <div class="pt-3 flex items-center justify-between font-mono text-xs text-slate-400 border-t border-white/10">
+                        <span>申请人：朱拓恺 (ZTK)</span>
+                        <span class="text-cyber-amber font-bold">渴望入营 · 全力以赴</span>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <!-- ================= 9. INTERESTS 个人兴趣与特长 ================= -->
-        <section id="interests" class="space-y-6">
-            <div class="text-center max-w-3xl mx-auto space-y-2">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan"><i class="fa-solid fa-compass mr-1"></i> Interests & Hobbies</h2>
-                <p class="text-2xl sm:text-3xl font-extrabold text-white">个人特长与兴趣爱好</p>
-                <div class="w-16 h-1 bg-gradient-to-r from-brand-cyan to-brand-blue mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div class="glass-card p-6 rounded-2xl space-y-3">
-                    <div class="text-2xl text-purple-400"><i class="fa-solid fa-robot"></i></div>
-                    <h3 class="text-base font-bold text-white">研究 AI 编程与搭建智能 Agent</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">
-                        深入研究 AI 编程方法，结合提示词工程（Prompt Engineering）为自己定制解决信息整理、自动化脚本与学习辅助的 AI 智能体工作流。
+        <!-- ================= 9. Nº007 CONTACT 通讯通道 ================= -->
+        <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+            <div class="glass-panel rounded-3xl p-8 sm:p-12 text-center space-y-7 border-t-2 border-t-cyber-cyan relative overflow-hidden">
+                <div class="max-w-xl mx-auto space-y-2">
+                    <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº007 // TRANSMIT & CONNECT</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">联系方式与交流</h2>
+                    <p class="text-xs sm:text-sm text-slate-400 font-mono">
+                        欢迎浪尖社区老师、学长与组队伙伴随时交流！点击下方卡片即可复制：
                     </p>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl space-y-3">
-                    <div class="text-2xl text-brand-cyan"><i class="fa-solid fa-film"></i></div>
-                    <h3 class="text-base font-bold text-white">视频剪辑与演示 PPT 美化</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">
-                        熟练进行多轨道视频剪辑与调色，注重视觉审美和信息传递效率，能独立产出美观、大气的汇报演示材料与项目视频。
-                    </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto font-mono text-xs">
+                    <!-- 邮箱 -->
+                    <div onclick="copyText('1929823854@qq.com', '电子邮箱已复制到剪贴板！')" class="p-5 rounded-2xl bg-black/50 border border-white/10 hover:border-cyber-cyan cursor-pointer transition-all group">
+                        <i class="fa-regular fa-envelope text-2xl text-cyber-cyan block mb-2 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-slate-400 block text-[11px]">电子邮箱 (点击复制)</span>
+                        <span class="text-white font-bold mt-1 block">1929823854@qq.com</span>
+                    </div>
+
+                    <!-- 电话 -->
+                    <div onclick="copyText('15150211979', '联系电话已复制到剪贴板！')" class="p-5 rounded-2xl bg-black/50 border border-white/10 hover:border-cyber-emerald cursor-pointer transition-all group">
+                        <i class="fa-solid fa-phone text-2xl text-cyber-emerald block mb-2 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-slate-400 block text-[11px]">联系电话 (点击复制)</span>
+                        <span class="text-white font-bold mt-1 block">15150211979</span>
+                    </div>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/ZTK1119" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-black/50 border border-white/10 hover:border-cyber-purple transition-all group block">
+                        <i class="fa-brands fa-github text-2xl text-cyber-purple block mb-2 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-slate-400 block text-[11px]">GitHub 主页</span>
+                        <span class="text-white font-bold mt-1 block">github.com/ZTK1119</span>
+                    </a>
                 </div>
 
-                <div class="glass-card p-6 rounded-2xl space-y-3">
-                    <div class="text-2xl text-emerald-400"><i class="fa-solid fa-gamepad"></i></div>
-                    <h3 class="text-base font-bold text-white">探索各类电子游戏与机制设计</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">
-                        资深电子游戏爱好者，喜欢分析不同类型游戏的交互机制、剧情叙事与数值平衡，思考如何将游戏玩法与科学实践教育相结合。
-                    </p>
+                <div class="pt-6 border-t border-white/10 text-xs text-slate-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <span>© 2026 朱拓恺 (Zhu Tuokai) · 浪尖儿大学生社区 RST 竞赛训练营入营选拔作品</span>
+                    <span>Hosted with GitHub Pages</span>
                 </div>
-            </div>
-        </section>
-
-
-        <!-- ================= 10. CONTACT 联系方式 ================= -->
-        <section id="contact" class="glass-card rounded-2xl p-8 sm:p-10 text-center space-y-6 border-t-2 border-t-brand-cyan">
-            <div class="max-w-xl mx-auto space-y-2">
-                <h2 class="text-2xl font-extrabold text-white">联系方式</h2>
-                <p class="text-xs text-slate-300">
-                    欢迎老师、同学交流与指导！点击下方即可直接复制联系方式：
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto font-mono text-xs">
-                <!-- 邮箱 -->
-                <div onclick="copyText('1929823854@qq.com', '邮箱已复制到剪贴板！')" class="p-4 rounded-xl bg-slate-900/80 border border-slate-700 cursor-pointer hover:border-brand-cyan transition-colors group">
-                    <i class="fa-regular fa-envelope text-lg text-brand-cyan block mb-2 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-slate-400 block text-[11px]">电子邮箱 (点击复制)</span>
-                    <span class="text-white font-bold mt-1 block">1929823854@qq.com</span>
-                </div>
-
-                <!-- 电话 -->
-                <div onclick="copyText('15150211979', '电话已复制到剪贴板！')" class="p-4 rounded-xl bg-slate-900/80 border border-slate-700 cursor-pointer hover:border-emerald-400 transition-colors group">
-                    <i class="fa-solid fa-phone text-lg text-emerald-400 block mb-2 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-slate-400 block text-[11px]">联系电话 (点击复制)</span>
-                    <span class="text-white font-bold mt-1 block">15150211979</span>
-                </div>
-
-                <!-- GitHub -->
-                <a href="https://github.com/ZTK1119" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-slate-900/80 border border-slate-700 hover:border-purple-400 transition-colors group block">
-                    <i class="fa-brands fa-github text-lg text-purple-400 block mb-2 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-slate-400 block text-[11px]">GitHub 主页</span>
-                    <span class="text-white font-bold mt-1 block">github.com/ZTK1119</span>
-                </a>
-            </div>
-
-            <div class="pt-6 border-t border-slate-800 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <span>© 2026 朱拓恺 (Zhu Tuokai) · RST 竞赛训练营入营筛选作品</span>
-                <span class="font-mono">Hosted with GitHub Pages</span>
             </div>
         </section>
 
     </main>
 
-
-    <!-- ================= 11. 证书图片放大预览模态框 (Modal) ================= -->
-    <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 hidden opacity-0 transition-opacity duration-300">
-        <div class="glass-card max-w-3xl w-full max-h-[95vh] rounded-2xl p-4 sm:p-6 space-y-3 border border-brand-cyan/40 relative flex flex-col justify-between">
-            <button onclick="closeCertImageModal()" class="absolute top-3 right-3 text-slate-400 hover:text-white p-2 text-xl z-20">
+    <!-- ================= 10. 证书图片高清预览模态框 (Lightbox) ================= -->
+    <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 hidden opacity-0 transition-opacity duration-300">
+        <div class="glass-panel max-w-3xl w-full max-h-[92vh] rounded-3xl p-5 sm:p-7 space-y-4 border border-cyber-cyan/40 relative flex flex-col justify-between">
+            <button onclick="closeCertImageModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-xl z-20">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <div class="pr-10">
-                <h3 id="modal-img-title" class="text-sm sm:text-base font-bold text-white">证书标题</h3>
-                <p id="modal-img-sub" class="text-[11px] text-slate-400 font-mono mt-0.5">证书编号与发证机构</p>
+            <div class="pr-12">
+                <h3 id="modal-img-title" class="text-base sm:text-lg font-bold text-white font-display">证书标题</h3>
+                <p id="modal-img-sub" class="text-xs text-slate-400 font-mono mt-1">证书编号与发证机构</p>
             </div>
 
-            <div class="w-full flex-1 max-h-[65vh] bg-slate-950/80 rounded-xl overflow-hidden flex items-center justify-center p-2 border border-slate-800">
-                <img id="modal-img-src" src="" alt="证书大图预览" class="max-w-full max-h-[60vh] object-contain rounded-lg shadow-2xl">
+            <div class="w-full flex-1 max-h-[62vh] bg-black/80 rounded-2xl overflow-hidden flex items-center justify-center p-3 border border-white/10">
+                <img id="modal-img-src" src="" alt="证书大图预览" class="max-w-full max-h-[58vh] object-contain rounded-xl shadow-2xl">
             </div>
 
-            <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs font-mono">
-                <a id="modal-img-download" href="" download class="px-4 py-2 rounded-lg bg-brand-blue hover:bg-brand-cyan hover:text-slate-900 text-white font-bold transition-colors flex items-center gap-1.5">
-                    <i class="fa-solid fa-download"></i> 下载该证书原件
+            <div class="flex items-center justify-between pt-3 border-t border-white/10 text-xs font-mono">
+                <a id="modal-img-download" href="" download class="px-5 py-2.5 rounded-xl bg-cyber-blue hover:bg-cyber-cyan hover:text-slate-950 text-white font-bold transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-download"></i> 下载证书原件
                 </a>
-                <button onclick="closeCertImageModal()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white transition-colors">
-                    关闭
+                <button onclick="closeCertImageModal()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white transition-colors">
+                    关闭预览
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- 12. 复制提示 Toast -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-3 rounded-xl bg-emerald-500 text-white text-xs font-bold shadow-2xl flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
-        <i class="fa-solid fa-circle-check text-sm"></i>
-        <span id="toast-msg">提示信息</span>
+    <!-- 11. 交互反馈 Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-2xl bg-cyber-cyan text-slate-950 text-xs font-mono font-bold shadow-[0_0_25px_rgba(0,240,255,0.4)] flex items-center gap-2.5 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-base"></i>
+        <span id="toast-msg">操作成功</span>
     </div>
 
-
-    <!-- ================= 13. JavaScript 交互逻辑 ================= -->
+    <!-- ================= 12. 交互与动态 Canvas 脚本 ================= -->
     <script>
         // 1. 顶部进度条
         window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
-            document.getElementById('scroll-progress').style.width = scrolled + '%';
+            document.getElementById('scroll-bar').style.width = scrolled + '%';
         });
 
-        // 2. 打字机特效
+        // 2. 底层超级动态 Canvas 背景 (粒子连线星云 + 科技光晕 + 鼠标引力)
+        const canvas = document.getElementById('cyber-bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        let mouseX = -1000, mouseY = -1000;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class CyberParticle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.6;
+                this.vy = (Math.random() - 0.5) * 0.6;
+                this.radius = Math.random() * 2 + 1;
+                this.baseAlpha = Math.random() * 0.5 + 0.2;
+                this.alpha = this.baseAlpha;
+                this.color = Math.random() > 0.4 ? '#00F0FF' : (Math.random() > 0.5 ? '#8B5CF6' : '#2563EB');
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                if (this.y > height) this.y = 0;
+
+                // 鼠标引力场交互
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) {
+                    this.x -= (dx / dist) * 1.5;
+                    this.y -= (dy / dist) * 1.5;
+                    this.alpha = 0.9;
+                } else {
+                    this.alpha = this.baseAlpha;
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.alpha;
+                ctx.fill();
+            }
+        }
+
+        const particleCount = Math.min(Math.floor(window.innerWidth / 25), 65);
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new CyberParticle());
+        }
+
+        function animateCyberBackground() {
+            ctx.clearRect(0, 0, width, height);
+
+            // 绘制动态网格底纹
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.025)';
+            ctx.lineWidth = 1;
+            const gridSize = 45;
+            for (let x = 0; x < width; x += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, height);
+                ctx.stroke();
+            }
+            for (let y = 0; y < height; y += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(width, y);
+                ctx.stroke();
+            }
+
+            // 更新并绘制粒子与连线
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = '#00F0FF';
+                        ctx.globalAlpha = 0.18 * (1 - dist / 120);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            ctx.globalAlpha = 1;
+            requestAnimationFrame(animateCyberBackground);
+        }
+        animateCyberBackground();
+
+        // 3. 鼠标悬浮光晕
+        const mouseGlow = document.getElementById('mouse-glow');
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            mouseGlow.style.background = `radial-gradient(650px circle at ${mouseX}px ${mouseY}px, rgba(0, 240, 255, 0.09), rgba(139, 92, 246, 0.05), transparent 60%)`;
+        });
+
+        // 4. 3D Tilt 卡片微动效
+        const heroCard = document.getElementById('hero-card');
+        if (heroCard) {
+            heroCard.addEventListener('mousemove', (e) => {
+                const rect = heroCard.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                heroCard.style.transform = `rotateY(${x * 0.035}deg) rotateX(${-y * 0.035}deg)`;
+            });
+            heroCard.addEventListener('mouseleave', () => {
+                heroCard.style.transform = 'rotateY(0deg) rotateX(0deg)';
+            });
+        }
+
+        // 5. 真实比赛代码 Tab 切换 (100% 对应比赛提供的源码)
+        const codeSnippets = {
+            cell1: `import pandas as pd
+
+# 加载数据集
+file_path = '电子游戏销量数据集.csv'
+data = pd.read_csv(file_path)
+data.head()
+
+# 检查缺失值情况
+missing_data = data.isnull().sum()
+print("Missing Data Summary:\n", missing_data)`,
+
+            cell2: `# 处理 'Publisher' 列的缺失值，填充为 'Unknown'
+data['Publisher'].fillna('Unknown', inplace=True)
+
+# 根据已有非缺失的 'Year' 数据构建字典用于填充缺失的 'Year' 值
+year_inference = data.dropna(subset=['Year']).set_index('Name')['Year'].to_dict()
+data['Year'] = data.apply(lambda row: year_inference.get(row['Name'], row['Year']), axis=1)
+
+# 再次检查 'Year' 列剩余的缺失值数量
+remaining_missing_years = data['Year'].isnull().sum()
+print("Remaining Missing Years:", remaining_missing_years)`,
+
+            cell3: `# 用中位数填充剩余的缺失 'Year' 值
+median_year = data['Year'].median()
+data['Year'].fillna(median_year, inplace=True)
+
+# 删除 'Year' 为 2020 和 2017 的异常区间数据
+data = data[~((data['Year'] == 2020) | (data['Year'] == 2017))]
+
+# 将清洗后的数据保存为新的 CSV 文件
+data.to_csv('清洗后的电子游戏销量数据集.csv', index=False)
+print("Data Cleaning Complete. Saved to 清洗后的电子游戏销量数据集.csv")`,
+
+            game: `# Ren'Py 科普游戏分支与理化题目交互逻辑脚本
+label chemistry_puzzle:
+    scene bg lab_room with dissolve
+    "【科学谜题】请根据高中化学离子共存原理，选择能够同时大量共存的离子组："
+    
+    menu:
+        "A. Fe3+, K+, SCN-, Cl-":
+            $ player_score -= 5
+            "【解析错误】Fe3+ 与 SCN- 会发生络合反应生成红色配合物，无法大量共存！"
+            jump chemistry_puzzle
+            
+        "B. Na+, K+, SO4(2-), NO3-":
+            $ player_score += 10
+            "【回答正确！】四种离子均不发生复分解或氧化还原反应，可稳定大量共存！"
+            play sound "correct.mp3"
+            jump next_story_chapter`
+        };
+
+        function switchTab(type) {
+            document.getElementById('code-block').innerText = codeSnippets[type];
+            ['cell1', 'cell2', 'cell3', 'game'].forEach(t => {
+                const btn = document.getElementById('tab-' + t);
+                if (t === type) {
+                    btn.className = "px-3 py-1 rounded-lg bg-slate-800 text-cyber-cyan border border-cyber-cyan/30 text-[11px] font-bold";
+                } else {
+                    btn.className = "px-3 py-1 rounded-lg bg-transparent text-slate-400 hover:text-white text-[11px]";
+                }
+            });
+        }
+
+        // 6. 打字机循环动画
         const words = [
             "未来致力于从事车辆工程与AI算法开发",
             "高中长三角科创活动省级一等奖组长",
-            "考取达摩院人工智能训练师初/高级证书",
-            "熟练使用 Python 数据分析与时序建模"
+            "阿里巴巴达摩院AI训练师初/高级双认证",
+            "精通 Python 数据清洗与特征推断算法"
         ];
         let wordIdx = 0, charIdx = 0, isDeleting = false;
         function typeLoop() {
             const currentWord = words[wordIdx];
-            const typedElement = document.getElementById('typed-text');
-            
+            const el = document.getElementById('typed-text');
             if (isDeleting) {
-                typedElement.innerText = currentWord.substring(0, charIdx - 1);
+                el.innerText = currentWord.substring(0, charIdx - 1);
                 charIdx--;
             } else {
-                typedElement.innerText = currentWord.substring(0, charIdx + 1);
+                el.innerText = currentWord.substring(0, charIdx + 1);
                 charIdx++;
             }
 
-            let typingSpeed = isDeleting ? 30 : 70;
-
+            let speed = isDeleting ? 30 : 65;
             if (!isDeleting && charIdx === currentWord.length) {
-                typingSpeed = 2000;
+                speed = 2200;
                 isDeleting = true;
             } else if (isDeleting && charIdx === 0) {
                 isDeleting = false;
                 wordIdx = (wordIdx + 1) % words.length;
-                typingSpeed = 400;
+                speed = 400;
             }
-
-            setTimeout(typeLoop, typingSpeed);
+            setTimeout(typeLoop, speed);
         }
         typeLoop();
 
-        // 3. 移动端菜单
+        // 7. 移动端菜单控制
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // 4. 复制简介信息
+        // 8. 一键复制个人简介概要
         function copyProfileInfo() {
-            const profileText = `朱拓恺 (ZTK) 个人简介：
-- 姓名：朱拓恺 (ZTK)
-- 学校专业：苏州大学 · 车辆工程 (2026级准大一)
-- 未来志向：未来致力于从事车辆工程与AI算法开发
-- 主要荣誉：长三角中学生数据应用创新省级一等奖（组长）、优秀营员
-- 专业技能：Python数据分析、ARIMA时序建模、AI编程、HTML
-- 证书资质：达摩院智能客服人工智能训练师(初级+高级)`;
+            const profileText = `朱拓恺 (ZTK) 个人简历规格：
+- 院校专业：苏州大学 · 车辆工程 (2026级准大一)
+- 发展方向：未来致力于从事车辆工程与AI算法开发
+- 目标组织：浪尖儿大学生社区 · RST 竞赛训练营
+- 核心荣誉：第六届长三角科创活动省级一等奖(组长)、优秀营员
+- 专业技能：Python 数据清洗、特征字典推断、Ren'Py 游戏引擎、Prompt 工作流
+- 行业认证：阿里巴巴达摩院人工智能训练师(初级+高级)`;
             navigator.clipboard.writeText(profileText).then(() => {
-                const copyIcon = document.getElementById('copy-icon');
-                const copyText = document.getElementById('copy-text');
-                
-                copyIcon.className = "fa-solid fa-check text-emerald-400";
-                copyText.innerText = "已复制";
-                copyText.classList.add("text-emerald-400");
-                
-                showToast("个人简介已成功复制到剪贴板！");
-
-                setTimeout(() => {
-                    copyIcon.className = "fa-regular fa-copy";
-                    copyText.innerText = "复制简介";
-                    copyText.classList.remove("text-emerald-400");
-                }, 2000);
+                showToast("简历要点已成功复制到剪贴板！");
             });
         }
 
-        // 5. 证书图片预览弹窗
+        // 9. 证书放大模态框
         function openCertImageModal(imgSrc, title, subtitle) {
             document.getElementById('modal-img-title').innerText = title;
             document.getElementById('modal-img-sub').innerText = subtitle;
@@ -816,20 +1187,16 @@
 
             const modal = document.getElementById('image-modal');
             modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-            }, 10);
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
         }
 
         function closeCertImageModal() {
             const modal = document.getElementById('image-modal');
             modal.classList.add('opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 250);
+            setTimeout(() => modal.classList.add('hidden'), 250);
         }
 
-        // 6. 复制通用文本与 Toast
+        // 10. 通用复制与 Toast 弹窗
         function copyText(text, msg) {
             navigator.clipboard.writeText(text).then(() => {
                 showToast(msg);
@@ -839,9 +1206,9 @@
         function showToast(msg) {
             const toast = document.getElementById('toast');
             document.getElementById('toast-msg').innerText = msg;
-            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.remove('translate-y-24', 'opacity-0');
             setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
+                toast.classList.add('translate-y-24', 'opacity-0');
             }, 2500);
         }
     </script>
