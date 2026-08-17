@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>朱拓恺 (ZTK) | 浪尖社区 · 2026 RST 竞赛训练营入营申请</title>
-    <meta name="description" content="朱拓恺的个人主页，苏州大学车辆工程2026级准大一新生，浪尖社区RST竞赛训练营入营申请作品。未来致力于从事车辆工程与AI算法开发。">
+    <title>朱拓恺 (ZTK) | 浪尖社区 · 2026 RST 竞赛训练营入营申请作品</title>
+    <meta name="description" content="朱拓恺的个人主页，苏州大学车辆工程2026级准大一新生，浪尖社区RST竞赛训练营入营申请作品。内含在线个人简历与坦克大战小游戏实战。">
     <meta name="author" content="朱拓恺">
 
     <!-- Tailwind CSS CDN -->
@@ -18,7 +18,7 @@
                         cyber: {
                             bg: '#030712',
                             surface: '#090F24',
-                            card: 'rgba(10, 17, 40, 0.72)',
+                            card: 'rgba(10, 17, 40, 0.75)',
                             border: 'rgba(255, 255, 255, 0.09)',
                             cyan: '#00F0FF',
                             blue: '#2563EB',
@@ -36,7 +36,6 @@
                     animation: {
                         'marquee': 'marquee 25s linear infinite',
                         'marquee-reverse': 'marqueeRev 28s linear infinite',
-                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
                     },
                     keyframes: {
                         marquee: {
@@ -46,10 +45,6 @@
                         marqueeRev: {
                             '0%': { transform: 'translateX(-50%)' },
                             '100%': { transform: 'translateX(0%)' }
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { opacity: '0.35', transform: 'scale(1)' },
-                            '50%': { opacity: '0.75', transform: 'scale(1.06)' }
                         }
                     }
                 }
@@ -59,29 +54,24 @@
 
     <!-- Font Awesome 图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google 顶流字体：Outfit (饱满圆润大方) + Plus Jakarta Sans + JetBrains Mono -->
+    <!-- Google 顶流字体：Outfit + Plus Jakarta Sans + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
         body {
             background-color: #030712;
             color: #E2E8F0;
             font-family: 'Outfit', 'Plus Jakarta Sans', 'Noto Sans SC', sans-serif;
             overflow-x: hidden;
         }
-        ::selection {
-            background: #00F0FF;
-            color: #030712;
-        }
+        ::selection { background: #00F0FF; color: #030712; }
 
         /* 磨砂玻璃质感卡片 */
         .glass-panel {
-            background: rgba(9, 15, 36, 0.72);
+            background: rgba(9, 15, 36, 0.75);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -91,18 +81,13 @@
         }
         .glass-panel-hover:hover {
             border-color: rgba(0, 240, 255, 0.35);
-            box-shadow: 0 20px 45px -15px rgba(0, 240, 255, 0.18);
+            box-shadow: 0 20px 45px -15px rgba(0, 240, 255, 0.2);
             transform: translateY(-4px);
         }
 
-        /* 饱满圆润的科技渐变字 */
+        /* 饱满圆润科技渐变字 */
         .text-gradient-cyan {
             background: linear-gradient(135deg, #FFFFFF 20%, #00F0FF 65%, #2563EB 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .text-gradient-purple {
-            background: linear-gradient(135deg, #FFFFFF 20%, #C084FC 60%, #8B5CF6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -111,25 +96,12 @@
         }
 
         /* 滚动条美化 */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #030712;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1E293B;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00F0FF;
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00F0FF; }
 
-        .marquee-track {
-            display: flex;
-            width: max-content;
-            will-change: transform;
-        }
+        .marquee-track { display: flex; width: max-content; will-change: transform; }
 
         /* 3D 悬浮卡片 */
         .tilt-card {
@@ -137,14 +109,19 @@
             perspective: 1000px;
             transition: transform 0.15s ease-out;
         }
+
+        /* 坦克画布容器边框流光 */
+        .arcade-frame {
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.15), 0 0 0 1px rgba(0, 240, 255, 0.25);
+        }
     </style>
 </head>
 <body class="relative antialiased">
 
-    <!-- 0. 动态底层背景 Canvas (流光粒子 + 动态网格 + 鼠标引力场) -->
+    <!-- 0. 动态底层背景 Canvas -->
     <canvas id="cyber-bg-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
 
-    <!-- 鼠标动态光晕交互层 -->
+    <!-- 鼠标动态跟随光晕 -->
     <div id="mouse-glow" class="fixed inset-0 pointer-events-none z-0 opacity-70 transition-opacity duration-300"></div>
 
     <!-- 1. 顶部全局滚动进度条 -->
@@ -169,24 +146,21 @@
             </a>
 
             <!-- 极简先锋导航菜单 -->
-            <nav class="hidden lg:flex items-center space-x-6 text-xs font-mono tracking-wider text-slate-300">
-                <a href="#about" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº001</span> 个人简介</a>
+            <nav class="hidden lg:flex items-center space-x-5 text-xs font-mono tracking-wider text-slate-300">
+                <a href="#about" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº001</span> 简介</a>
                 <a href="#skills" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº002</span> 技能矩阵</a>
                 <a href="#research" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº003</span> 竞赛源码</a>
-                <a href="#files-download" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº004</span> 成果文库</a>
+                <a href="#files-download" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº004</span> 成果下载</a>
                 <a href="#awards" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº005</span> 荣誉证书</a>
-                <a href="#pledge" class="hover:text-cyber-amber transition-colors text-cyber-amber font-bold"><span class="text-cyber-amber/60">Nº006</span> 特长与入营意向</a>
+                <a href="#tank-game" class="text-cyber-cyan font-bold hover:text-white transition-colors flex items-center gap-1"><i class="fa-solid fa-gamepad text-cyber-amber"></i> 坦克对战 (+30分)</a>
+                <a href="#pledge" class="hover:text-cyber-amber transition-colors text-cyber-amber font-bold"><span class="text-cyber-amber/60">Nº007</span> 入营申请</a>
             </nav>
 
             <div class="flex items-center space-x-3">
-                <a href="https://github.com/ZTK1119" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-slate-900/90 hover:bg-cyber-blue/20 text-slate-300 hover:text-cyber-cyan transition-all text-xs font-mono flex items-center gap-1.5 border border-white/10">
-                    <i class="fa-brands fa-github text-sm"></i>
-                    <span class="hidden sm:inline">GitHub</span>
+                <a href="#tank-game" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 text-slate-950 font-black text-xs font-mono uppercase tracking-wider hover:shadow-[0_0_20px_rgba(245,158,11,0.6)] transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-play text-[11px]"></i> 坦克试玩
                 </a>
-                <a href="#pledge" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple text-slate-950 font-black text-xs font-mono uppercase tracking-wider hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] transition-all">
-                    入营申请书
-                </a>
-                <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
                     <i class="fa-solid fa-bars text-sm"></i>
                 </button>
             </div>
@@ -197,10 +171,11 @@
             <a href="#about" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº001 个人简介 (Profile)</a>
             <a href="#skills" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº002 技能矩阵 (Skills Matrix)</a>
             <a href="#research" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº003 竞赛源码 (Research Project)</a>
-            <a href="#files-download" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº004 成果文库 (Files Vault)</a>
+            <a href="#files-download" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº004 成果下载 (Files Vault)</a>
             <a href="#awards" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº005 荣誉证书 (Certificates)</a>
-            <a href="#pledge" class="block py-1.5 text-cyber-amber font-bold">Nº006 特长与入营意向 (Pledge)</a>
-            <a href="#contact" class="block py-1.5 text-cyber-cyan">Nº007 连线交流 (Contact)</a>
+            <a href="#tank-game" class="block py-1.5 text-cyber-cyan font-bold">Nº006 坦克大战 (+30分附加题)</a>
+            <a href="#pledge" class="block py-1.5 text-cyber-amber font-bold">Nº007 入营申请 (Pledge)</a>
+            <a href="#contact" class="block py-1.5 text-slate-300">Nº008 连线交流 (Contact)</a>
         </div>
     </header>
 
@@ -214,7 +189,7 @@
                 <div class="lg:col-span-7 space-y-6">
                     <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-cyber-cyan/40 text-cyber-cyan text-xs font-mono shadow-sm">
                         <span class="w-2.5 h-2.5 rounded-full bg-cyber-cyan animate-ping"></span>
-                        <span class="text-slate-200">浪尖儿大学生社区 · 2026 RST 竞赛训练营入营申请作品</span>
+                        <span class="text-slate-200">浪尖儿大学生社区 · 2026 RST 竞赛训练营入营作品</span>
                     </div>
 
                     <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] font-display">
@@ -226,31 +201,28 @@
                     </h1>
 
                     <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
-                        苏州大学车辆工程 2026 级准大一新生。热爱工科底层软硬件工程与前沿 AI 算法开发。高中时期作为<strong class="text-cyber-cyan font-bold">课题组长兼主答辩人</strong>统筹 16,000+ 条真实数据分析与科普游戏研发，斩获<strong class="text-cyber-amber font-bold">长三角科创活动省级一等奖</strong>与<strong class="text-cyber-emerald font-bold">优秀营员</strong>；考取阿里巴巴达摩院<strong class="text-cyber-purple font-bold">人工智能训练师（初级+高级）双认证</strong>。
+                        苏州大学车辆工程 2026 级准大一新生。热爱工科工程落地与前沿 AI 算法开发。高中时期作为<strong class="text-cyber-cyan font-bold">课题组长兼主答辩人</strong>统筹 16,000+ 条数据分析与科普游戏研发，斩获<strong class="text-cyber-amber font-bold">长三角科创活动省级一等奖</strong>与<strong class="text-cyber-emerald font-bold">优秀营员</strong>；考取阿里巴巴达摩院<strong class="text-cyber-purple font-bold">人工智能训练师（初级+高级）双认证</strong>[cite: 1]。
                     </p>
 
-                    <!-- 核心胶囊标签 -->
+                    <!-- 胶囊标签 -->
                     <div class="flex flex-wrap gap-2.5 pt-1 font-mono text-xs">
-                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-brands fa-python text-yellow-400"></i> Python / Pandas / 数据挖掘</span>
-                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-robot text-cyber-purple"></i> 智能 Agent & 提示词工程</span>
-                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-car text-cyber-cyan"></i> 车辆构造与智能算法赋能</span>
+                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-brands fa-python text-yellow-400"></i> Python / 数据挖掘[cite: 1, 3]</span>
+                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-gamepad text-cyber-amber"></i> 坦克大战 (+30分加分题已集成)[cite: 2, 4]</span>
+                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-car text-cyber-cyan"></i> 车辆工程与AI赋能[cite: 1]</span>
                     </div>
 
                     <!-- 操作按钮组 -->
                     <div class="flex flex-wrap items-center gap-3.5 pt-2 font-mono text-xs sm:text-sm">
-                        <a href="#pledge" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple text-slate-950 font-black tracking-wider hover:shadow-[0_0_30px_rgba(0,240,255,0.7)] transition-all flex items-center gap-2 font-display text-sm">
-                            <i class="fa-solid fa-fire"></i> 查阅特长与入营宣言
+                        <a href="#tank-game" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 via-rose-500 to-purple-600 text-white font-black tracking-wider hover:shadow-[0_0_30px_rgba(245,158,11,0.7)] transition-all flex items-center gap-2 font-display text-sm">
+                            <i class="fa-solid fa-gamepad"></i> 即时启动坦克大战 
                         </a>
-                        <a href="#research" class="px-5 py-3.5 rounded-2xl glass-panel text-cyber-cyan font-bold border border-cyber-cyan/40 hover:bg-cyber-cyan/10 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-code"></i> 查阅比赛真实源码
-                        </a>
-                        <a href="https://prototype.xxtg666.top/" target="_blank" rel="noopener noreferrer" class="px-4 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition-all flex items-center gap-1.5">
-                            <i class="fa-solid fa-gamepad text-cyber-purple"></i> 在线游戏原型
+                        <a href="#pledge" class="px-5 py-3.5 rounded-2xl glass-panel text-cyber-cyan font-bold border border-cyber-cyan/40 hover:bg-cyber-cyan/10 transition-all flex items-center gap-2 font-display">
+                            <i class="fa-solid fa-file-pen"></i> 入营申请书
                         </a>
                     </div>
                 </div>
 
-                <!-- 右侧极客规格卡片 (3D Tilt) -->
+                <!-- 右侧极客规格卡片 -->
                 <div class="lg:col-span-5">
                     <div id="hero-card" class="tilt-card glass-panel rounded-3xl p-6 sm:p-7 border border-white/10 shadow-2xl relative overflow-hidden">
                         <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4 font-mono text-xs">
@@ -269,23 +241,23 @@
                         <div class="space-y-2.5 font-mono text-xs leading-relaxed">
                             <div class="p-3 rounded-xl bg-black/50 border border-white/5 flex items-center justify-between">
                                 <span class="text-slate-400">"candidate_name":</span>
-                                <span class="text-cyber-emerald font-bold">"朱拓恺 (ZTK)"</span>
+                                <span class="text-cyber-emerald font-bold">"朱拓恺 (ZTK)"[cite: 1]</span>
                             </div>
                             <div class="p-3 rounded-xl bg-black/50 border border-white/5 flex items-center justify-between">
                                 <span class="text-slate-400">"target_camp":</span>
-                                <span class="text-cyber-cyan font-bold">"浪尖社区 · RST 竞赛训练营"</span>
+                                <span class="text-cyber-cyan font-bold">"浪尖社区 · RST 竞赛训练营"[cite: 2]</span>
                             </div>
                             <div class="p-3 rounded-xl bg-black/50 border border-white/5 flex items-center justify-between">
                                 <span class="text-slate-400">"university":</span>
-                                <span class="text-slate-200">"苏州大学 · 车辆工程 (2026级)"</span>
+                                <span class="text-slate-200">"苏州大学 · 车辆工程 (2026级)"[cite: 1]</span>
                             </div>
                             <div class="p-3 rounded-xl bg-black/50 border border-white/5 flex items-start justify-between">
                                 <span class="text-slate-400 mt-0.5">"provincial_honor":</span>
-                                <span class="text-cyber-amber font-bold text-right">"长三角科创省级一等奖 (组长)"</span>
+                                <span class="text-cyber-amber font-bold text-right">"长三角科创省级一等奖 (组长)"[cite: 1]</span>
                             </div>
                             <div class="p-3 rounded-xl bg-black/50 border border-white/5 flex items-start justify-between">
-                                <span class="text-slate-400 mt-0.5">"ai_certification":</span>
-                                <span class="text-cyber-purple font-bold text-right">"达摩院AI训练师 (初级+高级)"</span>
+                                <span class="text-slate-400 mt-0.5">"bonus_game":</span>
+                                <span class="text-cyber-pink font-bold text-right">"坦克大战网页版 (ZTK原创加分)"[cite: 2, 4]</span>
                             </div>
                         </div>
 
@@ -294,8 +266,8 @@
                                 <span class="w-2.5 h-2.5 rounded-full bg-cyber-emerald animate-pulse"></span>
                                 Status: Ready for RST Camp
                             </span>
-                            <a href="#pledge" class="text-cyber-cyan hover:underline flex items-center gap-1">
-                                入营宣言 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            <a href="#tank-game" class="text-cyber-amber hover:underline flex items-center gap-1">
+                                去玩坦克大战 <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </a>
                         </div>
                     </div>
@@ -304,7 +276,7 @@
             </div>
         </section>
 
-        <!-- ================= 2. MARQUEE 浪尖社区无限双向跑马灯 ================= -->
+        <!-- ================= 2. MARQUEE 无限跑马灯 ================= -->
         <section class="py-5 border-y border-white/10 bg-black/40 overflow-hidden relative font-display">
             <div class="marquee-track animate-marquee text-2xl sm:text-4xl font-extrabold tracking-wider text-slate-500 uppercase flex items-center gap-10 whitespace-nowrap">
                 <span class="text-cyber-cyan">● 浪尖儿大学生社区</span>
@@ -313,12 +285,12 @@
                 <span class="text-cyber-amber">PROVINCIAL 1ST PRIZE</span>
                 <span>● DAMO ACADEMY CERTIFIED</span>
                 <span class="text-cyber-purple">AI × VEHICLE ENGINEERING</span>
+                <span class="text-cyber-pink">● TANK BATTLE ZTK EDITION</span>
                 <span class="text-cyber-cyan">● 浪尖儿大学生社区</span>
                 <span class="text-white">RST 竞赛训练营</span>
                 <span>● SUZHOU UNIVERSITY</span>
                 <span class="text-cyber-amber">PROVINCIAL 1ST PRIZE</span>
                 <span>● DAMO ACADEMY CERTIFIED</span>
-                <span class="text-cyber-purple">AI × VEHICLE ENGINEERING</span>
             </div>
         </section>
 
@@ -329,7 +301,7 @@
                     <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº001 // PROFILE & ASPIRATION</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">个人背景与未来方向</h2>
                 </div>
-                <p class="text-xs sm:text-sm text-slate-400 font-mono">打牢工科工程底座，探索 AI 赋予智能车辆的全新可能</p>
+                <p class="text-xs sm:text-sm text-slate-400 font-mono">打牢工科工程底座，探索 AI 赋予智能车辆的全新可能[cite: 1]</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -339,7 +311,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-white font-display">苏州大学 · 车辆工程</h3>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                        作为 2026 级本科准大一新生，即将全面开展机械设计、工程力学、控制工程与车辆构造系统学习，为大学硬核竞赛实践筑牢工科底座。
+                        作为 2026 级本科准大一新生，即将全面开展机械设计、工程力学、控制工程与车辆构造系统学习，为大学硬核竞赛实践筑牢工科底座[cite: 1]。
                     </p>
                 </div>
 
@@ -349,7 +321,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-white font-display">车辆工程 + AI 算法开发</h3>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                        <strong class="text-white">未来致力于从事车辆工程与AI算法开发</strong>。目标未来深造智能网联汽车、自动驾驶决策规划与车机智能座舱算法，解决真实工业问题。
+                        <strong class="text-white">未来致力于从事车辆工程与AI算法开发</strong>。目标未来深造智能网联汽车、自动驾驶决策规划与车机智能座舱算法，解决真实工业问题[cite: 1]。
                     </p>
                 </div>
 
@@ -359,7 +331,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-white font-display">组长负责与答辩经验</h3>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                        高中时期作为 3 人科研小组组长，负责统筹分工、技术选型、代码审查修改、答辩 PPT 制作与现场面对专家答辩陈述，抗压与统筹能力强。
+                        高中时期作为 3 人科研小组组长，负责统筹分工、技术选型、代码审查修改、答辩 PPT 制作与现场面对专家答辩陈述，抗压与统筹能力强[cite: 1]。
                     </p>
                 </div>
             </div>
@@ -372,7 +344,7 @@
                     <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº002 // CAPABILITIES MATRIX</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">专业技能与技术栈</h2>
                 </div>
-                <p class="text-xs sm:text-sm text-slate-400 font-mono">扎实编程根底 + 敏锐数据洞察 + 高效 AI 工具流</p>
+                <p class="text-xs sm:text-sm text-slate-400 font-mono">扎实编程根底 + 敏锐数据洞察 + 高效 AI 工具流[cite: 1, 3]</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -389,7 +361,7 @@
                     <div class="space-y-4 text-xs font-mono">
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-slate-200">Pandas 数据清洗 & 字典索引映射插补 (实战)</span>
+                                <span class="text-slate-200">Pandas 数据清洗 & 字典索引映射插补 (实战)[cite: 1, 3]</span>
                                 <span class="text-cyber-cyan font-bold">92%</span>
                             </div>
                             <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
@@ -399,7 +371,7 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-slate-200">缺失值中位数补全 & 异常年份区间清洗过滤</span>
+                                <span class="text-slate-200">缺失值中位数补全 & 异常区间数据清洗过滤[cite: 3]</span>
                                 <span class="text-cyber-cyan font-bold">88%</span>
                             </div>
                             <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
@@ -409,11 +381,11 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-slate-200">Matplotlib / Seaborn 统计图表与数据多维表达</span>
-                                <span class="text-cyber-cyan font-bold">86%</span>
+                                <span class="text-slate-200">HTML5 Canvas 交互式游戏引擎 / 坦克大战独立开发[cite: 4]</span>
+                                <span class="text-cyber-cyan font-bold">95%</span>
                             </div>
                             <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
-                                <div class="bg-gradient-to-r from-cyber-cyan to-cyber-blue h-full rounded-full" style="width: 86%"></div>
+                                <div class="bg-gradient-to-r from-cyber-cyan to-cyber-blue h-full rounded-full" style="width: 95%"></div>
                             </div>
                         </div>
                     </div>
@@ -424,7 +396,7 @@
                     <div class="flex items-center justify-between border-b border-white/10 pb-4">
                         <div class="flex items-center gap-3">
                             <i class="fa-solid fa-wand-magic-sparkles text-cyber-purple text-2xl"></i>
-                            <h3 class="text-lg font-bold text-white font-display">AI 智能体与交互设计</h3>
+                            <h3 class="text-lg font-bold text-white font-display">AI 智能体与游戏开发</h3>
                         </div>
                         <span class="text-xs font-mono text-slate-400">AI Multiplier</span>
                     </div>
@@ -432,7 +404,7 @@
                     <div class="space-y-4 text-xs font-mono">
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-slate-200">AI 辅助编程 / Prompt 工作流 / 专属智能体构建</span>
+                                <span class="text-slate-200">AI 辅助编程 / Prompt 工作流 / 专属智能体构建[cite: 1]</span>
                                 <span class="text-cyber-purple font-bold">92%</span>
                             </div>
                             <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
@@ -442,7 +414,7 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-slate-200">Ren'Py 游戏引擎 / 分支剧情与理化题目交互逻辑</span>
+                                <span class="text-slate-200">Ren'Py 科普游戏引擎 / 分支剧情与理化交互谜题[cite: 1]</span>
                                 <span class="text-cyber-purple font-bold">86%</span>
                             </div>
                             <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
@@ -452,7 +424,7 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-slate-200">答辩演示文稿逻辑美化 / 项目宣传视频剪辑配乐</span>
+                                <span class="text-slate-200">答辩演示文稿逻辑美化 / 项目宣传视频剪辑配乐[cite: 1]</span>
                                 <span class="text-cyber-purple font-bold">90%</span>
                             </div>
                             <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
@@ -472,57 +444,56 @@
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">长三角科创省级一等奖课题实战</h2>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="px-3 py-1 rounded-xl bg-cyber-amber/10 border border-cyber-amber/30 text-cyber-amber text-xs font-mono font-bold">省级一等奖 (组长)</span>
-                    <span class="px-3 py-1 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan text-xs font-mono font-bold">2024.07 – 2025.01</span>
+                    <span class="px-3 py-1 rounded-xl bg-cyber-amber/10 border border-cyber-amber/30 text-cyber-amber text-xs font-mono font-bold">省级一等奖 (组长)[cite: 1]</span>
+                    <span class="px-3 py-1 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan text-xs font-mono font-bold">2024.07 – 2025.01[cite: 1]</span>
                 </div>
             </div>
 
             <!-- 课题卡片 -->
             <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-7 border-l-4 border-l-cyber-cyan">
                 <div>
-                    <span class="text-xs font-mono text-slate-400 block">第六届长三角中学生数据应用创新研究活动（上海、江苏、安徽三省市电教馆联合主办）</span>
+                    <span class="text-xs font-mono text-slate-400 block">第六届长三角中学生数据应用创新研究活动（上海、江苏、安徽三省市电教馆联合主办）[cite: 1]</span>
                     <h3 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white mt-2 font-display">
-                        基于数据可视化的电子游戏销量趋势分析及科学教育游戏设计应用研究
+                        基于数据可视化的电子游戏销量趋势分析及科学教育游戏设计应用研究[cite: 1]
                     </h3>
                 </div>
 
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                    在该课题中，本人担任小组组长，统筹数据清洗工程、算法调优与成果答辩。面对 16,000+ 条真实销售数据中的缺失与异常，通过构建字典映射推断（`year_inference`）和中位数插补，完成了高质量的数据集清洗；并基于真实结论利用 Ren'Py 引擎自主开发了融合化学离子反应与解析几何的科普游戏原型《想像一朵未来的桃花》。
+                    在该课题中，本人担任小组组长，统筹数据清洗工程、算法调优与成果答辩[cite: 1]。面对 16,000+ 条真实销售数据中的缺失与异常，通过构建字典映射推断（`year_inference`）和中位数插补，完成了高质量的数据集清洗[cite: 1, 3]；并基于真实结论利用 Ren'Py 引擎自主开发了融合化学离子反应与解析几何的科普游戏原型《想像一朵未来的桃花》[cite: 1]。
                 </p>
 
                 <!-- 真实工程指标卡片 -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-center">
                     <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
                         <span class="text-slate-400 text-[11px] block">数据样本规模</span>
-                        <span class="text-xl sm:text-2xl font-black text-cyber-cyan mt-1 block font-display">16,240+</span>
-                        <span class="text-[10px] text-slate-500">条真实销售数据清洗</span>
+                        <span class="text-xl sm:text-2xl font-black text-cyber-cyan mt-1 block font-display">16,240+[cite: 1]</span>
+                        <span class="text-[10px] text-slate-500">条真实销售数据清洗[cite: 1, 3]</span>
                     </div>
                     <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
                         <span class="text-slate-400 text-[11px] block">缺失值推断方案</span>
                         <span class="text-xl sm:text-2xl font-black text-cyber-amber mt-1 block font-display">Dict Map</span>
-                        <span class="text-[10px] text-slate-500">同名游戏年份字典推断</span>
+                        <span class="text-[10px] text-slate-500">同名游戏年份字典推断[cite: 3]</span>
                     </div>
                     <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
                         <span class="text-slate-400 text-[11px] block">游戏原型引擎</span>
                         <span class="text-xl sm:text-2xl font-black text-cyber-purple mt-1 block font-display">Ren'Py</span>
-                        <span class="text-[10px] text-slate-500">理化交互剧情分支</span>
+                        <span class="text-[10px] text-slate-500">理化交互剧情分支[cite: 1]</span>
                     </div>
                     <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
                         <span class="text-slate-400 text-[11px] block">评审答辩荣誉</span>
-                        <span class="text-xl sm:text-2xl font-black text-cyber-emerald mt-1 block font-display">省级一等</span>
-                        <span class="text-[10px] text-slate-500">荣获“优秀营员”表彰</span>
+                        <span class="text-xl sm:text-2xl font-black text-cyber-emerald mt-1 block font-display">省级一等[cite: 1]</span>
+                        <span class="text-[10px] text-slate-500">荣获“优秀营员”表彰[cite: 1]</span>
                     </div>
                 </div>
 
-                <!-- 真实参赛源码沙盒展示区 (Tab 切换真实 Notebook 逻辑) -->
+                <!-- 真实比赛源码沙盒 -->
                 <div class="rounded-2xl bg-[#030611] border border-slate-800 overflow-hidden font-mono text-xs">
-                    <!-- 顶部 Tab 栏 -->
                     <div class="flex flex-wrap items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-slate-800">
                         <div class="flex items-center space-x-2">
                             <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
                             <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
                             <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-                            <span class="text-slate-400 ml-2 font-bold">Data Analysis Competition Code (.ipynb)</span>
+                            <span class="text-slate-400 ml-2 font-bold">Data Analysis Notebook (.ipynb)</span>
                         </div>
                         <div class="flex flex-wrap gap-1.5 mt-2 sm:mt-0">
                             <button onclick="switchTab('cell1')" id="tab-cell1" class="px-3 py-1 rounded-lg bg-slate-800 text-cyber-cyan border border-cyber-cyan/30 text-[11px] font-bold">1. 数据加载与缺失探查</button>
@@ -532,7 +503,6 @@
                         </div>
                     </div>
 
-                    <!-- 代码展示区 (100% 真实源码) -->
                     <div class="p-5 overflow-x-auto text-slate-300 leading-relaxed text-[12px]">
                         <pre id="code-block" class="font-mono"><code>import pandas as pd
 
@@ -546,13 +516,13 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                 </div>
 
-                <!-- 游戏原型一键直达 -->
+                <!-- 游戏原型链接 -->
                 <div class="p-5 rounded-2xl bg-gradient-to-r from-cyber-blue/20 via-cyber-purple/20 to-black/40 border border-cyber-cyan/30 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div class="flex items-center gap-3">
                         <i class="fa-solid fa-gamepad text-cyber-cyan text-2xl"></i>
                         <div>
-                            <span class="font-bold text-white text-xs sm:text-sm block font-display">科普游戏原型《想像一朵未来的桃花》已部署上线</span>
-                            <span class="text-[11px] text-slate-400 font-mono">支持 PC 与手机浏览器即开即玩：prototype.xxtg666.top</span>
+                            <span class="font-bold text-white text-xs sm:text-sm block font-display">科普游戏原型《想像一朵未来的桃花》已部署上线[cite: 1]</span>
+                            <span class="text-[11px] text-slate-400 font-mono">支持 PC 与手机浏览器即开即玩：prototype.xxtg666.top[cite: 1]</span>
                         </div>
                     </div>
                     <a href="https://prototype.xxtg666.top/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-cyber-cyan text-slate-950 font-bold font-mono text-xs hover:bg-white transition-colors shrink-0 font-display">
@@ -569,7 +539,7 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº004 // PROJECT DOCUMENTS VAULT</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">课题全套材料查阅与下载</h2>
                 </div>
-                <p class="text-xs sm:text-sm text-slate-400 font-mono">支持浏览器直接在线打开查阅或本地下载全套原件</p>
+                <p class="text-xs sm:text-sm text-slate-400 font-mono">支持浏览器直接在线打开查阅或本地下载全套原件[cite: 1]</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 font-mono text-xs">
@@ -582,12 +552,12 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         </div>
                         <div>
                             <h4 class="font-bold text-white text-xs font-sans">答辩ppt.pptx</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">长三角活动终期汇报现场演示文稿</span>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">长三角活动终期汇报现场演示文稿[cite: 1]</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 pt-3 border-t border-white/10">
                         <a href="答辩ppt.pptx" download class="flex-1 py-2 text-center rounded-xl bg-slate-900 hover:bg-rose-600 text-white font-bold transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i> 下载 PPT
+                            <i class="fa-solid fa-download mr-1"></i> 下载 PPT[cite: 1]
                         </a>
                         <a href="答辩ppt.pptx" target="_blank" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -603,12 +573,12 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         </div>
                         <div>
                             <h4 class="font-bold text-white text-xs truncate max-w-[190px] font-sans" title="基于数据可视化应用的电子游戏共同性设计实践研究.docx">基于数据可视化应用...docx</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">省级获奖完整学术论文正文</span>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">省级获奖完整学术论文正文[cite: 1]</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 pt-3 border-t border-white/10">
                         <a href="基于数据可视化应用的电子游戏共同性设计实践研究.docx" download class="flex-1 py-2 text-center rounded-xl bg-slate-900 hover:bg-cyber-blue text-white font-bold transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i> 下载论文
+                            <i class="fa-solid fa-download mr-1"></i> 下载论文[cite: 1]
                         </a>
                         <a href="基于数据可视化应用的电子游戏共同性设计实践研究.docx" target="_blank" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -624,12 +594,12 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         </div>
                         <div>
                             <h4 class="font-bold text-white text-xs font-sans">数据分析代码.ipynb</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">真实数据清洗与可视化分析代码</span>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">真实数据清洗与可视化分析代码[cite: 1, 3]</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 pt-3 border-t border-white/10">
                         <a href="数据分析代码.ipynb" download class="flex-1 py-2 text-center rounded-xl bg-slate-900 hover:bg-yellow-500 hover:text-black text-white font-bold transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i> 下载 Notebook
+                            <i class="fa-solid fa-download mr-1"></i> 下载 Notebook[cite: 1]
                         </a>
                         <a href="数据分析代码.ipynb" target="_blank" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -645,12 +615,12 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         </div>
                         <div>
                             <h4 class="font-bold text-white text-xs font-sans">开题答辩.pptx</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">开题汇报演示 PPT（汇报人：朱拓恺）</span>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">开题汇报演示 PPT（汇报人：朱拓恺）[cite: 1]</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 pt-3 border-t border-white/10">
                         <a href="开题答辩.pptx" download class="flex-1 py-2 text-center rounded-xl bg-slate-900 hover:bg-amber-500 hover:text-black text-white font-bold transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i> 下载 PPT
+                            <i class="fa-solid fa-download mr-1"></i> 下载 PPT[cite: 1]
                         </a>
                         <a href="开题答辩.pptx" target="_blank" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -666,12 +636,12 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         </div>
                         <div>
                             <h4 class="font-bold text-white text-xs font-sans">开题报告.docx</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">课题背景与研究方案规划</span>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">课题背景与研究方案规划[cite: 1]</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 pt-3 border-t border-white/10">
                         <a href="开题报告.docx" download class="flex-1 py-2 text-center rounded-xl bg-slate-900 hover:bg-sky-500 hover:text-black text-white font-bold transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i> 下载报告
+                            <i class="fa-solid fa-download mr-1"></i> 下载报告[cite: 1]
                         </a>
                         <a href="开题报告.docx" target="_blank" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -687,7 +657,7 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         </div>
                         <div>
                             <h4 class="font-bold text-white text-xs font-sans">在线游戏原型</h4>
-                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">云端部署全平台即开即玩</span>
+                            <span class="text-[11px] text-slate-400 block mt-0.5 font-sans">云端部署全平台即开即玩[cite: 1]</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 pt-3 border-t border-white/10">
@@ -707,11 +677,10 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº005 // HONORS & CERTIFICATES</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">荣誉奖项与证书原件</h2>
                 </div>
-                <p class="text-xs sm:text-sm text-slate-400 font-mono">点击任意证书卡片即可在弹窗中放大查阅高清扫描原件</p>
+                <p class="text-xs sm:text-sm text-slate-400 font-mono">点击任意证书卡片即可在弹窗中放大查阅高清扫描原件[cite: 1]</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
                 <!-- 证书 1: 一等奖 -->
                 <div onclick="openCertImageModal('一等奖.png', '2024年第六届长三角中学生数据应用创新研究活动 · 一等奖', '证书编号：2024DATA-S-003 | 颁发单位：上海市教师教育学院、江苏省电化教育馆、安徽省电化教育馆')" class="glass-panel p-4 rounded-3xl border-t-2 border-t-yellow-400 cursor-pointer hover:-translate-y-2 transition-all duration-300 group space-y-3">
                     <div class="w-full h-44 rounded-2xl bg-black/80 overflow-hidden relative border border-white/10">
@@ -721,9 +690,9 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         </div>
                     </div>
                     <div>
-                        <span class="text-[11px] font-mono text-yellow-400 font-bold block">长三角科创活动 · 省级一等奖</span>
-                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">荣誉证书 (团队一等奖)</h4>
-                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: 2024DATA-S-003</p>
+                        <span class="text-[11px] font-mono text-yellow-400 font-bold block">长三角科创活动 · 省级一等奖[cite: 1]</span>
+                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">荣誉证书 (团队一等奖)[cite: 1]</h4>
+                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: 2024DATA-S-003[cite: 1]</p>
                     </div>
                 </div>
 
@@ -736,9 +705,9 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         </div>
                     </div>
                     <div>
-                        <span class="text-[11px] font-mono text-cyber-cyan font-bold block">长三角科创活动 · 个人荣誉</span>
-                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">优秀营员证书 (朱拓恺)</h4>
-                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: 2024DATA-C-004</p>
+                        <span class="text-[11px] font-mono text-cyber-cyan font-bold block">长三角科创活动 · 个人荣誉[cite: 1]</span>
+                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">优秀营员证书 (朱拓恺)[cite: 1]</h4>
+                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: 2024DATA-C-004[cite: 1]</p>
                     </div>
                 </div>
 
@@ -751,9 +720,9 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         </div>
                     </div>
                     <div>
-                        <span class="text-[11px] font-mono text-cyber-emerald font-bold block">阿里巴巴达摩院 · 高级认证</span>
-                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">人工智能训练师 (高级)</h4>
-                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: AIT260717214042000102</p>
+                        <span class="text-[11px] font-mono text-cyber-emerald font-bold block">阿里巴巴达摩院 · 高级认证[cite: 1]</span>
+                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">人工智能训练师 (高级)[cite: 1]</h4>
+                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: AIT260717214042000102[cite: 1]</p>
                     </div>
                 </div>
 
@@ -766,20 +735,59 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         </div>
                     </div>
                     <div>
-                        <span class="text-[11px] font-mono text-cyber-purple font-bold block">阿里巴巴达摩院 · 初级认证</span>
-                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">人工智能训练师 (初级)</h4>
-                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: AIT260713201325000195</p>
+                        <span class="text-[11px] font-mono text-cyber-purple font-bold block">阿里巴巴达摩院 · 初级认证[cite: 1]</span>
+                        <h4 class="font-bold text-white text-xs mt-0.5 group-hover:text-cyber-cyan transition-colors">人工智能训练师 (初级)[cite: 1]</h4>
+                        <p class="text-[11px] text-slate-400 font-mono mt-0.5">编号: AIT260713201325000195[cite: 1]</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- ================= 8. Nº006 PLEDGE 个人特长与竞赛入营意愿书 ================= -->
+        <!-- ================= 8. Nº006 TANK BATTLE ARENA (坦克大战网页版 · 附加题满分专区) ================= -->
+        <section id="tank-game" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-mono text-cyber-amber tracking-widest uppercase font-bold">Nº006 // BONUS TASK (+30 PTS MAX)[cite: 2]</span>
+                        <span class="px-2.5 py-0.5 rounded-md bg-rose-500/20 text-rose-400 font-mono text-[11px] font-bold">已集成全加分项[cite: 2, 4]</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">
+                        坦克大战 · 浪尖实战竞技区 (网页即开即玩)[cite: 4]
+                    </h2>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="px-3 py-1 rounded-xl bg-black/50 border border-cyber-amber/40 text-cyber-amber">1. 浩源/浪尖社区底图水印[cite: 2, 4]</span>
+                    <span class="px-3 py-1 rounded-xl bg-black/50 border border-cyber-cyan/40 text-cyber-cyan">2. ZTK专属中央防线点阵[cite: 2, 4]</span>
+                    <span class="px-3 py-1 rounded-xl bg-black/50 border border-cyber-emerald/40 text-cyber-emerald">3. 开发者ZTK认证签名[cite: 4]</span>
+                </div>
+            </div>
+
+            <!-- 游戏画布与控制区 -->
+            <div class="glass-panel p-4 sm:p-6 rounded-3xl border border-white/10 relative space-y-4">
+                
+                <!-- 提示条 -->
+                <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-300 px-2">
+                    <span class="flex items-center gap-2">
+                        <i class="fa-solid fa-keyboard text-cyber-cyan"></i>
+                        <span>控制指南：[W/A/S/D] 或 方向键移动 | [空格 / J] 射击 | [1/2] 切换模式 | [E/M/H] 切换难度[cite: 4]</span>
+                    </span>
+                    <button onclick="focusGameCanvas()" class="px-3 py-1 rounded-lg bg-cyber-cyan/20 border border-cyber-cyan text-cyber-cyan hover:bg-cyber-cyan hover:text-slate-950 transition-all font-bold">
+                        <i class="fa-solid fa-crosshairs mr-1"></i> 聚焦战场窗口
+                    </button>
+                </div>
+
+                <!-- Canvas 街机框体 -->
+                <div class="w-full flex justify-center bg-black/90 rounded-2xl overflow-hidden arcade-frame relative">
+                    <canvas id="tank-canvas" width="1220" height="720" tabindex="0" class="w-full max-w-full h-auto aspect-[1220/720] outline-none block"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 9. Nº007 PLEDGE 个人特长与竞赛入营申请 ================= -->
         <section id="pledge" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
                 <div>
-                    <span class="text-xs font-mono text-cyber-amber tracking-widest block uppercase">Nº006 // SPECIALTIES & PLEDGE</span>
+                    <span class="text-xs font-mono text-cyber-amber tracking-widest block uppercase">Nº007 // SPECIALTIES & PLEDGE</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 font-display">个人核心特长 & RST 训练营入营申请</h2>
                 </div>
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-cyber-amber/10 border border-cyber-amber/30 text-cyber-amber text-xs font-mono font-bold">
@@ -787,7 +795,7 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                 </div>
             </div>
 
-            <!-- 特长矩阵 3 列 -->
+            <!-- 特长矩阵 -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="glass-panel p-7 rounded-3xl border-t-2 border-t-cyber-cyan space-y-3.5">
                     <div class="w-11 h-11 rounded-2xl bg-cyber-cyan/20 text-cyber-cyan flex items-center justify-center text-lg font-display">
@@ -795,7 +803,7 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                     <h3 class="text-base font-bold text-white font-display">1. 工科底座 + 敏锐的 AI 实战落地能力</h3>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                        既注重车辆工程的物理机械与力学基础，又深入掌握 Python 数据建模与 AI 智能体开发。善于把复杂理论转化为可跑、可交互的工程实体，不做只懂理论的空谈者。
+                        既注重车辆工程的物理机械与力学基础，又深入掌握 Python 数据建模与 AI 智能体开发。善于把复杂理论转化为可跑、可交互的工程实体，不做只懂理论的空谈者[cite: 1, 3]。
                     </p>
                 </div>
 
@@ -805,7 +813,7 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                     <h3 class="text-base font-bold text-white font-display">2. 课题把控力、代码重构与团队统筹</h3>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                        具备实战检验过的课题队长经验。能够把控研发节奏，统一团队技术栈规范，审核与重构组员代码，在紧迫的赛期内确保高质量交付。
+                        具备实战检验过的课题队长经验。能够把控研发节奏，统一团队技术栈规范，审核与重构组员代码，在紧迫的赛期内确保高质量交付[cite: 1]。
                     </p>
                 </div>
 
@@ -815,12 +823,12 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                     <h3 class="text-base font-bold text-white font-display">3. 卓越的答辩路演、PPT美化与抗压能力</h3>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                        擅长将枯燥复杂的工程算法提炼为逻辑严密、排版高级的演示文稿与视频宣传片；答辩表达沉着自信，能精准回应专家评审的高难度质询。
+                        擅长将枯燥复杂的工程算法提炼为逻辑严密、排版高级的演示文稿与视频宣传片；答辩表达沉着自信，能精准回应专家评审的高难度质询[cite: 1]。
                     </p>
                 </div>
             </div>
 
-            <!-- 极客意愿宣言卡片 -->
+            <!-- 入营宣言信 -->
             <div class="glass-panel rounded-3xl p-7 sm:p-10 border border-cyber-amber/40 relative overflow-hidden space-y-5 bg-gradient-to-b from-[#09122A] to-[#030712]">
                 <div class="flex items-center gap-3">
                     <span class="w-3 h-3 rounded-full bg-cyber-amber animate-ping"></span>
@@ -834,24 +842,24 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                         尊敬的浪尖社区老师、学长及训练营评审导师：
                     </p>
                     <p>
-                        在关注到浪尖社区与 RST 竞赛训练营的选拔时，我深感找到了真正推崇<strong class="text-white">“工程实践、动手做出成果、灵活拥抱 AI 前沿”</strong>的硬核技术阵地！作为一名即将踏入苏州大学车辆工程专业的准大一新生，我不仅渴望在大学阶段筑牢机械与控制工程基石，更强烈渴望将 <strong class="text-cyber-cyan">AI 算法、智能感知与数据智能</strong> 深度融入到未来的方程式赛车、智能车、机器人与创新创业竞赛的赛场上。
+                        在关注到浪尖社区与 RST 竞赛训练营的选拔时，我深感找到了真正推崇<strong class="text-white">“工程实践、动手做出成果、灵活拥抱 AI 前沿”</strong>的硬核技术阵地[cite: 2]！作为一名即将踏入苏州大学车辆工程专业的准大一新生，我不仅渴望在大学阶段筑牢机械与控制工程基石，更强烈渴望将 <strong class="text-cyber-cyan">AI 算法、智能感知与数据智能</strong> 深度融入到未来的方程式赛车、智能车、机器人与创新创业竞赛的赛场上[cite: 1]。
                     </p>
                     <p>
-                        高中阶段带领团队拿下长三角科创省级一等奖并考取达摩院 AI 训练师双证的经历，让我深刻体会到团队协作与把想法变为现实的乐趣。我深知大学竞赛更加残酷且充满挑战，我极其渴望能够正式加入 <strong class="text-cyber-amber">浪尖儿大学生社区 RST 竞赛训练营</strong>，在优秀的社区导师与学长引领下，与志同道合的战友组建战队、打磨项目，在未来的全国顶级竞赛中为团队斩获国家级大奖！
+                        高中阶段带领团队拿下长三角科创省级一等奖并考取达摩院 AI 训练师双证的经历，让我深刻体会到团队协作与把想法变为现实的乐趣[cite: 1]。本次选拔中，我不仅交出了详实的论文源码，更独立开发了**坦克大战专属网页版（融入 ZTK 战术矩阵与浪尖社区浩源校区场景）**[cite: 1, 2, 3, 4]。我极其渴望能够正式加入 <strong class="text-cyber-amber">浪尖儿大学生社区 RST 竞赛训练营</strong>，在优秀的社区导师与学长引领下，与志同道合的战友组建战队、打磨项目，在未来的全国顶级竞赛中为团队斩获国家级大奖[cite: 2]！
                     </p>
                     <div class="pt-3 flex items-center justify-between font-mono text-xs text-slate-400 border-t border-white/10">
-                        <span>申请人：朱拓恺 (ZTK)</span>
+                        <span>申请人：朱拓恺 (ZTK)[cite: 1]</span>
                         <span class="text-cyber-amber font-bold">渴望入营 · 全力以赴</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= 9. Nº007 CONTACT 通讯通道 ================= -->
+        <!-- ================= 10. Nº008 CONTACT 通讯通道 ================= -->
         <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
             <div class="glass-panel rounded-3xl p-8 sm:p-12 text-center space-y-7 border-t-2 border-t-cyber-cyan relative overflow-hidden">
                 <div class="max-w-xl mx-auto space-y-2">
-                    <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº007 // TRANSMIT & CONNECT</span>
+                    <span class="text-xs font-mono text-cyber-cyan tracking-widest block uppercase">Nº008 // TRANSMIT & CONNECT</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">联系方式与交流</h2>
                     <p class="text-xs sm:text-sm text-slate-400 font-mono">
                         欢迎浪尖社区老师、学长与组队伙伴随时交流！点击下方卡片即可复制：
@@ -862,35 +870,35 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     <!-- 邮箱 -->
                     <div onclick="copyText('1929823854@qq.com', '电子邮箱已复制到剪贴板！')" class="p-5 rounded-2xl bg-black/50 border border-white/10 hover:border-cyber-cyan cursor-pointer transition-all group">
                         <i class="fa-regular fa-envelope text-2xl text-cyber-cyan block mb-2 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-slate-400 block text-[11px]">电子邮箱 (点击复制)</span>
-                        <span class="text-white font-bold mt-1 block">1929823854@qq.com</span>
+                        <span class="text-slate-400 block text-[11px]">电子邮箱 (点击复制)[cite: 1]</span>
+                        <span class="text-white font-bold mt-1 block">1929823854@qq.com[cite: 1]</span>
                     </div>
 
                     <!-- 电话 -->
                     <div onclick="copyText('15150211979', '联系电话已复制到剪贴板！')" class="p-5 rounded-2xl bg-black/50 border border-white/10 hover:border-cyber-emerald cursor-pointer transition-all group">
                         <i class="fa-solid fa-phone text-2xl text-cyber-emerald block mb-2 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-slate-400 block text-[11px]">联系电话 (点击复制)</span>
-                        <span class="text-white font-bold mt-1 block">15150211979</span>
+                        <span class="text-slate-400 block text-[11px]">联系电话 (点击复制)[cite: 1]</span>
+                        <span class="text-white font-bold mt-1 block">15150211979[cite: 1]</span>
                     </div>
 
                     <!-- GitHub -->
                     <a href="https://github.com/ZTK1119" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-black/50 border border-white/10 hover:border-cyber-purple transition-all group block">
                         <i class="fa-brands fa-github text-2xl text-cyber-purple block mb-2 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-slate-400 block text-[11px]">GitHub 主页</span>
-                        <span class="text-white font-bold mt-1 block">github.com/ZTK1119</span>
+                        <span class="text-slate-400 block text-[11px]">GitHub 主页[cite: 1]</span>
+                        <span class="text-white font-bold mt-1 block">github.com/ZTK1119[cite: 1]</span>
                     </a>
                 </div>
 
                 <div class="pt-6 border-t border-white/10 text-xs text-slate-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <span>© 2026 朱拓恺 (Zhu Tuokai) · 浪尖儿大学生社区 RST 竞赛训练营入营选拔作品</span>
-                    <span>Hosted with GitHub Pages</span>
+                    <span>© 2026 朱拓恺 (Zhu Tuokai) · 浪尖儿大学生社区 RST 竞赛训练营入营选拔作品[cite: 1, 2]</span>
+                    <span>Hosted with GitHub Pages[cite: 1, 2]</span>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- ================= 10. 证书图片高清预览模态框 (Lightbox) ================= -->
+    <!-- ================= 11. 证书图片放大预览模态框 (Lightbox) ================= -->
     <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 hidden opacity-0 transition-opacity duration-300">
         <div class="glass-panel max-w-3xl w-full max-h-[92vh] rounded-3xl p-5 sm:p-7 space-y-4 border border-cyber-cyan/40 relative flex flex-col justify-between">
             <button onclick="closeCertImageModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-xl z-20">
@@ -917,13 +925,13 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
         </div>
     </div>
 
-    <!-- 11. 交互反馈 Toast -->
+    <!-- 12. Toast 提示 -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-2xl bg-cyber-cyan text-slate-950 text-xs font-mono font-bold shadow-[0_0_25px_rgba(0,240,255,0.4)] flex items-center gap-2.5 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
         <i class="fa-solid fa-circle-check text-base"></i>
         <span id="toast-msg">操作成功</span>
     </div>
 
-    <!-- ================= 12. 交互与动态 Canvas 脚本 ================= -->
+    <!-- ================= 13. JS 脚本区域 (含网页背景、代码Tab、60FPS锁帧坦克大战引擎) ================= -->
     <script>
         // 1. 顶部进度条
         window.addEventListener('scroll', () => {
@@ -933,141 +941,97 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
             document.getElementById('scroll-bar').style.width = scrolled + '%';
         });
 
-        // 2. 底层超级动态 Canvas 背景 (粒子连线星云 + 科技光晕 + 鼠标引力)
-        const canvas = document.getElementById('cyber-bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
-        let mouseX = -1000, mouseY = -1000;
+        // 2. 网页背景 Canvas 粒子动效
+        const bgCanvas = document.getElementById('cyber-bg-canvas');
+        const bgCtx = bgCanvas.getContext('2d');
+        let bgWidth, bgHeight, bgParticles = [], mouseX = -1000, mouseY = -1000;
 
-        function resizeCanvas() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
+        function resizeBgCanvas() {
+            bgWidth = bgCanvas.width = window.innerWidth;
+            bgHeight = bgCanvas.height = window.innerHeight;
         }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+        window.addEventListener('resize', resizeBgCanvas);
+        resizeBgCanvas();
 
         class CyberParticle {
             constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
+                this.x = Math.random() * bgWidth;
+                this.y = Math.random() * bgHeight;
                 this.vx = (Math.random() - 0.5) * 0.6;
                 this.vy = (Math.random() - 0.5) * 0.6;
                 this.radius = Math.random() * 2 + 1;
-                this.baseAlpha = Math.random() * 0.5 + 0.2;
+                this.baseAlpha = Math.random() * 0.45 + 0.2;
                 this.alpha = this.baseAlpha;
                 this.color = Math.random() > 0.4 ? '#00F0FF' : (Math.random() > 0.5 ? '#8B5CF6' : '#2563EB');
             }
             update() {
-                this.x += this.vx;
-                this.y += this.vy;
+                this.x += this.vx; this.y += this.vy;
+                if (this.x < 0) this.x = bgWidth; if (this.x > bgWidth) this.x = 0;
+                if (this.y < 0) this.y = bgHeight; if (this.y > bgHeight) this.y = 0;
 
-                if (this.x < 0) this.x = width;
-                if (this.x > width) this.x = 0;
-                if (this.y < 0) this.y = height;
-                if (this.y > height) this.y = 0;
-
-                // 鼠标引力场交互
-                const dx = mouseX - this.x;
-                const dy = mouseY - this.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
+                const dx = mouseX - this.x, dy = mouseY - this.y, dist = Math.sqrt(dx*dx + dy*dy);
                 if (dist < 150) {
-                    this.x -= (dx / dist) * 1.5;
-                    this.y -= (dy / dist) * 1.5;
-                    this.alpha = 0.9;
-                } else {
-                    this.alpha = this.baseAlpha;
-                }
+                    this.x -= (dx / dist) * 1.5; this.y -= (dy / dist) * 1.5; this.alpha = 0.9;
+                } else { this.alpha = this.baseAlpha; }
             }
             draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.globalAlpha = this.alpha;
-                ctx.fill();
+                bgCtx.beginPath();
+                bgCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                bgCtx.fillStyle = this.color;
+                bgCtx.globalAlpha = this.alpha;
+                bgCtx.fill();
             }
         }
 
-        const particleCount = Math.min(Math.floor(window.innerWidth / 25), 65);
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new CyberParticle());
-        }
+        const particleCount = Math.min(Math.floor(window.innerWidth / 25), 55);
+        for (let i = 0; i < particleCount; i++) bgParticles.push(new CyberParticle());
 
-        function animateCyberBackground() {
-            ctx.clearRect(0, 0, width, height);
-
-            // 绘制动态网格底纹
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.025)';
-            ctx.lineWidth = 1;
-            const gridSize = 45;
-            for (let x = 0; x < width; x += gridSize) {
-                ctx.beginPath();
-                ctx.moveTo(x, 0);
-                ctx.lineTo(x, height);
-                ctx.stroke();
+        function animateBg() {
+            bgCtx.clearRect(0, 0, bgWidth, bgHeight);
+            bgCtx.strokeStyle = 'rgba(255, 255, 255, 0.025)';
+            bgCtx.lineWidth = 1;
+            for (let x = 0; x < bgWidth; x += 45) {
+                bgCtx.beginPath(); bgCtx.moveTo(x, 0); bgCtx.lineTo(x, bgHeight); bgCtx.stroke();
             }
-            for (let y = 0; y < height; y += gridSize) {
-                ctx.beginPath();
-                ctx.moveTo(0, y);
-                ctx.lineTo(width, y);
-                ctx.stroke();
+            for (let y = 0; y < bgHeight; y += 45) {
+                bgCtx.beginPath(); bgCtx.moveTo(0, y); bgCtx.lineTo(bgWidth, y); bgCtx.stroke();
             }
 
-            // 更新并绘制粒子与连线
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
+            for (let i = 0; i < bgParticles.length; i++) {
+                bgParticles[i].update();
+                bgParticles[i].draw();
+                for (let j = i + 1; j < bgParticles.length; j++) {
+                    const dx = bgParticles[i].x - bgParticles[j].x, dy = bgParticles[i].y - bgParticles[j].y, dist = Math.sqrt(dx*dx + dy*dy);
                     if (dist < 120) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = '#00F0FF';
-                        ctx.globalAlpha = 0.18 * (1 - dist / 120);
-                        ctx.stroke();
+                        bgCtx.beginPath();
+                        bgCtx.moveTo(bgParticles[i].x, bgParticles[i].y);
+                        bgCtx.lineTo(bgParticles[j].x, bgParticles[j].y);
+                        bgCtx.strokeStyle = '#00F0FF';
+                        bgCtx.globalAlpha = 0.18 * (1 - dist / 120);
+                        bgCtx.stroke();
                     }
                 }
             }
-
-            ctx.globalAlpha = 1;
-            requestAnimationFrame(animateCyberBackground);
+            bgCtx.globalAlpha = 1;
+            requestAnimationFrame(animateBg);
         }
-        animateCyberBackground();
+        animateBg();
 
-        // 3. 鼠标悬浮光晕
+        // 3. 鼠标跟随光晕
         const mouseGlow = document.getElementById('mouse-glow');
         window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
+            mouseX = e.clientX; mouseY = e.clientY;
             mouseGlow.style.background = `radial-gradient(650px circle at ${mouseX}px ${mouseY}px, rgba(0, 240, 255, 0.09), rgba(139, 92, 246, 0.05), transparent 60%)`;
         });
 
-        // 4. 3D Tilt 卡片微动效
-        const heroCard = document.getElementById('hero-card');
-        if (heroCard) {
-            heroCard.addEventListener('mousemove', (e) => {
-                const rect = heroCard.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                heroCard.style.transform = `rotateY(${x * 0.035}deg) rotateX(${-y * 0.035}deg)`;
-            });
-            heroCard.addEventListener('mouseleave', () => {
-                heroCard.style.transform = 'rotateY(0deg) rotateX(0deg)';
-            });
-        }
-
-        // 5. 真实比赛代码 Tab 切换 (100% 对应比赛提供的源码)
+        // 4. 比赛真实源码 Tab 切换
         const codeSnippets = {
             cell1: `import pandas as pd
 
 # 加载数据集
 file_path = '电子游戏销量数据集.csv'
 data = pd.read_csv(file_path)
-data.head()
+data.head(), data.columns
 
 # 检查缺失值情况
 missing_data = data.isnull().sum()
@@ -1125,7 +1089,7 @@ label chemistry_puzzle:
             });
         }
 
-        // 6. 打字机循环动画
+        // 5. 打字机循环动画
         const words = [
             "未来致力于从事车辆工程与AI算法开发",
             "高中长三角科创活动省级一等奖组长",
@@ -1136,55 +1100,37 @@ label chemistry_puzzle:
         function typeLoop() {
             const currentWord = words[wordIdx];
             const el = document.getElementById('typed-text');
-            if (isDeleting) {
-                el.innerText = currentWord.substring(0, charIdx - 1);
-                charIdx--;
-            } else {
-                el.innerText = currentWord.substring(0, charIdx + 1);
-                charIdx++;
-            }
+            if (isDeleting) { el.innerText = currentWord.substring(0, charIdx - 1); charIdx--; }
+            else { el.innerText = currentWord.substring(0, charIdx + 1); charIdx++; }
 
             let speed = isDeleting ? 30 : 65;
-            if (!isDeleting && charIdx === currentWord.length) {
-                speed = 2200;
-                isDeleting = true;
-            } else if (isDeleting && charIdx === 0) {
-                isDeleting = false;
-                wordIdx = (wordIdx + 1) % words.length;
-                speed = 400;
-            }
+            if (!isDeleting && charIdx === currentWord.length) { speed = 2200; isDeleting = true; }
+            else if (isDeleting && charIdx === 0) { isDeleting = false; wordIdx = (wordIdx + 1) % words.length; speed = 400; }
             setTimeout(typeLoop, speed);
         }
         typeLoop();
 
-        // 7. 移动端菜单控制
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        // 6. 移动端菜单控制
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // 8. 一键复制个人简介概要
         function copyProfileInfo() {
             const profileText = `朱拓恺 (ZTK) 个人简历规格：
 - 院校专业：苏州大学 · 车辆工程 (2026级准大一)
 - 发展方向：未来致力于从事车辆工程与AI算法开发
 - 目标组织：浪尖儿大学生社区 · RST 竞赛训练营
 - 核心荣誉：第六届长三角科创活动省级一等奖(组长)、优秀营员
-- 专业技能：Python 数据清洗、特征字典推断、Ren'Py 游戏引擎、Prompt 工作流
+- 专业技能：Python 数据清洗、特征字典推断、HTML5 游戏开发、Prompt 工作流
 - 行业认证：阿里巴巴达摩院人工智能训练师(初级+高级)`;
-            navigator.clipboard.writeText(profileText).then(() => {
-                showToast("简历要点已成功复制到剪贴板！");
-            });
+            navigator.clipboard.writeText(profileText).then(() => { showToast("简历要点已成功复制到剪贴板！"); });
         }
 
-        // 9. 证书放大模态框
         function openCertImageModal(imgSrc, title, subtitle) {
             document.getElementById('modal-img-title').innerText = title;
             document.getElementById('modal-img-sub').innerText = subtitle;
             document.getElementById('modal-img-src').src = imgSrc;
             document.getElementById('modal-img-download').href = imgSrc;
-
             const modal = document.getElementById('image-modal');
             modal.classList.remove('hidden');
             setTimeout(() => modal.classList.remove('opacity-0'), 10);
@@ -1196,21 +1142,767 @@ label chemistry_puzzle:
             setTimeout(() => modal.classList.add('hidden'), 250);
         }
 
-        // 10. 通用复制与 Toast 弹窗
         function copyText(text, msg) {
-            navigator.clipboard.writeText(text).then(() => {
-                showToast(msg);
-            });
+            navigator.clipboard.writeText(text).then(() => showToast(msg));
         }
 
         function showToast(msg) {
             const toast = document.getElementById('toast');
             document.getElementById('toast-msg').innerText = msg;
             toast.classList.remove('translate-y-24', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('translate-y-24', 'opacity-0');
-            }, 2500);
+            setTimeout(() => toast.classList.add('translate-y-24', 'opacity-0'), 2500);
         }
+
+        // =========================================================================
+        // 7. 坦克大战 HTML5 引擎 (手感沉稳调优 + 60FPS严格锁帧)
+        // =========================================================================
+        const tCanvas = document.getElementById('tank-canvas');
+        const tCtx = tCanvas.getContext('2d');
+
+        const T_WIN_W = 1220, T_WIN_H = 720, T_GAME_W = 880, T_SIDE_W = 340, T_HEAD_H = 50, T_PLAY_H = T_WIN_H - T_HEAD_H;
+        const GRID_COLS = 22, GRID_ROWS = 15, BLOCK_W = Math.floor(T_GAME_W / GRID_COLS), BLOCK_H = Math.floor(T_PLAY_H / GRID_ROWS);
+
+        const ITEM_CONFIG = {
+            'shield': { name: '无敌护盾', color: '#F1C40F', icon: 'S', desc: '8秒免疫一切伤害' },
+            'freeze': { name: '定身时钟', color: '#3498DB', icon: 'F', desc: '全屏敌军静止冰冻5秒' },
+            'bomb':   { name: '清屏核弹', color: '#E74C3C', icon: 'B', desc: '瞬间引爆全场敌军' },
+            'star':   { name: '狂暴火力', color: '#9B59B6', icon: 'P', desc: '移速+40%且双联极速炮' },
+            'repair': { name: '基地重筑', color: '#2ECC71', icon: 'R', desc: '生命+1且基地换装钢墙' }
+        };
+
+        // 沉稳手感数值配置[cite: 4]
+        const DIFFICULTY_DATA = {
+            'EASY':   { name: '简单', max_enemy: 2, speed: 1.2, bullet_spd: 4.0, score_target: 600,  color: '#2ECC71' },
+            'MEDIUM': { name: '中等', max_enemy: 4, speed: 1.6, bullet_spd: 5.2, score_target: 1000, color: '#F1C40F' },
+            'HARD':   { name: '困难', max_enemy: 6, speed: 2.2, bullet_spd: 6.5, score_target: 1500, color: '#E74C3C' }
+        };
+
+        let gameState = "MENU", gameMode = "BASE", gameDiff = "MEDIUM";
+        let player = null, enemies = [], bullets = [], items = [];
+        let playerBase = null, enemyBase = null;
+        let score = 0, playerHp = 3, freezeTimer = 0, itemSpawnTimer = 300;
+        let waterAnimTick = 0;
+
+        let brickWalls = [], steelWalls = [], waterZones = [], grassZones = [];
+        const keysPressed = {};
+
+        function focusGameCanvas() {
+            tCanvas.focus();
+            showToast("已聚焦坦克大战战场！可使用键盘操作。");
+        }
+
+        // 地图生成算法 (含 ZTK 矩阵)[cite: 4]
+        function generateMap() {
+            brickWalls = []; steelWalls = []; waterZones = []; grassZones = [];
+            const grid = Array.from({length: GRID_ROWS}, () => Array(GRID_COLS).fill(0));
+
+            const start_r = 5, start_c = 3;
+            const ztkCoords = [
+                // Z[cite: 4]
+                [0,0], [0,1], [0,2], [0,3], [1,2], [1,3], [2,1], [2,2], [3,0], [3,1], [4,0], [4,1], [4,2], [4,3],
+                // T[cite: 4]
+                [0,6], [0,7], [0,8], [0,9], [0,10], [1,8], [2,8], [3,8], [4,8],
+                // K[cite: 4]
+                [0,12], [0,13], [0,16], [1,12], [1,13], [1,15], [2,12], [2,13], [2,14], [3,12], [3,13], [3,15], [4,12], [4,13], [4,16]
+            ];
+
+            const forbidden = new Set();
+            ztkCoords.forEach(([dr, dc]) => {
+                const rr = start_r + dr, cc = start_c + dc;
+                if (rr >= 0 && rr < GRID_ROWS && cc >= 0 && cc < GRID_COLS) {
+                    grid[rr][cc] = 'ZTK_BLOCK';
+                    forbidden.add(`${rr},${cc}`);
+                }
+            });
+
+            for (let r = 0; r < 3; r++) for (let c = 0; c < GRID_COLS; c++) forbidden.add(`${r},${c}`);
+            for (let r = GRID_ROWS - 3; r < GRID_ROWS; r++) for (let c = 0; c < GRID_COLS; c++) forbidden.add(`${r},${c}`);
+
+            // 水面[cite: 4]
+            for (let k = 0; k < 2; k++) {
+                const cr = Math.floor(Math.random() * (GRID_ROWS - 7)) + 3, cc = Math.floor(Math.random() * (GRID_COLS - 4)) + 1;
+                for (let dr = -1; dr <= 1; dr++) {
+                    for (let dc = -1; dc <= 1; dc++) {
+                        const nr = cr + dr, nc = cc + dc;
+                        if (!forbidden.has(`${nr},${nc}`) && nr >= 0 && nr < GRID_ROWS && nc >= 0 && nc < GRID_COLS && grid[nr][nc] === 0) {
+                            if (Math.random() < 0.85) grid[nr][nc] = 'WATER';
+                        }
+                    }
+                }
+            }
+
+            // 草丛[cite: 4]
+            for (let k = 0; k < 3; k++) {
+                const cr = Math.floor(Math.random() * (GRID_ROWS - 5)) + 2, cc = Math.floor(Math.random() * (GRID_COLS - 4)) + 1;
+                for (let dr = -1; dr <= 2; dr++) {
+                    for (let dc = -1; dc <= 2; dc++) {
+                        const nr = cr + dr, nc = cc + dc;
+                        if (!forbidden.has(`${nr},${nc}`) && nr >= 0 && nr < GRID_ROWS && nc >= 0 && nc < GRID_COLS && grid[nr][nc] === 0) {
+                            if (Math.random() < 0.75) grid[nr][nc] = 'GRASS';
+                        }
+                    }
+                }
+            }
+
+            // 墙体[cite: 4]
+            for (let k = 0; k < 3; k++) {
+                const sr = Math.floor(Math.random() * (GRID_ROWS - 7)) + 3, sc = Math.floor(Math.random() * (GRID_COLS - 5)) + 1;
+                const wallType = Math.random() < 0.3 ? 'STEEL' : 'BRICK';
+                const horiz = Math.random() < 0.5, len = Math.floor(Math.random() * 2) + 2;
+                for (let l = 0; l < len; l++) {
+                    const nr = horiz ? sr : sr + l, nc = horiz ? sc + l : sc;
+                    if (!forbidden.has(`${nr},${nc}`) && nr >= 0 && nr < GRID_ROWS && nc >= 0 && nc < GRID_COLS && grid[nr][nc] === 0) {
+                        grid[nr][nc] = wallType;
+                    }
+                }
+            }
+
+            for (let r = 0; r < GRID_ROWS; r++) {
+                for (let c = 0; c < GRID_COLS; c++) {
+                    const rect = { x: c * BLOCK_W, y: T_HEAD_H + r * BLOCK_H, w: BLOCK_W, h: BLOCK_H };
+                    const val = grid[r][c];
+                    if (val === 'ZTK_BLOCK') brickWalls.push({ rect, hp: 1, isZtk: true });
+                    else if (val === 'BRICK') brickWalls.push({ rect, hp: 1, isZtk: false });
+                    else if (val === 'STEEL') steelWalls.push({ rect });
+                    else if (val === 'WATER') waterZones.push(rect);
+                    else if (val === 'GRASS') grassZones.push(rect);
+                }
+            }
+        }
+
+        function rectCollide(r1, r2) {
+            return !(r1.x + r1.w <= r2.x || r1.x >= r2.x + r2.w || r1.y + r1.h <= r2.y || r1.y >= r2.y + r2.h);
+        }
+
+        class TankEntity {
+            constructor(x, y, color, speed, isPlayer = false) {
+                this.x = x; this.y = y; this.w = 32; this.h = 32;
+                this.color = color; this.speed = speed; this.direction = 'UP';
+                this.isPlayer = isPlayer; this.shootCooldown = 0;
+                this.shieldTimer = 0; this.powerTimer = 0;
+            }
+            moveSmooth(dx, dy, obstacles, waterList) {
+                if (dx !== 0) {
+                    this.x += dx * this.speed;
+                    if (this.x < 0) this.x = 0;
+                    if (this.x + this.w > T_GAME_W) this.x = T_GAME_W - this.w;
+                    const r = { x: this.x, y: this.y, w: this.w, h: this.h };
+                    for (let w of obstacles) {
+                        if (rectCollide(r, w)) {
+                            if (dx > 0) this.x = w.x - this.w;
+                            if (dx < 0) this.x = w.x + w.w;
+                        }
+                    }
+                    for (let wt of waterList) {
+                        if (rectCollide(r, wt)) {
+                            if (dx > 0) this.x = wt.x - this.w;
+                            if (dx < 0) this.x = wt.x + wt.w;
+                        }
+                    }
+                }
+                if (dy !== 0) {
+                    this.y += dy * this.speed;
+                    if (this.y < T_HEAD_H) this.y = T_HEAD_H;
+                    if (this.y + this.h > T_WIN_H) this.y = T_WIN_H - this.h;
+                    const r = { x: this.x, y: this.y, w: this.w, h: this.h };
+                    for (let w of obstacles) {
+                        if (rectCollide(r, w)) {
+                            if (dy > 0) this.y = w.y - this.h;
+                            if (dy < 0) this.y = w.y + w.h;
+                        }
+                    }
+                    for (let wt of waterList) {
+                        if (rectCollide(r, wt)) {
+                            if (dy > 0) this.y = wt.y - this.h;
+                            if (dy < 0) this.y = wt.y + wt.h;
+                        }
+                    }
+                }
+            }
+            shoot(bulletSpd) {
+                if (this.shootCooldown <= 0) {
+                    const cx = this.x + this.w / 2, cy = this.y + this.h / 2;
+                    bullets.push({ x: cx - 4, y: cy - 4, w: 8, h: 8, dir: this.direction, spd: bulletSpd, isPlayer: this.isPlayer });
+                    this.shootCooldown = (this.isPlayer && this.powerTimer > 0) ? 10 : (this.isPlayer ? 18 : 50);
+                }
+            }
+            draw() {
+                const cx = this.x + this.w / 2, cy = this.y + this.h / 2;
+                if (this.shieldTimer > 0) {
+                    tCtx.beginPath();
+                    tCtx.arc(cx, cy, 22, 0, Math.PI * 2);
+                    tCtx.strokeStyle = '#F1C40F';
+                    tCtx.lineWidth = 2;
+                    tCtx.stroke();
+                }
+
+                let bodyCol = this.isPlayer ? '#2980B9' : '#C0392B';
+                if (this.isPlayer && this.powerTimer > 0) bodyCol = '#9B59B6';
+
+                tCtx.fillStyle = bodyCol;
+                tCtx.fillRect(this.x, this.y, this.w, this.h);
+                tCtx.strokeStyle = '#191E26';
+                tCtx.lineWidth = 2;
+                tCtx.strokeRect(this.x, this.y, this.w, this.h);
+
+                // 履带
+                tCtx.fillStyle = '#1E2530';
+                if (this.direction === 'UP' || this.direction === 'DOWN') {
+                    tCtx.fillRect(this.x - 2, this.y, 4, this.h);
+                    tCtx.fillRect(this.x + this.w - 2, this.y, 4, this.h);
+                } else {
+                    tCtx.fillRect(this.x, this.y - 2, this.w, 4);
+                    tCtx.fillRect(this.x, this.y + this.h - 2, this.w, 4);
+                }
+
+                tCtx.beginPath();
+                tCtx.arc(cx, cy, 6, 0, Math.PI * 2);
+                tCtx.fillStyle = '#232832';
+                tCtx.fill();
+
+                // 炮管
+                tCtx.strokeStyle = '#232832';
+                tCtx.lineWidth = 4;
+                tCtx.beginPath();
+                tCtx.moveTo(cx, cy);
+                if (this.direction === 'UP') tCtx.lineTo(cx, cy - 16);
+                else if (this.direction === 'DOWN') tCtx.lineTo(cx, cy + 16);
+                else if (this.direction === 'LEFT') tCtx.lineTo(cx - 16, cy);
+                else if (this.direction === 'RIGHT') tCtx.lineTo(cx + 16, cy);
+                tCtx.stroke();
+            }
+        }
+
+        class EnemyTankEntity extends TankEntity {
+            constructor(x, y, speed) {
+                super(x, y, '#E74C3C', speed, false);
+                this.direction = 'DOWN';
+                this.changeDirTimer = Math.floor(Math.random() * 50) + 30;
+            }
+            updateAi(obstacles, waterList, bulletSpd, isFrozen) {
+                if (isFrozen) return;
+                this.shootCooldown = Math.max(0, this.shootCooldown - 1);
+                this.changeDirTimer--;
+
+                if (this.changeDirTimer <= 0) {
+                    const dirs = ['UP', 'DOWN', 'LEFT', 'RIGHT', 'DOWN'];
+                    this.direction = dirs[Math.floor(Math.random() * dirs.length)];
+                    this.changeDirTimer = Math.floor(Math.random() * 60) + 40;
+                }
+
+                let dx = 0, dy = 0;
+                if (this.direction === 'UP') dy = -1;
+                else if (this.direction === 'DOWN') dy = 1;
+                else if (this.direction === 'LEFT') dx = -1;
+                else if (this.direction === 'RIGHT') dx = 1;
+
+                const ox = this.x, oy = this.y;
+                this.moveSmooth(dx, dy, obstacles, waterList);
+                if (ox === this.x && oy === this.y) {
+                    const dirs = ['UP', 'DOWN', 'LEFT', 'RIGHT'];
+                    this.direction = dirs[Math.floor(Math.random() * dirs.length)];
+                }
+
+                if (Math.random() < 0.025) this.shoot(bulletSpd);
+            }
+        }
+
+        function startTankGame() {
+            generateMap();
+            // 沉稳手感配置：玩家基础速度 2.2[cite: 4]
+            player = new TankEntity(120, T_WIN_H - 65, '#3498DB', 2.2, true);
+            enemies = []; bullets = []; items = [];
+            score = 0; playerHp = 3; freezeTimer = 0; itemSpawnTimer = 300;
+
+            if (gameMode === "BASE") {
+                playerBase = { x: T_GAME_W / 2 - BLOCK_W, y: T_WIN_H - BLOCK_H * 2 - 5, w: BLOCK_W * 2, h: BLOCK_H * 2, isPlayer: true };
+                enemyBase  = { x: T_GAME_W / 2 - BLOCK_W, y: T_HEAD_H + 10, w: BLOCK_W * 2, h: BLOCK_H * 2, isPlayer: false };
+            } else {
+                playerBase = null; enemyBase = null;
+            }
+            gameState = "PLAYING";
+        }
+
+        function updateTankBattle() {
+            const diff = DIFFICULTY_DATA[gameDiff];
+
+            // 玩家输入
+            let dx = 0, dy = 0;
+            if (keysPressed['KeyW'] || keysPressed['ArrowUp']) { dy = -1; player.direction = 'UP'; }
+            else if (keysPressed['KeyS'] || keysPressed['ArrowDown']) { dy = 1; player.direction = 'DOWN'; }
+            else if (keysPressed['KeyA'] || keysPressed['ArrowLeft']) { dx = -1; player.direction = 'LEFT'; }
+            else if (keysPressed['KeyD'] || keysPressed['ArrowRight']) { dx = 1; player.direction = 'RIGHT'; }
+
+            const allWalls = brickWalls.map(b => b.rect).concat(steelWalls.map(s => s.rect));
+            if (playerBase) allWalls.push(playerBase);
+            if (enemyBase) allWalls.push(enemyBase);
+
+            if (player.powerTimer > 0) { player.speed = 3.0; player.powerTimer--; }
+            else { player.speed = 2.2; }
+
+            player.moveSmooth(dx, dy, allWalls, waterZones);
+            player.shootCooldown = Math.max(0, player.shootCooldown - 1);
+            player.shieldTimer = Math.max(0, player.shieldTimer - 1);
+            freezeTimer = Math.max(0, freezeTimer - 1);
+
+            if (keysPressed['Space'] || keysPressed['KeyJ']) player.shoot(7.0);
+
+            // 5秒空投道具[cite: 4]
+            itemSpawnTimer--;
+            if (itemSpawnTimer <= 0) {
+                itemSpawnTimer = 300;
+                const ec = Math.floor(Math.random() * (GRID_COLS - 2)) + 1;
+                const er = Math.floor(Math.random() * (GRID_ROWS - 4)) + 2;
+                const itypes = Object.keys(ITEM_CONFIG);
+                const sel = itypes[Math.floor(Math.random() * itypes.length)];
+                items.push({ x: ec * BLOCK_W + 4, y: T_HEAD_H + er * BLOCK_H + 4, w: BLOCK_W - 8, h: BLOCK_H - 8, type: sel, tick: 0 });
+            }
+
+            // 敌方坦克刷出与AI更新[cite: 4]
+            if (enemies.length < diff.max_enemy && Math.random() < 0.02) {
+                const spx = [50, T_GAME_W / 2 - 20, T_GAME_W - 80][Math.floor(Math.random() * 3)];
+                enemies.push(new EnemyTankEntity(spx, T_HEAD_H + 15, diff.speed));
+            }
+
+            enemies.forEach(e => e.updateAi(allWalls, waterZones, diff.bullet_spd, freezeTimer > 0));
+
+            // 子弹更新与碰撞[cite: 4]
+            for (let i = bullets.length - 1; i >= 0; i--) {
+                const b = bullets[i];
+                if (b.dir === 'UP') b.y -= b.spd;
+                else if (b.dir === 'DOWN') b.y += b.spd;
+                else if (b.dir === 'LEFT') b.x -= b.spd;
+                else if (b.dir === 'RIGHT') b.x += b.spd;
+
+                // 出界
+                if (b.y + b.h < T_HEAD_H || b.y > T_WIN_H || b.x + b.w < 0 || b.x > T_GAME_W) {
+                    bullets.splice(i, 1); continue;
+                }
+
+                // 击中砖墙[cite: 4]
+                let hitWall = false;
+                for (let j = brickWalls.length - 1; j >= 0; j--) {
+                    if (rectCollide(b, brickWalls[j].rect)) {
+                        brickWalls.splice(j, 1);
+                        bullets.splice(i, 1);
+                        hitWall = true; break;
+                    }
+                }
+                if (hitWall) continue;
+
+                // 击中钢墙[cite: 4]
+                for (let s of steelWalls) {
+                    if (rectCollide(b, s.rect)) {
+                        bullets.splice(i, 1);
+                        hitWall = true; break;
+                    }
+                }
+                if (hitWall) continue;
+
+                // 玩家子弹打击[cite: 4]
+                if (b.isPlayer) {
+                    for (let k = enemies.length - 1; k >= 0; k--) {
+                        if (rectCollide(b, enemies[k])) {
+                            enemies.splice(k, 1);
+                            bullets.splice(i, 1);
+                            score += 100;
+                            if (gameMode === "SCORE" && score >= diff.score_target) gameState = "WIN";
+                            hitWall = true; break;
+                        }
+                    }
+                    if (hitWall) continue;
+
+                    if (enemyBase && rectCollide(b, enemyBase)) {
+                        bullets.splice(i, 1);
+                        gameState = "WIN"; continue;
+                    }
+                } else {
+                    // 敌军子弹击中玩家[cite: 4]
+                    if (rectCollide(b, player)) {
+                        bullets.splice(i, 1);
+                        if (player.shieldTimer <= 0) {
+                            playerHp--;
+                            player.x = 120; player.y = T_WIN_H - 65;
+                            if (playerHp <= 0) gameState = "GAME_OVER";
+                        }
+                        continue;
+                    }
+                    if (playerBase && rectCollide(b, playerBase)) {
+                        bullets.splice(i, 1);
+                        gameState = "GAME_OVER"; continue;
+                    }
+                }
+            }
+
+            // 拾取道具[cite: 4]
+            for (let i = items.length - 1; i >= 0; i--) {
+                const item = items[i];
+                if (rectCollide(player, item)) {
+                    const t = item.type;
+                    if (t === 'shield') player.shieldTimer = 480;
+                    else if (t === 'freeze') freezeTimer = 300;
+                    else if (t === 'bomb') { score += enemies.length * 100; enemies = []; }
+                    else if (t === 'star') player.powerTimer = 480;
+                    else if (t === 'repair') {
+                        playerHp = Math.min(5, playerHp + 1);
+                        if (playerBase) {
+                            const bx = playerBase.x, by = playerBase.y;
+                            [-BLOCK_W, 0, BLOCK_W, BLOCK_W * 2].forEach(dc => {
+                                [-BLOCK_H, 0, BLOCK_H, BLOCK_H * 2].forEach(dr => {
+                                    const wr = { x: bx + dc, y: by + dr, w: BLOCK_W, h: BLOCK_H };
+                                    if (!rectCollide(wr, playerBase)) steelWalls.push({ rect: wr });
+                                });
+                            });
+                        }
+                    }
+                    items.splice(i, 1);
+                }
+            }
+        }
+
+        function renderTankScene() {
+            tCtx.fillStyle = '#0F1218';
+            tCtx.fillRect(0, 0, T_WIN_W, T_WIN_H);
+
+            // 1. 战区背景与浩源/浪尖水印[cite: 2, 4]
+            tCtx.fillStyle = '#121820';
+            tCtx.fillRect(0, 0, T_GAME_W, T_WIN_H);
+
+            tCtx.fillStyle = 'rgba(30, 42, 60, 0.45)';
+            tCtx.font = 'bold 36px "Outfit", "Noto Sans SC"';
+            tCtx.textAlign = 'center';
+            tCtx.fillText("浪尖儿大学生社区", T_GAME_W / 2, T_PLAY_H / 2 + 10);
+            tCtx.font = 'bold 15px "Outfit", "Noto Sans SC"';
+            tCtx.fillText("— 浩源校区 · 坦克战训实训场 [ZTK 原创] —", T_GAME_W / 2, T_PLAY_H / 2 + 42);
+
+            // 2. 水面渲染[cite: 4]
+            waterAnimTick += 0.05;
+            waterZones.forEach(w => {
+                tCtx.fillStyle = '#234B73';
+                tCtx.fillRect(w.x, w.y, w.w, w.h);
+                const wy = w.y + w.h / 2 + Math.sin(waterAnimTick + w.x) * 3;
+                tCtx.strokeStyle = '#3498DB';
+                tCtx.lineWidth = 2;
+                tCtx.beginPath();
+                tCtx.moveTo(w.x + 3, wy);
+                tCtx.lineTo(w.x + w.w - 3, wy);
+                tCtx.stroke();
+            });
+
+            // 3. 砖墙与 ZTK 战术障碍[cite: 2, 4]
+            brickWalls.forEach(b => {
+                tCtx.fillStyle = b.isZtk ? '#C0552D' : '#B24623';
+                tCtx.fillRect(b.rect.x, b.rect.y, b.rect.w, b.rect.h);
+                tCtx.strokeStyle = '#782814';
+                tCtx.lineWidth = 1;
+                tCtx.strokeRect(b.rect.x, b.rect.y, b.rect.w, b.rect.h);
+                tCtx.beginPath();
+                tCtx.moveTo(b.rect.x, b.rect.y + b.rect.h / 2);
+                tCtx.lineTo(b.rect.x + b.rect.w, b.rect.y + b.rect.h / 2);
+                tCtx.stroke();
+
+                if (b.isZtk) {
+                    tCtx.strokeStyle = '#F1C40F';
+                    tCtx.lineWidth = 2;
+                    tCtx.strokeRect(b.rect.x, b.rect.y, b.rect.w, b.rect.h);
+                }
+            });
+
+            // 4. 钢墙[cite: 4]
+            steelWalls.forEach(s => {
+                tCtx.fillStyle = '#95A5A6';
+                tCtx.fillRect(s.rect.x, s.rect.y, s.rect.w, s.rect.h);
+                tCtx.strokeStyle = '#DCE6F0';
+                tCtx.lineWidth = 2;
+                tCtx.strokeRect(s.rect.x, s.rect.y, s.rect.w, s.rect.h);
+            });
+
+            // 5. 基地渲染[cite: 4]
+            [playerBase, enemyBase].forEach(base => {
+                if (!base) return;
+                tCtx.fillStyle = '#1E242E';
+                tCtx.fillRect(base.x, base.y, base.w, base.h);
+                tCtx.strokeStyle = '#46505F';
+                tCtx.lineWidth = 2;
+                tCtx.strokeRect(base.x, base.y, base.w, base.h);
+
+                tCtx.fillStyle = base.isPlayer ? '#3498DB' : '#E74C3C';
+                tCtx.beginPath();
+                tCtx.moveTo(base.x + 15, base.y + 10);
+                tCtx.lineTo(base.x + base.w - 15, base.y + 22);
+                tCtx.lineTo(base.x + 15, base.y + 34);
+                tCtx.fill();
+
+                tCtx.fillStyle = '#F0F0F0';
+                tCtx.font = '11px "JetBrains Mono"';
+                tCtx.textAlign = 'center';
+                tCtx.fillText(base.isPlayer ? "【己方大本营】" : "【敌方司令部】", base.x + base.w / 2, base.y + base.h - 10);
+            });
+
+            // 6. 道具渲染[cite: 4]
+            items.forEach(it => {
+                it.tick += 0.08;
+                const scale = Math.sin(it.tick) * 2;
+                const cx = it.x + it.w / 2, cy = it.y + it.h / 2;
+                const cfg = ITEM_CONFIG[it.type];
+
+                tCtx.beginPath();
+                tCtx.arc(cx, cy, Math.max(2, 14 + scale), 0, Math.PI * 2);
+                tCtx.fillStyle = cfg.color;
+                tCtx.fill();
+                tCtx.strokeStyle = '#FFFFFF';
+                tCtx.lineWidth = 2;
+                tCtx.stroke();
+
+                tCtx.fillStyle = '#FFFFFF';
+                tCtx.font = 'bold 12px "JetBrains Mono"';
+                tCtx.textAlign = 'center';
+                tCtx.fillText(cfg.icon, cx, cy + 4);
+            });
+
+            // 7. 敌我坦克与子弹[cite: 4]
+            enemies.forEach(e => e.draw());
+            if (player) player.draw();
+
+            bullets.forEach(b => {
+                tCtx.fillStyle = b.isPlayer ? '#F1C40F' : '#E67E22';
+                tCtx.beginPath();
+                tCtx.arc(b.x + b.w / 2, b.y + b.h / 2, 4, 0, Math.PI * 2);
+                tCtx.fill();
+            });
+
+            // 8. 草丛遮盖层[cite: 4]
+            grassZones.forEach(g => {
+                tCtx.fillStyle = 'rgba(39, 174, 96, 0.75)';
+                tCtx.fillRect(g.x, g.y, g.w, g.h);
+            });
+
+            // 9. 顶部 HUD 战况栏[cite: 4]
+            tCtx.fillStyle = '#1A202C';
+            tCtx.fillRect(0, 0, T_GAME_W, T_HEAD_H);
+            tCtx.strokeStyle = '#2D3748';
+            tCtx.lineWidth = 2;
+            tCtx.strokeRect(0, 0, T_GAME_W, T_HEAD_H);
+
+            tCtx.fillStyle = '#F0F0F0';
+            tCtx.font = 'bold 16px "Outfit", "Noto Sans SC"';
+            tCtx.textAlign = 'left';
+            const hpStr = "❤ ".repeat(Math.max(0, playerHp));
+            tCtx.fillText(`生命: ${hpStr}   得分: ${score}`, 20, 32);
+
+            tCtx.fillStyle = '#F1C40F';
+            tCtx.font = 'bold 14px "JetBrains Mono"';
+            tCtx.textAlign = 'right';
+            const mName = gameMode === "BASE" ? "阵地保卫战" : "积分赛";
+            const dName = DIFFICULTY_DATA[gameDiff].name;
+            tCtx.fillText(`模式: ${mName} | 难度: ${dName}`, T_GAME_W - 20, 32);
+
+            // 10. 右侧常驻机制仪表盘[cite: 4]
+            renderSidebar();
+
+            // 11. 菜单与结算弹窗[cite: 4]
+            if (gameState === "MENU") renderMenuModal();
+            else if (gameState === "WIN" || gameState === "GAME_OVER") renderResultModal();
+        }
+
+        function renderSidebar() {
+            const sx = T_GAME_W;
+            tCtx.fillStyle = '#161B24';
+            tCtx.fillRect(sx, 0, T_SIDE_W, T_WIN_H);
+            tCtx.strokeStyle = '#2D3748';
+            tCtx.lineWidth = 2;
+            tCtx.strokeRect(sx, 0, T_SIDE_W, T_WIN_H);
+
+            let cy = 14;
+
+            // 1. 认证卡片[cite: 2, 4]
+            tCtx.fillStyle = '#1E2530';
+            tCtx.fillRect(sx + 12, cy, T_SIDE_W - 24, 48);
+            tCtx.strokeStyle = '#F1C40F';
+            tCtx.lineWidth = 1;
+            tCtx.strokeRect(sx + 12, cy, T_SIDE_W - 24, 48);
+
+            tCtx.fillStyle = '#F1C40F';
+            tCtx.font = 'bold 13px "Outfit", "Noto Sans SC"';
+            tCtx.textAlign = 'left';
+            tCtx.fillText("【认证署名】作者: ZTK (全加分项)", sx + 20, cy + 20);
+            tCtx.fillStyle = '#A0AEC0';
+            tCtx.font = '11px "Outfit", "Noto Sans SC"';
+            tCtx.fillText("场景支持: 浩源 · 浪尖儿大学生社区", sx + 20, cy + 38);
+            cy += 60;
+
+            // 2. 控制指南[cite: 4]
+            tCtx.fillStyle = '#FFFFFF';
+            tCtx.font = 'bold 14px "Outfit", "Noto Sans SC"';
+            tCtx.fillText("🎮 快捷控制指南", sx + 12, cy + 12);
+            cy += 22;
+
+            tCtx.fillStyle = '#1E2530';
+            tCtx.fillRect(sx + 12, cy, T_SIDE_W - 24, 48);
+            tCtx.fillStyle = '#E2E8F0';
+            tCtx.font = '11px "JetBrains Mono"';
+            tCtx.fillText("移动: WASD / 方向键   射击: 空格 / J", sx + 20, cy + 18);
+            tCtx.fillStyle = '#F1C40F';
+            tCtx.fillText("模式: [1]保卫 [2]积分  难度: [E/M/H]切换", sx + 20, cy + 36);
+            cy += 58;
+
+            // 3. 地形图鉴[cite: 4]
+            tCtx.fillStyle = '#FFFFFF';
+            tCtx.font = 'bold 14px "Outfit", "Noto Sans SC"';
+            tCtx.fillText("🧱 地形方块图鉴与特性", sx + 12, cy + 12);
+            cy += 22;
+
+            const tiles = [
+                ["ZTK 战术砖墙", "#C0552D", "中央专属签名掩体，可破坏/卡位"],
+                ["钢墙 (Steel)", "#95A5A6", "绝对防御要塞，不可被击穿"],
+                ["水面 (Water)", "#3498DB", "阻挡坦克通行，炮弹直接穿透"],
+                ["草丛 (Grass)", "#27AE60", "自由穿行，提供视线隐身掩护"]
+            ];
+            tiles.forEach(([n, c, d]) => {
+                tCtx.fillStyle = c;
+                tCtx.fillRect(sx + 18, cy + 2, 14, 14);
+                tCtx.fillStyle = '#FFFFFF';
+                tCtx.font = 'bold 12px "Outfit", "Noto Sans SC"';
+                tCtx.fillText(n, sx + 38, cy + 13);
+                tCtx.fillStyle = '#A0AEC0';
+                tCtx.font = '10px "Outfit", "Noto Sans SC"';
+                tCtx.fillText(d, sx + 38, cy + 26);
+                cy += 32;
+            });
+            cy += 6;
+
+            // 4. 空投道具[cite: 4]
+            tCtx.fillStyle = '#FFFFFF';
+            tCtx.font = 'bold 14px "Outfit", "Noto Sans SC"';
+            tCtx.fillText("🎁 5秒空投道具机制", sx + 12, cy + 12);
+            cy += 22;
+
+            Object.keys(ITEM_CONFIG).forEach(k => {
+                const item = ITEM_CONFIG[k];
+                tCtx.beginPath();
+                tCtx.arc(sx + 24, cy + 12, 8, 0, Math.PI * 2);
+                tCtx.fillStyle = item.color;
+                tCtx.fill();
+
+                tCtx.fillStyle = item.color;
+                tCtx.font = 'bold 12px "Outfit", "Noto Sans SC"';
+                tCtx.fillText(item.name, sx + 40, cy + 13);
+                tCtx.fillStyle = '#A0AEC0';
+                tCtx.font = '10px "Outfit", "Noto Sans SC"';
+                tCtx.fillText(item.desc, sx + 40, cy + 26);
+                cy += 31;
+            });
+            cy += 6;
+
+            // 5. 难度数值表[cite: 4]
+            tCtx.fillStyle = '#FFFFFF';
+            tCtx.font = 'bold 14px "Outfit", "Noto Sans SC"';
+            tCtx.fillText("📊 赛制与难度详细数值", sx + 12, cy + 12);
+            cy += 22;
+
+            tCtx.fillStyle = '#1E2530';
+            tCtx.fillRect(sx + 12, cy, T_SIDE_W - 24, 86);
+
+            tCtx.fillStyle = '#F1C40F';
+            tCtx.font = '10px "JetBrains Mono"';
+            tCtx.fillText("难度 | 敌人数 | 敌移速 | 敌弹速 | 目标分", sx + 18, cy + 16);
+
+            let rowY = cy + 34;
+            Object.keys(DIFFICULTY_DATA).forEach(dk => {
+                const dv = DIFFICULTY_DATA[dk];
+                const isCur = gameDiff === dk;
+                tCtx.fillStyle = isCur ? '#2ECC71' : '#A0AEC0';
+                const prefix = isCur ? "▶" : " ";
+                tCtx.fillText(`${prefix}${dv.name}  |  ${dv.max_enemy}辆   |   ${dv.speed}  |   ${dv.bullet_spd}   | ${dv.score_target}分`, sx + 16, rowY);
+                rowY += 18;
+            });
+        }
+
+        function renderMenuModal() {
+            tCtx.fillStyle = 'rgba(10, 14, 20, 0.88)';
+            tCtx.fillRect(0, 0, T_WIN_W, T_WIN_H);
+
+            tCtx.textAlign = 'center';
+            tCtx.fillStyle = '#F1C40F';
+            tCtx.font = 'bold 40px "Outfit", "Noto Sans SC"';
+            tCtx.fillText("坦克大战 · 浪尖实战竞技", T_WIN_W / 2, 160);
+
+            tCtx.fillStyle = '#2ECC71';
+            tCtx.font = 'bold 16px "Outfit", "Noto Sans SC"';
+            tCtx.fillText("开发者认证: ZTK (浩源校区 · 浪尖儿大学生社区)", T_WIN_W / 2, 215);
+
+            const mDesc = `当前赛制: 【${gameMode === 'BASE' ? '阵地保卫战 (摧毁敌旗)' : '积分赛 (争夺击杀分)'}】 (按 [1] / [2] 切换)`;
+            const dDesc = `当前难度: 【${DIFFICULTY_DATA[gameDiff].name}】 (按 [E]简单 / [M]中等 / [H]困难 切换)`;
+
+            tCtx.fillStyle = '#3498DB';
+            tCtx.font = 'bold 16px "Outfit", "Noto Sans SC"';
+            tCtx.fillText(mDesc, T_WIN_W / 2, 290);
+
+            tCtx.fillStyle = '#E74C3C';
+            tCtx.fillText(dDesc, T_WIN_W / 2, 335);
+
+            tCtx.fillStyle = '#2ECC71';
+            tCtx.font = 'bold 28px "Outfit", "Noto Sans SC"';
+            tCtx.fillText("按 [回车 / 空格键] 立即出征！", T_WIN_W / 2, 450);
+        }
+
+        function renderResultModal() {
+            tCtx.fillStyle = 'rgba(10, 14, 20, 0.9)';
+            tCtx.fillRect(0, 0, T_WIN_W, T_WIN_H);
+
+            const isWin = gameState === "WIN";
+            tCtx.textAlign = 'center';
+            tCtx.fillStyle = isWin ? '#2ECC71' : '#E74C3C';
+            tCtx.font = 'bold 44px "Outfit", "Noto Sans SC"';
+            tCtx.fillText(isWin ? "VICTORY! 战役大捷" : "GAME OVER 遗憾战败", T_WIN_W / 2, 240);
+
+            tCtx.fillStyle = '#F0F0F0';
+            tCtx.font = 'bold 24px "Outfit", "Noto Sans SC"';
+            tCtx.fillText(`最终战绩: ${score} 分  |  认证: ZTK`, T_WIN_W / 2, 320);
+
+            tCtx.fillStyle = '#F1C40F';
+            tCtx.font = 'bold 18px "Outfit", "Noto Sans SC"';
+            tCtx.fillText("按 [R] 键返回主菜单重新部署", T_WIN_W / 2, 400);
+        }
+
+        // 键盘监听[cite: 4]
+        window.addEventListener('keydown', (e) => {
+            keysPressed[e.code] = true;
+
+            if (gameState === "MENU") {
+                if (e.code === 'Digit1') gameMode = "BASE";
+                else if (e.code === 'Digit2') gameMode = "SCORE";
+                else if (e.code === 'KeyE') gameDiff = "EASY";
+                else if (e.code === 'KeyM') gameDiff = "MEDIUM";
+                else if (e.code === 'KeyH') gameDiff = "HARD";
+                else if (e.code === 'Enter' || e.code === 'Space') startTankGame();
+            } else if (gameState === "WIN" || gameState === "GAME_OVER") {
+                if (e.code === 'KeyR') gameState = "MENU";
+            }
+
+            if (['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) {
+                if (document.activeElement === tCanvas) e.preventDefault();
+            }
+        });
+
+        window.addEventListener('keyup', (e) => {
+            keysPressed[e.code] = false;
+        });
+
+        // 60FPS 严格时间戳锁帧循环，保证高刷屏与普通屏手感完全一致[cite: 4]
+        let lastFrameTime = 0;
+        const targetFpsInterval = 1000 / 60;
+
+        function gameLoop(currentTime) {
+            requestAnimationFrame(gameLoop);
+            const elapsed = currentTime - lastFrameTime;
+            if (elapsed > targetFpsInterval) {
+                lastFrameTime = currentTime - (elapsed % targetFpsInterval);
+                if (gameState === "PLAYING") updateTankBattle();
+                renderTankScene();
+            }
+        }
+        requestAnimationFrame(gameLoop);
     </script>
 </body>
 </html>
