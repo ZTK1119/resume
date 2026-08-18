@@ -7,7 +7,6 @@
     <meta name="description" content="朱拓恺的个人主页，苏州大学车辆工程2026级准大一新生，浪尖社区RST竞赛训练营入营申请作品。内含在线个人简历与坦克大战小游戏实战。">
     <meta name="author" content="朱拓恺">
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -52,9 +51,8 @@
         }
     </script>
 
-    <!-- Font Awesome 图标库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google 字体：Outfit + Plus Jakarta Sans + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -71,7 +69,7 @@
 
         /* 磨砂玻璃质感卡片 */
         .glass-panel {
-            background: rgba(9, 15, 36, 0.75);
+            background: rgba(9, 15, 36, 0.72);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -118,16 +116,12 @@
 </head>
 <body class="relative antialiased">
 
-    <!-- 0. 动态底层背景 Canvas -->
     <canvas id="cyber-bg-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
 
-    <!-- 鼠标动态跟随光晕 -->
-    <div id="mouse-glow" class="fixed inset-0 pointer-events-none z-0 opacity-70 transition-opacity duration-300"></div>
+    <div id="mouse-glow" class="fixed inset-0 pointer-events-none z-0 opacity-60 transition-opacity duration-300"></div>
 
-    <!-- 1. 顶部全局滚动进度条 -->
     <div id="scroll-bar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-purple z-50 transition-all duration-100" style="width: 0%"></div>
 
-    <!-- 2. 悬浮导航栏 -->
     <header class="fixed top-0 left-0 right-0 z-40 glass-panel border-b border-white/5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
             <a href="#hero" class="flex items-center space-x-3 group">
@@ -145,7 +139,6 @@
                 </div>
             </a>
 
-            <!-- 极简先锋导航菜单 -->
             <nav class="hidden lg:flex items-center space-x-5 text-xs font-mono tracking-wider text-slate-300">
                 <a href="#about" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº001</span> 简介</a>
                 <a href="#skills" class="hover:text-cyber-cyan transition-colors"><span class="text-cyber-cyan/60">Nº002</span> 技能矩阵</a>
@@ -166,7 +159,6 @@
             </div>
         </div>
 
-        <!-- 移动端抽屉菜单 -->
         <div id="mobile-menu" class="hidden lg:hidden px-6 py-5 space-y-3 bg-[#030712]/95 border-b border-white/10 backdrop-blur-2xl font-mono text-xs">
             <a href="#about" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº001 个人简介 (Profile)</a>
             <a href="#skills" class="block py-1.5 text-slate-300 hover:text-cyber-cyan">Nº002 技能矩阵 (Skills Matrix)</a>
@@ -181,11 +173,9 @@
 
     <main class="relative z-10 pt-28 sm:pt-36 space-y-24 sm:space-y-32">
 
-        <!-- ================= 1. HERO 视觉主介绍区 ================= -->
         <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 
-                <!-- 左侧文案 -->
                 <div class="lg:col-span-7 space-y-6">
                     <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-cyber-cyan/40 text-cyber-cyan text-xs font-mono shadow-sm">
                         <span class="w-2.5 h-2.5 rounded-full bg-cyber-cyan animate-ping"></span>
@@ -204,14 +194,12 @@
                         苏州大学车辆工程 2026 级准大一新生。热爱工科工程落地与前沿 AI 算法开发。高中时期作为<strong class="text-cyber-cyan font-bold">课题组长兼主答辩人</strong>统筹 16,000+ 条数据分析与科普游戏研发，斩获<strong class="text-cyber-amber font-bold">长三角科创活动省级一等奖</strong>与<strong class="text-cyber-emerald font-bold">优秀营员</strong>；考取阿里巴巴达摩院<strong class="text-cyber-purple font-bold">人工智能训练师（初级+高级）双认证</strong>。
                     </p>
 
-                    <!-- 胶囊标签 -->
                     <div class="flex flex-wrap gap-2.5 pt-1 font-mono text-xs">
                         <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-brands fa-python text-yellow-400"></i> Python / 数据挖掘</span>
                         <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-gamepad text-cyber-amber"></i> 坦克大战 / 网页实战演练</span>
                         <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-car text-cyber-cyan"></i> 车辆工程与AI赋能</span>
                     </div>
 
-                    <!-- 操作按钮组 -->
                     <div class="flex flex-wrap items-center gap-3.5 pt-2 font-mono text-xs sm:text-sm">
                         <a href="#tank-game" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 via-rose-500 to-purple-600 text-white font-black tracking-wider hover:shadow-[0_0_30px_rgba(245,158,11,0.7)] transition-all flex items-center gap-2 font-display text-sm">
                             <i class="fa-solid fa-gamepad"></i> 即时启动坦克大战 
@@ -222,7 +210,6 @@
                     </div>
                 </div>
 
-                <!-- 右侧规格卡片 -->
                 <div class="lg:col-span-5">
                     <div id="hero-card" class="tilt-card glass-panel rounded-3xl p-6 sm:p-7 border border-white/10 shadow-2xl relative overflow-hidden">
                         <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4 font-mono text-xs">
@@ -276,7 +263,6 @@
             </div>
         </section>
 
-        <!-- ================= 2. MARQUEE 无限跑马灯 ================= -->
         <section class="py-5 border-y border-white/10 bg-black/40 overflow-hidden relative font-display">
             <div class="marquee-track animate-marquee text-2xl sm:text-4xl font-extrabold tracking-wider text-slate-500 uppercase flex items-center gap-10 whitespace-nowrap">
                 <span class="text-cyber-cyan">● 浪尖儿大学生社区</span>
@@ -294,7 +280,6 @@
             </div>
         </section>
 
-        <!-- ================= 3. Nº001 ABOUT 个人背景与志向 ================= -->
         <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
                 <div>
@@ -337,7 +322,6 @@
             </div>
         </section>
 
-        <!-- ================= 4. Nº002 SKILLS 核心技能矩阵 ================= -->
         <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
                 <div>
@@ -348,7 +332,6 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- 编程与数据分析 -->
                 <div class="glass-panel p-7 sm:p-8 rounded-3xl space-y-5">
                     <div class="flex items-center justify-between border-b border-white/10 pb-4">
                         <div class="flex items-center gap-3">
@@ -391,7 +374,6 @@
                     </div>
                 </div>
 
-                <!-- AI 工具链与交互开发 -->
                 <div class="glass-panel p-7 sm:p-8 rounded-3xl space-y-5">
                     <div class="flex items-center justify-between border-b border-white/10 pb-4">
                         <div class="flex items-center gap-3">
@@ -436,7 +418,6 @@
             </div>
         </section>
 
-        <!-- ================= 5. Nº003 RESEARCH 核心课题与真实比赛源码展示 ================= -->
         <section id="research" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
                 <div>
@@ -449,7 +430,6 @@
                 </div>
             </div>
 
-            <!-- 课题卡片 -->
             <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-7 border-l-4 border-l-cyber-cyan">
                 <div>
                     <span class="text-xs font-mono text-slate-400 block">第六届长三角中学生数据应用创新研究活动（上海、江苏、安徽三省市电教馆联合主办）</span>
@@ -462,7 +442,6 @@
                     在该课题中，本人担任小组组长，统筹数据清洗工程、算法调优与成果答辩。面对 16,000+ 条真实销售数据中的缺失与异常，通过构建字典映射推断（`year_inference`）和中位数插补，完成了高质量的数据集清洗；并基于真实结论利用 Ren'Py 引擎自主开发了融合化学离子反应与解析几何的科普游戏原型《想像一朵未来的桃花》。
                 </p>
 
-                <!-- 真实工程指标卡片 -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-center">
                     <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
                         <span class="text-slate-400 text-[11px] block">数据样本规模</span>
@@ -486,7 +465,6 @@
                     </div>
                 </div>
 
-                <!-- 真实比赛源码沙盒 -->
                 <div class="rounded-2xl bg-[#030611] border border-slate-800 overflow-hidden font-mono text-xs">
                     <div class="flex flex-wrap items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-slate-800">
                         <div class="flex items-center space-x-2">
@@ -516,7 +494,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                 </div>
 
-                <!-- 游戏原型链接 -->
                 <div class="p-5 rounded-2xl bg-gradient-to-r from-cyber-blue/20 via-cyber-purple/20 to-black/40 border border-cyber-cyan/30 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div class="flex items-center gap-3">
                         <i class="fa-solid fa-gamepad text-cyber-cyan text-2xl"></i>
@@ -532,7 +509,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
             </div>
         </section>
 
-        <!-- ================= 6. Nº004 FILES VAULT 全套材料查阅与下载中心 ================= -->
         <section id="files-download" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
                 <div>
@@ -544,7 +520,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 font-mono text-xs">
                 
-                <!-- 1. 终期答辩 PPT -->
                 <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-rose-400/50 transition-all">
                     <div class="flex items-start gap-3.5">
                         <div class="w-11 h-11 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg shrink-0">
@@ -565,7 +540,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                 </div>
 
-                <!-- 2. 论文正文 Word -->
                 <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-cyber-cyan/50 transition-all">
                     <div class="flex items-start gap-3.5">
                         <div class="w-11 h-11 rounded-2xl bg-blue-500/20 text-cyber-cyan flex items-center justify-center text-lg shrink-0">
@@ -586,7 +560,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                 </div>
 
-                <!-- 3. Python 源码 Notebook -->
                 <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-yellow-400/50 transition-all">
                     <div class="flex items-start gap-3.5">
                         <div class="w-11 h-11 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-lg shrink-0">
@@ -607,7 +580,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                 </div>
 
-                <!-- 4. 开题答辩 PPT -->
                 <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-amber-400/50 transition-all">
                     <div class="flex items-start gap-3.5">
                         <div class="w-11 h-11 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg shrink-0">
@@ -628,7 +600,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                 </div>
 
-                <!-- 5. 开题报告 Word -->
                 <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-sky-400/50 transition-all">
                     <div class="flex items-start gap-3.5">
                         <div class="w-11 h-11 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg shrink-0">
@@ -649,7 +620,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                 </div>
 
-                <!-- 6. 游戏原型直达 -->
                 <div class="glass-panel p-6 rounded-3xl flex flex-col justify-between space-y-4 border border-white/10 hover:border-cyber-purple/50 transition-all">
                     <div class="flex items-start gap-3.5">
                         <div class="w-11 h-11 rounded-2xl bg-purple-500/20 text-cyber-purple flex items-center justify-center text-lg shrink-0">
@@ -670,7 +640,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
             </div>
         </section>
 
-        <!-- ================= 7. Nº005 HONORS 荣誉奖项与证书原件展厅 ================= -->
         <section id="awards" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
                 <div>
@@ -681,7 +650,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- 证书 1: 一等奖 -->
                 <div onclick="openCertImageModal('一等奖.png', '2024年第六届长三角中学生数据应用创新研究活动 · 一等奖', '证书编号：2024DATA-S-003 | 颁发单位：上海市教师教育学院、江苏省电化教育馆、安徽省电化教育馆')" class="glass-panel p-4 rounded-3xl border-t-2 border-t-yellow-400 cursor-pointer hover:-translate-y-2 transition-all duration-300 group space-y-3">
                     <div class="w-full h-44 rounded-2xl bg-black/80 overflow-hidden relative border border-white/10">
                         <img src="一等奖.png" alt="团队一等奖证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -696,7 +664,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                 </div>
 
-                <!-- 证书 2: 优秀营员 -->
                 <div onclick="openCertImageModal('优秀营员证书.png', '2024年第六届长三角数据应用创新研究活动 · 优秀营员', '证书编号：2024DATA-C-004 | 颁发单位：上海市教师教育学院、江苏省电化教育馆、安徽省电化教育馆')" class="glass-panel p-4 rounded-3xl border-t-2 border-t-cyber-cyan cursor-pointer hover:-translate-y-2 transition-all duration-300 group space-y-3">
                     <div class="w-full h-44 rounded-2xl bg-black/80 overflow-hidden relative border border-white/10">
                         <img src="优秀营员证书.png" alt="优秀营员证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -711,7 +678,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                 </div>
 
-                <!-- 证书 3: 达摩院高级 -->
                 <div onclick="openCertImageModal('人工智能训练师高级.jpg', '阿里巴巴达摩院 “人工智能训练师” 高级证书', '证书编号：AIT260717214042000102 | 认证机构：达摩院 - 机器智能技术事业部 / 阿里云智能服务事业部')" class="glass-panel p-4 rounded-3xl border-t-2 border-t-cyber-emerald cursor-pointer hover:-translate-y-2 transition-all duration-300 group space-y-3">
                     <div class="w-full h-44 rounded-2xl bg-black/80 overflow-hidden relative border border-white/10">
                         <img src="人工智能训练师高级.jpg" alt="达摩院人工智能训练师高级证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -726,7 +692,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </div>
                 </div>
 
-                <!-- 证书 4: 达摩院初级 -->
                 <div onclick="openCertImageModal('人工智能训练师初级.jpg', '阿里巴巴达摩院 “人工智能训练师” 初级证书', '证书编号：AIT260713201325000195 | 认证机构：达摩院 - 机器智能技术事业部 / 阿里云智能服务事业部')" class="glass-panel p-4 rounded-3xl border-t-2 border-t-cyber-purple cursor-pointer hover:-translate-y-2 transition-all duration-300 group space-y-3">
                     <div class="w-full h-44 rounded-2xl bg-black/80 overflow-hidden relative border border-white/10">
                         <img src="人工智能训练师初级.jpg" alt="达摩院人工智能训练师初级证书" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -743,7 +708,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
             </div>
         </section>
 
-        <!-- ================= 8. Nº006 TANK BATTLE ARENA (坦克大战网页版实战专区) ================= -->
         <section id="tank-game" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
                 <div>
@@ -762,10 +726,8 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                 </div>
             </div>
 
-            <!-- 游戏画布与控制区 -->
             <div class="glass-panel p-4 sm:p-6 rounded-3xl border border-white/10 relative space-y-4">
                 
-                <!-- 提示条 -->
                 <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-300 px-2">
                     <span class="flex items-center gap-2">
                         <i class="fa-solid fa-keyboard text-cyber-cyan"></i>
@@ -776,14 +738,12 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                     </button>
                 </div>
 
-                <!-- Canvas 街机框体 -->
                 <div class="w-full flex justify-center bg-black/90 rounded-2xl overflow-hidden arcade-frame relative">
                     <canvas id="tank-canvas" width="1220" height="720" tabindex="0" class="w-full max-w-full h-auto aspect-[1220/720] outline-none block"></canvas>
                 </div>
             </div>
         </section>
 
-        <!-- ================= 9. Nº007 PLEDGE 个人特长与竞赛入营申请 ================= -->
         <section id="pledge" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-5">
                 <div>
@@ -795,7 +755,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                 </div>
             </div>
 
-            <!-- 特长矩阵 -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="glass-panel p-7 rounded-3xl border-t-2 border-t-cyber-cyan space-y-3.5">
                     <div class="w-11 h-11 rounded-2xl bg-cyber-cyan/20 text-cyber-cyan flex items-center justify-center text-lg font-display">
@@ -828,7 +787,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                 </div>
             </div>
 
-            <!-- 入营宣言信 -->
             <div class="glass-panel rounded-3xl p-7 sm:p-10 border border-cyber-amber/40 relative overflow-hidden space-y-5 bg-gradient-to-b from-[#09122A] to-[#030712]">
                 <div class="flex items-center gap-3">
                     <span class="w-3 h-3 rounded-full bg-cyber-amber animate-ping"></span>
@@ -855,7 +813,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
             </div>
         </section>
 
-        <!-- ================= 10. Nº008 CONTACT 通讯通道 ================= -->
         <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
             <div class="glass-panel rounded-3xl p-8 sm:p-12 text-center space-y-7 border-t-2 border-t-cyber-cyan relative overflow-hidden">
                 <div class="max-w-xl mx-auto space-y-2">
@@ -867,21 +824,18 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto font-mono text-xs">
-                    <!-- 邮箱 -->
                     <div onclick="copyText('1929823854@qq.com', '电子邮箱已复制到剪贴板！')" class="p-5 rounded-2xl bg-black/50 border border-white/10 hover:border-cyber-cyan cursor-pointer transition-all group">
                         <i class="fa-regular fa-envelope text-2xl text-cyber-cyan block mb-2 group-hover:scale-110 transition-transform"></i>
                         <span class="text-slate-400 block text-[11px]">电子邮箱 (点击复制)</span>
                         <span class="text-white font-bold mt-1 block">1929823854@qq.com</span>
                     </div>
 
-                    <!-- 电话 -->
                     <div onclick="copyText('15150211979', '联系电话已复制到剪贴板！')" class="p-5 rounded-2xl bg-black/50 border border-white/10 hover:border-cyber-emerald cursor-pointer transition-all group">
                         <i class="fa-solid fa-phone text-2xl text-cyber-emerald block mb-2 group-hover:scale-110 transition-transform"></i>
                         <span class="text-slate-400 block text-[11px]">联系电话 (点击复制)</span>
                         <span class="text-white font-bold mt-1 block">15150211979</span>
                     </div>
 
-                    <!-- GitHub -->
                     <a href="https://github.com/ZTK1119" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-black/50 border border-white/10 hover:border-cyber-purple transition-all group block">
                         <i class="fa-brands fa-github text-2xl text-cyber-purple block mb-2 group-hover:scale-110 transition-transform"></i>
                         <span class="text-slate-400 block text-[11px]">GitHub 主页</span>
@@ -898,7 +852,6 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
 
     </main>
 
-    <!-- ================= 11. 证书图片放大预览模态框 (Lightbox) ================= -->
     <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 hidden opacity-0 transition-opacity duration-300">
         <div class="glass-panel max-w-3xl w-full max-h-[92vh] rounded-3xl p-5 sm:p-7 space-y-4 border border-cyber-cyan/40 relative flex flex-col justify-between">
             <button onclick="closeCertImageModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-xl z-20">
@@ -925,13 +878,11 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
         </div>
     </div>
 
-    <!-- 12. Toast 提示 -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-2xl bg-cyber-cyan text-slate-950 text-xs font-mono font-bold shadow-[0_0_25px_rgba(0,240,255,0.4)] flex items-center gap-2.5 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
         <i class="fa-solid fa-circle-check text-base"></i>
         <span id="toast-msg">操作成功</span>
     </div>
 
-    <!-- ================= 13. JS 脚本区域 (含网页背景、代码Tab、60FPS锁帧坦克大战引擎) ================= -->
     <script>
         // 1. 顶部进度条
         window.addEventListener('scroll', () => {
@@ -941,87 +892,167 @@ print("Missing Data Summary:\n", missing_data)</code></pre>
             document.getElementById('scroll-bar').style.width = scrolled + '%';
         });
 
-        // 2. 网页背景 Canvas 粒子动效
-        const bgCanvas = document.getElementById('cyber-bg-canvas');
-        const bgCtx = bgCanvas.getContext('2d');
-        let bgWidth, bgHeight, bgParticles = [], mouseX = -1000, mouseY = -1000;
+        // 2. Three.js 3D 动力学深空轨道与星系背景系统 (Decabits/Three.js 先锋视觉引擎)
+        const canvas3D = document.getElementById('cyber-bg-canvas');
+        const scene3D = new THREE.Scene();
+        const camera3D = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera3D.position.z = 45;
 
-        function resizeBgCanvas() {
-            bgWidth = bgCanvas.width = window.innerWidth;
-            bgHeight = bgCanvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeBgCanvas);
-        resizeBgCanvas();
+        const renderer3D = new THREE.WebGLRenderer({ 
+            canvas: canvas3D, 
+            alpha: true, 
+            antialias: true,
+            powerPreference: "high-performance"
+        });
+        renderer3D.setSize(window.innerWidth, window.innerHeight);
+        renderer3D.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        class CyberParticle {
-            constructor() {
-                this.x = Math.random() * bgWidth;
-                this.y = Math.random() * bgHeight;
-                this.vx = (Math.random() - 0.5) * 0.6;
-                this.vy = (Math.random() - 0.5) * 0.6;
-                this.radius = Math.random() * 2 + 1;
-                this.baseAlpha = Math.random() * 0.45 + 0.2;
-                this.alpha = this.baseAlpha;
-                this.color = Math.random() > 0.4 ? '#00F0FF' : (Math.random() > 0.5 ? '#8B5CF6' : '#2563EB');
-            }
-            update() {
-                this.x += this.vx; this.y += this.vy;
-                if (this.x < 0) this.x = bgWidth; if (this.x > bgWidth) this.x = 0;
-                if (this.y < 0) this.y = bgHeight; if (this.y > bgHeight) this.y = 0;
+        // 2.1 创建深空微粒星尘海 (2500+ 星子)
+        const starCount = 2600;
+        const starGeo = new THREE.BufferGeometry();
+        const starPos = new Float32Array(starCount * 3);
+        const starColors = new Float32Array(starCount * 3);
 
-                const dx = mouseX - this.x, dy = mouseY - this.y, dist = Math.sqrt(dx*dx + dy*dy);
-                if (dist < 150) {
-                    this.x -= (dx / dist) * 1.5; this.y -= (dy / dist) * 1.5; this.alpha = 0.9;
-                } else { this.alpha = this.baseAlpha; }
-            }
-            draw() {
-                bgCtx.beginPath();
-                bgCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                bgCtx.fillStyle = this.color;
-                bgCtx.globalAlpha = this.alpha;
-                bgCtx.fill();
-            }
+        const colCyan = new THREE.Color(0x00F0FF);
+        const colPurple = new THREE.Color(0x8B5CF6);
+        const colBlue = new THREE.Color(0x2563EB);
+
+        for (let i = 0; i < starCount * 3; i += 3) {
+            starPos[i] = (Math.random() - 0.5) * 180;
+            starPos[i + 1] = (Math.random() - 0.5) * 180;
+            starPos[i + 2] = (Math.random() - 0.5) * 180;
+
+            const r = Math.random();
+            const chosen = r < 0.4 ? colCyan : (r < 0.75 ? colBlue : colPurple);
+            starColors[i] = chosen.r;
+            starColors[i + 1] = chosen.g;
+            starColors[i + 2] = chosen.b;
         }
 
-        const particleCount = Math.min(Math.floor(window.innerWidth / 25), 55);
-        for (let i = 0; i < particleCount; i++) bgParticles.push(new CyberParticle());
+        starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+        starGeo.setAttribute('color', new THREE.BufferAttribute(starColors, 3));
 
-        function animateBg() {
-            bgCtx.clearRect(0, 0, bgWidth, bgHeight);
-            bgCtx.strokeStyle = 'rgba(255, 255, 255, 0.025)';
-            bgCtx.lineWidth = 1;
-            for (let x = 0; x < bgWidth; x += 45) {
-                bgCtx.beginPath(); bgCtx.moveTo(x, 0); bgCtx.lineTo(x, bgHeight); bgCtx.stroke();
-            }
-            for (let y = 0; y < bgHeight; y += 45) {
-                bgCtx.beginPath(); bgCtx.moveTo(0, y); bgCtx.lineTo(bgWidth, y); bgCtx.stroke();
-            }
+        const starMat = new THREE.PointsMaterial({
+            size: 0.75,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.8
+        });
 
-            for (let i = 0; i < bgParticles.length; i++) {
-                bgParticles[i].update();
-                bgParticles[i].draw();
-                for (let j = i + 1; j < bgParticles.length; j++) {
-                    const dx = bgParticles[i].x - bgParticles[j].x, dy = bgParticles[i].y - bgParticles[j].y, dist = Math.sqrt(dx*dx + dy*dy);
-                    if (dist < 120) {
-                        bgCtx.beginPath();
-                        bgCtx.moveTo(bgParticles[i].x, bgParticles[i].y);
-                        bgCtx.lineTo(bgParticles[j].x, bgParticles[j].y);
-                        bgCtx.strokeStyle = '#00F0FF';
-                        bgCtx.globalAlpha = 0.18 * (1 - dist / 120);
-                        bgCtx.stroke();
-                    }
-                }
-            }
-            bgCtx.globalAlpha = 1;
-            requestAnimationFrame(animateBg);
+        const starSystem = new THREE.Points(starGeo, starMat);
+        scene3D.add(starSystem);
+
+        // 2.2 创建核心拟态天体与多重轨道系统 (Orbital Planetary Rings)
+        const universeGroup = new THREE.Group();
+
+        // 核心晶体骨架 (Icosahedron Core)
+        const coreGeo = new THREE.IcosahedronGeometry(7, 1);
+        const coreMat = new THREE.MeshBasicMaterial({
+            color: 0x00F0FF,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.18
+        });
+        const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+        universeGroup.add(coreMesh);
+
+        // 创建各角度公转轨道圆环
+        function makeOrbitRing(radius, tube, colorHex, rotX, rotY) {
+            const ringGeo = new THREE.TorusGeometry(radius, tube, 16, 120);
+            const ringMat = new THREE.MeshBasicMaterial({
+                color: colorHex,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.32
+            });
+            const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+            ringMesh.rotation.x = rotX;
+            ringMesh.rotation.y = rotY;
+            return ringMesh;
         }
-        animateBg();
 
-        // 3. 鼠标跟随光晕
-        const mouseGlow = document.getElementById('mouse-glow');
+        const ringA = makeOrbitRing(16, 0.08, 0x00F0FF, Math.PI / 3, Math.PI / 6);
+        const ringB = makeOrbitRing(23, 0.06, 0x8B5CF6, -Math.PI / 4, Math.PI / 4);
+        const ringC = makeOrbitRing(30, 0.05, 0x2563EB, Math.PI / 2.3, -Math.PI / 5);
+
+        universeGroup.add(ringA);
+        universeGroup.add(ringB);
+        universeGroup.add(ringC);
+
+        // 伴星子系统 (Orbiting Satellites)
+        const moonGeo = new THREE.SphereGeometry(0.5, 8, 8);
+        const moonMatA = new THREE.MeshBasicMaterial({ color: 0x00F0FF });
+        const moonMatB = new THREE.MeshBasicMaterial({ color: 0xF59E0B });
+        const moonA = new THREE.Mesh(moonGeo, moonMatA);
+        const moonB = new THREE.Mesh(moonGeo, moonMatB);
+        universeGroup.add(moonA);
+        universeGroup.add(moonB);
+
+        scene3D.add(universeGroup);
+
+        // 2.3 鼠标全局视差跟随插值 (Parallax LERP)
+        let mouseNormX = 0, mouseNormY = 0;
+        let targetNormX = 0, targetNormY = 0;
+        let globalMouseX = -1000, globalMouseY = -1000;
+
         window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX; mouseY = e.clientY;
-            mouseGlow.style.background = `radial-gradient(650px circle at ${mouseX}px ${mouseY}px, rgba(0, 240, 255, 0.09), rgba(139, 92, 246, 0.05), transparent 60%)`;
+            globalMouseX = e.clientX;
+            globalMouseY = e.clientY;
+            mouseNormX = (e.clientX / window.innerWidth - 0.5) * 2;
+            mouseNormY = (e.clientY / window.innerHeight - 0.5) * 2;
+        });
+
+        window.addEventListener('resize', () => {
+            camera3D.aspect = window.innerWidth / window.innerHeight;
+            camera3D.updateProjectionMatrix();
+            renderer3D.setSize(window.innerWidth, window.innerHeight);
+            renderer3D.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        });
+
+        // 2.4 页面后台休眠守护
+        let is3DVisible = true;
+        document.addEventListener('visibilitychange', () => {
+            is3DVisible = !document.hidden;
+        });
+
+        let orbitTheta = 0;
+        function render3DScene() {
+            requestAnimationFrame(render3DScene);
+            if (!is3DVisible) return;
+
+            // 视差平滑追随
+            targetNormX += (mouseNormX - targetNormX) * 0.045;
+            targetNormY += (mouseNormY - targetNormY) * 0.045;
+
+            // 星云粒子缓动与自转
+            starSystem.rotation.y += 0.0006;
+            starSystem.rotation.x = -targetNormY * 0.15;
+            starSystem.rotation.y += targetNormX * 0.003;
+
+            // 轨道公转动力学
+            ringA.rotation.z += 0.0035;
+            ringB.rotation.z -= 0.0028;
+            ringC.rotation.z += 0.0020;
+            coreMesh.rotation.y += 0.004;
+            coreMesh.rotation.x += 0.002;
+
+            // 伴星圆周运动
+            orbitTheta += 0.02;
+            moonA.position.set(Math.cos(orbitTheta) * 16, Math.sin(orbitTheta) * 8, Math.sin(orbitTheta) * 13);
+            moonB.position.set(Math.cos(-orbitTheta * 0.8) * 23, Math.sin(-orbitTheta * 0.8) * 11, Math.cos(orbitTheta * 0.8) * 18);
+
+            // 整体公转群跟随视差倾角
+            universeGroup.rotation.x = targetNormY * 0.25;
+            universeGroup.rotation.y = targetNormX * 0.25;
+
+            renderer3D.render(scene3D, camera3D);
+        }
+        render3DScene();
+
+        // 3. 鼠标跟随微光晕
+        const mouseGlow = document.getElementById('mouse-glow');
+        window.addEventListener('mousemove', () => {
+            mouseGlow.style.background = `radial-gradient(650px circle at ${globalMouseX}px ${globalMouseY}px, rgba(0, 240, 255, 0.08), rgba(139, 92, 246, 0.04), transparent 65%)`;
         });
 
         // 4. 源码 Tab 切换
